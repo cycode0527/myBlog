@@ -1,4 +1,43 @@
-site_name: My Docs
+site_name: Sxrhhh的个人小站
+site_url: http://test.sxrhhh.top
+
+
+nav:
+  - 主页: index.md
+  - 博客: 
+    - 博客主页: blog/index.md
+    - 关于: blog/about.md
+  - 关于本站: about.md
 
 theme:
   name: material
+  language: zh  # 设置语言为中文
+  custom_dir: overrides
+  palette:
+    # 切换为浅色模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # 切换为深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  features:
+    - navigation.tabs # 使分类具有选型卡结构
+    - navigation.tabs.sticky  # 选项卡冻结,始终可见
+    - navigation.path # 文章显示导航路径
+    - navigation.top  # 回到顶部
+
+plugins:
+  - search:
+  - blog  # 内置博客插件
+    
+extra_css:
+  - stylesheets/extra.css
