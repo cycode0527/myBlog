@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>http://test.sxrhhh.top/api/</loc>
+         <lastmod>2023-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>http://test.sxrhhh.top/blog/</loc>
          <lastmod>2023-12-21</lastmod>
          <changefreq>daily</changefreq>
