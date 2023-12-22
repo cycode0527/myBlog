@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://test.sxrhhh.top/blog/2023/12/14/connect-to-wsl/">
+        <link rel="canonical" href="http://test.sxrhhh.top/blog/2023/07/14/raspberrypi-omv-nas/">
       
       
-        <link rel="prev" href="../../../11/25/priority-about-operator/">
+        <link rel="prev" href="../../../06/21/fever-in-ttrss/">
       
+      
+        <link rel="next" href="../../../11/07/writeup-of-hackergame2023/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>新版本下如何通过外部网络访问wsl - Sxrhhh的个人小站</title>
+        <title>通过树莓派+OMV建立自己的NAS - Sxrhhh的个人小站</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wsl" class="md-skip">
+        <a href="#omvnas" class="md-skip">
           跳转至
         </a>
       
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              新版本下如何通过外部网络访问wsl
+              通过树莓派+OMV建立自己的NAS
             
           </span>
         </div>
@@ -741,64 +743,79 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      研究起因
+      1. 材料准备
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      旧版本端口转发方案
+      2. 准备系统
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      旧版本桥接模式方案
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      新版本镜像网络模式方案
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="新版本镜像网络模式方案">
+    <nav class="md-nav" aria-label="2. 准备系统">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#wsl_1" class="md-nav__link">
+  <a href="#21" class="md-nav__link">
     <span class="md-ellipsis">
-      wsl版本检测
+      2.1 烧录系统
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#wsl_2" class="md-nav__link">
+  <a href="#22" class="md-nav__link">
     <span class="md-ellipsis">
-      配置wsl文件
+      2.2 配置网络
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 配置网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1 连接树莓派
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#222-hosts" class="md-nav__link">
     <span class="md-ellipsis">
-      解决遗留的坑
+      2.2.2 更改本机hosts（可选）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 升级系统
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 自动安装脚本
     </span>
   </a>
   
@@ -810,11 +827,101 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#4-omv" class="md-nav__link">
     <span class="md-ellipsis">
-      尾声
+      4. 配置OMV
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="4. 配置OMV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 基础配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 基础配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1.1 打开仪表盘
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1.2 更改密码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1.3 调整登出时间
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#414-omv-extras" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1.4 安装 OMV-Extras
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 配置存储
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 配置存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2.1 添加文件系统
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2.2 创建网络共享
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -855,7 +962,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-12-14 00:00:00" class="md-ellipsis">2023年12月14日</time>
+                        <time datetime="2023-07-14 00:00:00" class="md-ellipsis">2023年7月14日</time>
                       </div>
                     </li>
                     
@@ -877,7 +984,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 2 分钟阅读时间
+                              需要 4 分钟阅读时间
                             
                           </span>
                         </div>
@@ -903,145 +1010,177 @@
     
     
     
-      <a href="../../../../../tags/#wsl" class="md-tag">wsl</a>
+      <a href="../../../../../tags/#" class="md-tag">树莓派</a>
     
   
     
     
     
-      <a href="../../../../../tags/#" class="md-tag">服务器</a>
+      <a href="../../../../../tags/#nas" class="md-tag">NAS</a>
     
   
 </nav>
 
 
 
-<h1 id="wsl">新版本下如何通过外部网络访问wsl</h1>
-<p>众所周知，wsl2是windows下的linux子系统，并且采用类似于虚拟机NAT的管理方式。一般情况下，外部网络很难直接访问到wsl上的服务，除非使用端口转发。而现在，微软更新了wsl 2.0.0，采用镜像网络配置，完美解决了所有网络上的问题。</p>
+<h1 id="omvnas">通过树莓派+OMV建立自己的NAS</h1>
+<p>最近看到家中吃灰的树莓派，我突发奇想：不如把它做成NAS。虽然肯定不如专业的NAS稳定，容量也才可怜的32G，但是这样让我练练尝尝鲜也未尝不可。说干就干！</p>
 <!-- more -->
 
-<h2 id="_1">研究起因</h2>
-<p><strong><em><a href="#1">想直接看新版本解决方案的点这里</a></em></strong></p>
-<p>由于在编译他人代码时需要linux环境，我就放在了wsl下编译运行，然后在本地，我就尝试用<code>ifconfig</code>得到的虚拟机ip，成功连接上了wsl服务器。但是，当我试图用局域网下其他设备连接时，很显然，根本不可能连接上。<strong>这是因为wsl2采用了类似于NAT的网络模式，windows作为宿主机，隔离了局域网下其他设备和wsl的连接。</strong>为了外部访问wsl，我也试过一些方法。</p>
-<h2 id="_2">旧版本端口转发方案</h2>
-<p>在旧版本，常用的方法是端口转发，根据官方文档，在有管理员权限的powershell下，输入如下指令：</p>
-<pre><code class="language-powershell">netsh interface portproxy add v4tov4 listenport=&lt;yourPortToForward&gt; listenaddress=0.0.0.0 connectport=&lt;yourPortToConnectToInWSL&gt; connectaddress=(wsl hostname -I)
-</code></pre>
 <blockquote>
-<p>在此示例中，需要更新 <code>&lt;yourPortToForward&gt;</code> 到端口号，例如 <code>listenport=4000</code>。 <code>listenaddress=0.0.0.0</code> 表示将接受来自任何 IP 地址的传入请求。 侦听地址指定要侦听的 IPv4 地址，可以更改为以下值：IP 地址、计算机 NetBIOS 名称或计算机 DNS 名称。 如果未指定地址，则默认值为本地计算机。 需要将 <code>&lt;yourPortToConnectToInWSL&gt;</code> 值更新为希望 WSL 连接的端口号，例如 <code>connectport=4000</code>。 最后，<code>connectaddress</code> 值必须是通过 WSL 2 安装的 Linux 分发版的 IP 地址（WSL 2 VM 地址），可通过输入命令：<code>wsl.exe hostname -I</code> 找到。</p>
-<p>---官方文档</p>
+<p>前排提醒：经过笔者的踩坑，已经证明无线wifi连接树莓派做OMV的NAS不可行，必须要求连接<strong>网线</strong>！！！本文经过多次修改，如果文中出现WiFi相关信息，请忽略。</p>
 </blockquote>
-<p>然后，我将wsl中的<code>8303</code>端口映射在了windows下的<code>8304</code>端口下，我看到，在wsl中，服务器照常运行。</p>
-<pre><code class="language-powershell">netstat -ano | findstr 8304
-</code></pre>
-<p>也能看到8304端口正常监听。但是，在我访问wsl运行的游戏服务器~~（游戏名：DDraceNetwork）~~，客户端显示“udp疑似被拦截”。本来我认为这是端口转发失败了，但是我忽然注意到本地8304端口只有tcp。于是查询了有关资料，得到了<code>netsh</code>只支持tcp的结论。因此，netsh方案失败。</p>
-<h2 id="_3">旧版本桥接模式方案</h2>
-<p>后来，我希望用hyper-v创建一个虚拟交换机，相当于一个可通外网的虚拟网卡，并让wsl连接。结果，出现了许多问题。</p>
+<p>在这里先给出我的参考资料，毕竟网上资料鱼龙混杂，官方文档才是最好的！！！</p>
+<p><a href="https://wiki.omv-extras.org/doku.php?id=omv6:raspberry_pi_install">在树莓派上安装OMV（英文）</a></p>
+<p><a href="https://wiki.omv-extras.org/doku.php?id=omv6:new_user_guide">OMV新用户手册（英文）</a></p>
+<h2 id="1">1. 材料准备</h2>
+<p>硬件设备：</p>
 <ul>
-<li>当前版本下，wsl2已不支持更改连接方式为<code>bridge</code>桥接模式，从根本上杜绝了这一方法</li>
-<li>当我创建了虚拟交换机后并将其接入网桥，他直接<strong>把我Windows下的网络干废了</strong>。</li>
-<li>~~试图用Vmware创建交换机，结果根本找不到选项~~</li>
+<li>树莓派3B+一个</li>
+<li>电源线一根</li>
+<li>网线一根</li>
+<li>32G的TF卡一张</li>
+<li>离你树莓派近的路由器</li>
+<li>容量足够的U盘或移动硬盘</li>
 </ul>
-<p>最后，我发现了官网给出了新方案！</p>
-<p><a id="1"></a></p>
-<h2 id="_4">新版本镜像网络模式方案</h2>
-<p>由于本人入坑wsl时间晚，在此之前，我对wsl1只是道听途说。据我了解，wsl1建立在兼容层上，与windows共存，因此wsl1的网络配置与windows一致，外部网络也可以很轻松地接入wsl。而wsl2则是基于hyper-v的虚拟机，采用的是新一套的NAT方案，较为独立。所以对于wsl2也要用和普通虚拟机一样的网络方案，如NAT转发和桥接。</p>
-<p>而现在，在Windows<code>23H2</code>更新中，或是<code>22H2</code>中的insider，wsl2更新了镜像网络解决方案，这个方案将会解决几乎一切wsl上的网络问题。<strong>而此方法，也将随着时间推移，成为wsl2的默认解决方案</strong>。</p>
-<p>在此贴出微软官方文档：</p>
-<p><a href="https://learn.microsoft.com/zh-cn/windows/wsl/networking">使用 WSL 访问网络应用程序 | Microsoft Learn</a></p>
-<h3 id="wsl_1">wsl版本检测</h3>
-<p>要启用镜像网络模式，首先要保证你的windows系统是23H2以上，或是加入了windows体验计划。除此之外，由于版本更新已有一段时间，如果你不确定是否可以使用，可以在cmd输入<code>wsl --version</code>查看wsl版本是否是<code>2.0.0</code>以上。如果是，那就可以。</p>
-<h3 id="wsl_2">配置wsl文件</h3>
-<p>在windows用户根目录下，新建个名为<code>.wslconfig</code>的文件，选择合适的编辑器打开它。</p>
+<p>所需软件：</p>
+<ul>
+<li>Raspberry Pi Imager，官方推出的软件，用于烧录树莓派系统。<a href="https://downloads.raspberrypi.org/imager/imager_latest.exe">官网下载</a></li>
+<li>Windows Terminal或是Putty等终端软件。</li>
+<li>会简单使用Linux系统的大脑</li>
+</ul>
+<h2 id="2">2. 准备系统</h2>
+<p>现在万事俱备，开始制作咱们的树莓派了</p>
+<h3 id="21">2.1 烧录系统</h3>
+<p>首先，将我们的TF卡插入读卡器中，连接上电脑记住它的盘符，然后打开Raspberry Pi Imager</p>
+<p>打开软件，选择操作系统，由于OMV的安装与存储策略，我们<strong>必须选择精简版的64位系统</strong></p>
+<p><img alt="选择操作系统1" src="https://repo.sxrhhh.top/picgoimage-20230714173738097.png" /></p>
+<p><img alt="选择操作系统2" src="https://repo.sxrhhh.top/picgoimage-20230714173902815.png" /></p>
+<p>最后选择我们插入TF卡的盘符</p>
+<p><img alt="选择TF卡" src="https://repo.sxrhhh.top/picgoimage-20230714174047249.png" /></p>
+<p><strong>注意，一旦烧录开始，磁盘上的所有数据都会丢失，请注意备份</strong></p>
+<p>然后不要急着开始烧录，点击右下角的设置</p>
+<p><img alt="点击设置" src="https://repo.sxrhhh.top/picgoimage-20230714174307710.png" /></p>
+<p>打开ssh服务，并且设置用户名和密码，用户名可以为<code>pi</code>，密码需要用心设置，这是你的管理员密码，root账号已被锁定。</p>
+<p><strong>注：请不要将用户名修改为<code>admin</code>，这是OMV的默认管理员账号，会引起冲突。</strong></p>
+<p><img alt="设置ssh与密码" src="https://repo.sxrhhh.top/picgoimage-20230714174350920.png" /></p>
+<p>~~然后是设置WiFi，这个是无线连接树莓派的必要条件，有网线的可以略过此步骤~~。</p>
+<p><strong>接下来的<code>配置wifi</code>请去除勾选，因为即使配置完成，也会在安装OMV后删除有关wifi的一切配置。</strong></p>
+<p>如果错过以上两个步骤，可以通过修改TF卡目录下文件完成WiFi和ssh的设置</p>
+<p><img alt="取消配置wifi" src="https://repo.sxrhhh.top/picgoimage-20230718170333903.png" /></p>
+<p>语言设置保持上海。</p>
+<p><img alt="语言设置" src="https://repo.sxrhhh.top/picgoimage-20230714175024593.png" /></p>
+<p>好了，现在可以完成设置，开始烧录了！</p>
+<p><strong>再次提醒，开始烧录后原TF卡内数据将全部丢失！！！</strong></p>
+<p>等待进度条结束，便烧录完成，拔下TF卡插入树莓派通电吧！</p>
+<h3 id="22">2.2 配置网络</h3>
+<h4 id="221">2.2.1 连接树莓派</h4>
+<p>在连接到树莓派之前，你需要查看树莓派和路由器的IP地址，才可以连接。</p>
+<p><strong>首先将你的树莓派的网线连接到路由器上</strong>，在本机上，打开Windows Terminal（以下简称cmd），输入<code>ipconfig</code>，查看默认网关。</p>
+<p><img alt="找到路由器IP" src="https://repo.sxrhhh.top/picgoimage-20230714175709588.png" /></p>
+<p>随后，在浏览器中访问路由器，找到树莓派的IP地址</p>
+<p><img alt="找到树莓派IP" src="https://repo.sxrhhh.top/picgoimage-20230714180058425.png" /></p>
+<p>然后便可在cmd中连接树莓派了</p>
+<pre><code class="language-shell">ssh pi@192.168.0.120
+</code></pre>
+<h4 id="222-hosts">2.2.2 更改本机hosts（可选）</h4>
+<p>为了方便自己的连接，在部署完内网穿透之前，我们可以在windows本机上修改hosts文件</p>
+<p>打开<code>"C:\Windows\System32\drivers\etc\hosts"</code></p>
+<p>加入</p>
+<pre><code>192.168.0.120 pi.example.com #建议是你自己的域名，为以后的穿透做准备
+</code></pre>
+<p>通过管理员模式保存文件，然后在cmd中ping试试</p>
+<pre><code class="language-shell">ping pi.example.com
+</code></pre>
+<p>完成，以后可以用这个主机名连接了。</p>
+<pre><code class="language-shell">ssh pi@pi.example.com
+</code></pre>
+<p>## 3. 安装OMV</p>
+<h3 id="31">3.1 升级系统</h3>
+<p>在安装OMV之前，我们先接入树莓派，进行一下系统的升级</p>
+<pre><code class="language-bash">sudo apt-get update
+sudo apt-get -y upgrade
+</code></pre>
+<p>然后重启</p>
+<pre><code class="language-bash">sudo reboot
+</code></pre>
+<p><strong>请注意：在接下来的每次重启后，如果发现ssh无法连接树莓派，请到路由器上重新查看树莓派的IP地址</strong></p>
+<h3 id="32">3.2 自动安装脚本</h3>
+<p>在树莓派上安装OMV非常简单，只需要运行官方提供的自动安装脚本即可一键安装。</p>
+<pre><code class="language-bash">wget -O - https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install | sudo bash
+</code></pre>
+<p>如果遇到网络问题（被墙）等问题，可以选择直接下载<code>install</code>文件，然后通过ftp软件导入树莓派直接安装。</p>
+<pre><code class="language-bash">sudo bash ./install
+</code></pre>
+<p>经过漫长的等待，如果没出现问题，他会提示自动重启，随后你将自动断开连接。</p>
 <blockquote>
-<p>如果不知道自己的用户根目录，可以在cmd下输入<code>echo %USERPROFILE</code>，即可看到路径</p>
-<p>经过实验，我甚至发现上面的命令只能在cmd命令提示符下执行，powershell还不行！！！</p>
+<p>根据多种因素，运行此脚本最多可能需要 30 分钟。</p>
+<p>​                 ——OMV官网</p>
 </blockquote>
-<p>在文件中输入如下内容：</p>
-<pre><code>[experimental]
-networkingMode=mirrored
-dnsTunneling=true
-firewall=true
-autoProxy=true
+<p>现在，我们的OMV就已经安装完毕，可以进行配置了。</p>
+<h2 id="4-omv">4. 配置OMV</h2>
+<h3 id="41">4.1 基础配置</h3>
+<p>在浏览器中打开树莓派的IP地址，就可以看到登陆界面，输入你的用户名和密码。</p>
+<p>用户名：<code>admin</code> ，默认密码：<code>openmediavault</code></p>
+<h4 id="411">4.1.1 打开仪表盘</h4>
+<p>进入网页，我们点击设置</p>
+<p><img alt="打开设置" src="https://repo.sxrhhh.top/picgoomv6ug_-_dash.jpg" /></p>
+<p>将里面的所有选项全部勾上，保存。然后你就能看到仪表盘了。</p>
+<p><img alt="仪表盘" src="https://repo.sxrhhh.top/picgoimage-20230718202017641.png" /></p>
+<h4 id="412">4.1.2 更改密码</h4>
+<p>打开下图界面，更改密码</p>
+<p><img alt="更改密码" src="https://repo.sxrhhh.top/picgoimage-20230718202329297.png" /></p>
+<h4 id="413">4.1.3 调整登出时间</h4>
+<p>点击下图设置，调整登出时间，可以保证你不会一离开电脑就登出的烦恼。</p>
+<p><img alt="登出时间" src="https://repo.sxrhhh.top/picgoimage-20230718202525161.png" /></p>
+<p>随后，保存，点击黄框中的确定，应用配置。</p>
+<p><img alt="黄框应用配置" src="https://repo.sxrhhh.top/picgoimage-20230718202827619.png" /></p>
+<blockquote>
+<p>这个项目有一点不错，就是保存和应用分离，这样保证你可以放心在多个栏目下更改设置，最后统一应用，既有速度，又有安全性，就是有一点小烦。。。</p>
+</blockquote>
+<h4 id="414-omv-extras">4.1.4 安装 OMV-Extras</h4>
+<p>ssh连接树莓派，输入如下命令：</p>
+<pre><code class="language-bash">wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/master/install |sudo bash
 </code></pre>
-<p>然后，执行<code>wsl --shutdown</code>，等待大约8秒后重新启动wsl，即可成功改变网络策略。</p>
-<p>你可以通过在wsl虚拟机内执行<code>ifconfig</code>，看到原本有的IP地址现在没了，即可证明mirrored模式启用成功。现在你可以用phpstudy等软件在windows下建立一个网站，然后用linux访问，会发现linux可以访问windows的服务。</p>
-<p>比如说：我在windows下用80端口建立的网站，在linux下执行<code>curl localhost</code>，显示的是windows的网站。</p>
-<p>再比如说：我在linux下用apache在81端口建立了个网站，在windows下用浏览器访问<code>http://localhost:81</code>，可以看到linux的网站。</p>
-<p>那么，wsl的新版本网络配置也就成功了…………</p>
-<p>…………</p>
-<p><strong>吗？</strong></p>
-<h3 id="_5">解决遗留的坑</h3>
-<p>很遗憾地告诉大家，我上面给出的配置文件<strong>少了一句话</strong>，而这句话才是本文的重点。为什么会单独拿出来讲，这是因为我在20分钟查找资料的过程，<strong>没有一篇文章</strong>讲到这个。现在我们先来看看问题在哪里。</p>
-<p>首先，我们要先知道windows的IP地址，不要求上百度看公网IP，只要一个局域网内的外部IP，也就是你电脑直连路由器分配给你的IP，假设是192.168.1.101，那么我现在在浏览器访问<code>http://192.168.1.101</code>，可以成功看到宿主机创建的网站。</p>
-<p>现在在让我们访问<code>http://192.168.1.101:81</code>，也就是linux下的网站端口，结果发现，<strong>无法访问！</strong></p>
-<p>也就是说：</p>
-<ul>
-<li>localhost:81  可以！</li>
-<li>192.168.1.101:81  不行！</li>
-</ul>
-<p>那就奇了怪了，我也是成功在官网找到响应的配置选项，只要在最后加上那么一行：<code>hostAddressLoopback=true</code>就行了。</p>
-<p>最后的配置文件：</p>
-<pre><code>[experimental]
-networkingMode=mirrored
-dnsTunneling=true
-firewall=true
-autoProxy=true
-hostAddressLoopback=true
-</code></pre>
-<p>重启wsl，问题解决，~~我的游戏服务器也能进入了，只是服务器列表不显示[滑稽]~~</p>
-<h2 id="_6">尾声</h2>
-<p>我在这里贴出wsl2关于mirrored模式的一些其他配置选项，可以更好的帮助各位配置wsl。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">设置名称</th>
-<th style="text-align: left;">值</th>
-<th style="text-align: left;">默认值</th>
-<th style="text-align: left;">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>useWindowsDnsCache</code>**</td>
-<td style="text-align: left;">bool</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">仅当 <code>experimental.dnsTunneling</code> 设置为 true 时才适用。 如果此选项设置为 false，则从 Linux 隧道传输的 DNS 请求将绕过 Windows 中的缓存名称，以始终将请求放在网络上。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>bestEffortDnsParsing</code>**</td>
-<td style="text-align: left;">bool</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">仅当 <code>experimental.dnsTunneling</code> 设置为 true 时才适用。 如果设置为 true，Windows 将从 DNS 请求中提取问题并尝试解决该问题，从而忽略未知记录。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>initialAutoProxyTimeout</code>*</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">1000</td>
-<td style="text-align: left;">仅当 <code>experimental.autoProxy</code> 设置为 true 时才适用。 配置启动 WSL 容器时，WSL 等待检索 HTTP 代理信息的时长（以毫秒为单位）。 如果代理设置在此时间之后解析，则必须重启 WSL 实例才能使用检索到的代理设置。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>ignoredPorts</code>**</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Null</td>
-<td style="text-align: left;">仅当 <code>experimental.networkingMode</code> 设置为 <code>mirrored</code> 时才适用。 指定 Linux 应用程序可以绑定到哪些端口（即使该端口已在 Windows 中使用）。 通过此设置，应用程序能够仅侦听 Linux 中的流量端口，因此即使该端口在 Windows 上用于其他用途，这些应用程序也不会被阻止。 例如，WSL 将允许绑定到 Linux for Docker Desktop 中的端口 53，因为它只侦听来自 Linux 容器中的请求。 应在逗号分隔列表中设置格式，例如：<code>3000,9000,9090</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>hostAddressLoopback</code>**</td>
-<td style="text-align: left;">bool</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">仅当 <code>experimental.networkingMode</code> 设置为 <code>mirrored</code> 时才适用。 如果设置为 True，将会允许容器通过分配给主机的 IP 地址连接到主机，或允许主机通过此方式连接到容器。 请注意，始终可以使用 127.0.0.1 环回地址 - 此选项也允许使用所有额外分配的本地 IP 地址。</td>
-</tr>
-</tbody>
-</table>
-<p>具有 <code>path</code> 值的条目必须是带有转义反斜杠的 Windows 路径，例如：<code>C:\\Temp\\myCustomKernel</code></p>
-<p>具有 <code>size</code> 值的条目后面必须跟上大小的单位，例如 <code>8GB</code> 或 <code>512MB</code>。</p>
-<p>值类型后带有 * 的条目仅在 Windows 11 中可用。</p>
-<p>值类型后显示 ** 的条目需要 <a href="https://blogs.windows.com/windows-insider/2023/09/14/releasing-windows-11-build-22621-2359-to-the-release-preview-channel/">Windows 版本 22H2</a> 或更高版本。</p>
+<p>同样的，你也可以通过直接下载<code>install</code>文件并导入树莓派来安装。</p>
+<p>在安装成功后，你将看到OMV-Extras出现在菜单栏。</p>
+<p><img alt="菜单栏" src="https://repo.sxrhhh.top/picgoimage-20230718211158064.png" /></p>
+<h3 id="42">4.2 配置存储</h3>
+<h4 id="421">4.2.1 添加文件系统</h4>
+<p>对于OMV，它不支持系统和数据共用一个磁盘，因此，将你的U盘或移动硬盘插入树莓派的USB接口。</p>
+<p>打开网站后台，选择“磁盘”，然后选择U盘的磁盘，点击上方橡皮擦擦除数据。</p>
+<p><u>如果是系统盘，（如图中的/dev/mmcblk0），则无法擦除数据。</u></p>
+<p><img alt="磁盘界面" src="https://repo.sxrhhh.top/picgoimage-20230718213702086.png" /></p>
+<p>然后，点击<strong>“快速”</strong>进行擦除数据。</p>
+<p><strong>注：擦除后U盘内所有数据都将丢失且无法恢复，请注意备份</strong></p>
+<p>随后，依次点击“文件系统”“加号”“EXT4”，选择刚才擦除的U盘，保存，应用。</p>
+<p><img alt="建立文件系统" src="https://repo.sxrhhh.top/picgoimage-20230718214047319.png" /></p>
+<p>在经历了一段时间的等待后，我们看见了如上图所示的文件系统Online标识，意味着我们文件系统建立成功！</p>
+<h4 id="422">4.2.2 创建网络共享</h4>
+<p>做NAS，必然需要的是网络共享数据，那么我们现在就来将刚才创建好的文件系统共享吧！</p>
+<p><u>下图勘误：第二栏文件系统并非默认，而是选择刚才创建好的文件系统</u></p>
+<p><img alt="共享文件夹" src="https://repo.sxrhhh.top/picgoimage-20230718214857678.png" /></p>
+<p>随后打开 SMB/CIF“Samba网络共享</p>
+<p>如下图：</p>
+<p><img alt="打开SMB" src="https://repo.sxrhhh.top/picgoimage-20230718215727688.png" /></p>
+<p>打开SMB的设置，勾上最上方的启动（enabled），保存，应用。</p>
+<p>随后打开下方共享，新建SMB共享，如下图所示。</p>
+<p><img alt="新建SMB共享" src="https://repo.sxrhhh.top/picgoimage-20230718220005434.png" /></p>
+<p>勾上下图红框中所有选项，注意第一栏为刚才的共享文件夹，第三栏为“允许访客”。其余选项全部保持默认。</p>
+<p><img alt="SMB设置" src="https://repo.sxrhhh.top/picgoimage-20230718220220178.png" /></p>
+<p>最后保存并应用设置。</p>
+<p>最后结果应当如此：</p>
+<p><img alt="SMB结果" src="https://repo.sxrhhh.top/picgoimage-20230718220449259.png" /></p>
+<p>在最后，我们来到windows本机的“网络”，找到树莓派，双击进入。在此之前你可能需要等待几分钟。</p>
+<p><img alt="网络1" src="https://repo.sxrhhh.top/picgoimage-20230718222004116.png" /></p>
+<p><img alt="网络2" src="https://repo.sxrhhh.top/picgoimage-20230718222022061.png" /></p>
+<p><img alt="网络3" src="https://repo.sxrhhh.top/picgoimage-20230718222055606.png" /></p>
+<p>并且，他还可以像正常驱动器一样复制粘贴，新建文件夹和各种东西，非常的赞！！！</p>
+<p>你还可以通过映射驱动器路径将它放在更外面的位置方便存储。</p>
+<p><img alt="已映射驱动器路径" src="https://repo.sxrhhh.top/picgoimage-20230718222504237.png" /></p>
 <hr />
 <p>作者：Sxrhhh</p>
-<p>个人网站：<a href="https://www.sxrhhh.top/">https://www.sxrhhh.top</a></p>
-<p>博客园：<a href="https://www.cnblogs.com/sxrhhh/">Sxrhhh - 博客园 (cnblogs.com)</a></p>
+<p>个人网站：<a href="https://www.sxrhhh.top">https://www.sxrhhh.top</a></p>
 <p>转载请注明出处.</p>
 <p>在个人网站持续更新中……</p>
 

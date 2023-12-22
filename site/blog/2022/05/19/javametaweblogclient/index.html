@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://test.sxrhhh.top/blog/2023/12/14/connect-to-wsl/">
+        <link rel="canonical" href="http://test.sxrhhh.top/blog/2022/05/19/javametaweblogclient/">
       
       
-        <link rel="prev" href="../../../11/25/priority-about-operator/">
+        <link rel="prev" href="../../../04/29/how-to-generate-javadoc/">
       
+      
+        <link rel="next" href="../../../../2023/06/21/fever-in-ttrss/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>新版本下如何通过外部网络访问wsl - Sxrhhh的个人小站</title>
+        <title>JavaMetaweblogClient,Metaweblog的java实现-从此上传博客实现全平台 - Sxrhhh的个人小站</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wsl" class="md-skip">
+        <a href="#javametaweblogclientmetaweblogjava-" class="md-skip">
           跳转至
         </a>
       
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              新版本下如何通过外部网络访问wsl
+              JavaMetaweblogClient,Metaweblog的java实现-从此上传博客实现全平台
             
           </span>
         </div>
@@ -741,64 +743,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1-metaweblog" class="md-nav__link">
     <span class="md-ellipsis">
-      研究起因
+      1. 什么是Metaweblog?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#2-metaweblog" class="md-nav__link">
     <span class="md-ellipsis">
-      旧版本端口转发方案
+      2. Metaweblog的应用
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#3-metaweblog" class="md-nav__link">
     <span class="md-ellipsis">
-      旧版本桥接模式方案
+      3. 如何使用Metaweblog
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      新版本镜像网络模式方案
+      4. 本项目介绍
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="新版本镜像网络模式方案">
+    <nav class="md-nav" aria-label="4. 本项目介绍">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#wsl_1" class="md-nav__link">
+  <a href="#41-metaweblogjava" class="md-nav__link">
     <span class="md-ellipsis">
-      wsl版本检测
+      4.1 metaweblog与java之间的关系映射
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#wsl_2" class="md-nav__link">
+  <a href="#42-javametaweblogclient" class="md-nav__link">
     <span class="md-ellipsis">
-      配置wsl文件
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      解决遗留的坑
+      4.2 使用JavaMetaweblogClient
     </span>
   </a>
   
@@ -810,9 +803,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
-      尾声
+      5. 最后的话
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      联系我
     </span>
   </a>
   
@@ -855,7 +866,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-12-14 00:00:00" class="md-ellipsis">2023年12月14日</time>
+                        <time datetime="2022-05-19 00:00:00" class="md-ellipsis">2022年5月19日</time>
                       </div>
                     </li>
                     
@@ -866,7 +877,7 @@
                           <span class="md-ellipsis">
                             分类于
                             
-                              <a href="../../../../category/%E8%BF%90%E7%BB%B4/">运维</a></span>
+                              <a href="../../../../category/%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">程序开发</a></span>
                         </div>
                       </li>
                     
@@ -903,147 +914,129 @@
     
     
     
-      <a href="../../../../../tags/#wsl" class="md-tag">wsl</a>
+      <a href="../../../../../tags/#java" class="md-tag">Java</a>
     
   
     
     
     
-      <a href="../../../../../tags/#" class="md-tag">服务器</a>
+      <a href="../../../../../tags/#metaweblog" class="md-tag">Metaweblog</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../tags/#api" class="md-tag">API</a>
     
   
 </nav>
 
 
 
-<h1 id="wsl">新版本下如何通过外部网络访问wsl</h1>
-<p>众所周知，wsl2是windows下的linux子系统，并且采用类似于虚拟机NAT的管理方式。一般情况下，外部网络很难直接访问到wsl上的服务，除非使用端口转发。而现在，微软更新了wsl 2.0.0，采用镜像网络配置，完美解决了所有网络上的问题。</p>
+<h1 id="javametaweblogclientmetaweblogjava-">JavaMetaweblogClient,Metaweblog的java实现-从此上传博客实现全平台</h1>
+<p>不知你是否会遇到下面这样的情况:想要通过java上传博客,结果却发现api的使用有些复杂。没关系，这里帮你解决了api的问题。在使用Metaweblog的时候，只需要调用网页上同名的方法就好了，一键发送命令，感受调用api的快感。</p>
 <!-- more -->
 
-<h2 id="_1">研究起因</h2>
-<p><strong><em><a href="#1">想直接看新版本解决方案的点这里</a></em></strong></p>
-<p>由于在编译他人代码时需要linux环境，我就放在了wsl下编译运行，然后在本地，我就尝试用<code>ifconfig</code>得到的虚拟机ip，成功连接上了wsl服务器。但是，当我试图用局域网下其他设备连接时，很显然，根本不可能连接上。<strong>这是因为wsl2采用了类似于NAT的网络模式，windows作为宿主机，隔离了局域网下其他设备和wsl的连接。</strong>为了外部访问wsl，我也试过一些方法。</p>
-<h2 id="_2">旧版本端口转发方案</h2>
-<p>在旧版本，常用的方法是端口转发，根据官方文档，在有管理员权限的powershell下，输入如下指令：</p>
-<pre><code class="language-powershell">netsh interface portproxy add v4tov4 listenport=&lt;yourPortToForward&gt; listenaddress=0.0.0.0 connectport=&lt;yourPortToConnectToInWSL&gt; connectaddress=(wsl hostname -I)
-</code></pre>
-<blockquote>
-<p>在此示例中，需要更新 <code>&lt;yourPortToForward&gt;</code> 到端口号，例如 <code>listenport=4000</code>。 <code>listenaddress=0.0.0.0</code> 表示将接受来自任何 IP 地址的传入请求。 侦听地址指定要侦听的 IPv4 地址，可以更改为以下值：IP 地址、计算机 NetBIOS 名称或计算机 DNS 名称。 如果未指定地址，则默认值为本地计算机。 需要将 <code>&lt;yourPortToConnectToInWSL&gt;</code> 值更新为希望 WSL 连接的端口号，例如 <code>connectport=4000</code>。 最后，<code>connectaddress</code> 值必须是通过 WSL 2 安装的 Linux 分发版的 IP 地址（WSL 2 VM 地址），可通过输入命令：<code>wsl.exe hostname -I</code> 找到。</p>
-<p>---官方文档</p>
-</blockquote>
-<p>然后，我将wsl中的<code>8303</code>端口映射在了windows下的<code>8304</code>端口下，我看到，在wsl中，服务器照常运行。</p>
-<pre><code class="language-powershell">netstat -ano | findstr 8304
-</code></pre>
-<p>也能看到8304端口正常监听。但是，在我访问wsl运行的游戏服务器~~（游戏名：DDraceNetwork）~~，客户端显示“udp疑似被拦截”。本来我认为这是端口转发失败了，但是我忽然注意到本地8304端口只有tcp。于是查询了有关资料，得到了<code>netsh</code>只支持tcp的结论。因此，netsh方案失败。</p>
-<h2 id="_3">旧版本桥接模式方案</h2>
-<p>后来，我希望用hyper-v创建一个虚拟交换机，相当于一个可通外网的虚拟网卡，并让wsl连接。结果，出现了许多问题。</p>
+<h2 id="1-metaweblog">1. 什么是Metaweblog?</h2>
+<p>Metaweblog是一个webservice，也就是在网络上使用的api。它基于xml-rpc实现。对于现存的博客平台，例如博客园、开源中国、wordpress等都实现了metaweblog。通过这个api，你可以不登录网页，直接通过一些程序来增删查改你的博客，上传媒体文件。</p>
+<h2 id="2-metaweblog">2. Metaweblog的应用</h2>
+<p>metaweblog的适用范围不太广，但是绝对能满足于博客管理的需要。通常，面对下面情况，你就可以使用metaweblog：</p>
 <ul>
-<li>当前版本下，wsl2已不支持更改连接方式为<code>bridge</code>桥接模式，从根本上杜绝了这一方法</li>
-<li>当我创建了虚拟交换机后并将其接入网桥，他直接<strong>把我Windows下的网络干废了</strong>。</li>
-<li>~~试图用Vmware创建交换机，结果根本找不到选项~~</li>
+<li>你已经编辑好了一篇博客，保存为markdown文件，想要快速上传博客；</li>
+<li>你想删除一篇博客；</li>
+<li>你想更新一篇博客，但又不想复制并粘贴全部；</li>
+<li>你用离线编辑器写博客，但是图片又不想保存在本地，想直接把图片上传到博客服务器里面；</li>
 </ul>
-<p>最后，我发现了官网给出了新方案！</p>
-<p><a id="1"></a></p>
-<h2 id="_4">新版本镜像网络模式方案</h2>
-<p>由于本人入坑wsl时间晚，在此之前，我对wsl1只是道听途说。据我了解，wsl1建立在兼容层上，与windows共存，因此wsl1的网络配置与windows一致，外部网络也可以很轻松地接入wsl。而wsl2则是基于hyper-v的虚拟机，采用的是新一套的NAT方案，较为独立。所以对于wsl2也要用和普通虚拟机一样的网络方案，如NAT转发和桥接。</p>
-<p>而现在，在Windows<code>23H2</code>更新中，或是<code>22H2</code>中的insider，wsl2更新了镜像网络解决方案，这个方案将会解决几乎一切wsl上的网络问题。<strong>而此方法，也将随着时间推移，成为wsl2的默认解决方案</strong>。</p>
-<p>在此贴出微软官方文档：</p>
-<p><a href="https://learn.microsoft.com/zh-cn/windows/wsl/networking">使用 WSL 访问网络应用程序 | Microsoft Learn</a></p>
-<h3 id="wsl_1">wsl版本检测</h3>
-<p>要启用镜像网络模式，首先要保证你的windows系统是23H2以上，或是加入了windows体验计划。除此之外，由于版本更新已有一段时间，如果你不确定是否可以使用，可以在cmd输入<code>wsl --version</code>查看wsl版本是否是<code>2.0.0</code>以上。如果是，那就可以。</p>
-<h3 id="wsl_2">配置wsl文件</h3>
-<p>在windows用户根目录下，新建个名为<code>.wslconfig</code>的文件，选择合适的编辑器打开它。</p>
-<blockquote>
-<p>如果不知道自己的用户根目录，可以在cmd下输入<code>echo %USERPROFILE</code>，即可看到路径</p>
-<p>经过实验，我甚至发现上面的命令只能在cmd命令提示符下执行，powershell还不行！！！</p>
-</blockquote>
-<p>在文件中输入如下内容：</p>
-<pre><code>[experimental]
-networkingMode=mirrored
-dnsTunneling=true
-firewall=true
-autoProxy=true
-</code></pre>
-<p>然后，执行<code>wsl --shutdown</code>，等待大约8秒后重新启动wsl，即可成功改变网络策略。</p>
-<p>你可以通过在wsl虚拟机内执行<code>ifconfig</code>，看到原本有的IP地址现在没了，即可证明mirrored模式启用成功。现在你可以用phpstudy等软件在windows下建立一个网站，然后用linux访问，会发现linux可以访问windows的服务。</p>
-<p>比如说：我在windows下用80端口建立的网站，在linux下执行<code>curl localhost</code>，显示的是windows的网站。</p>
-<p>再比如说：我在linux下用apache在81端口建立了个网站，在windows下用浏览器访问<code>http://localhost:81</code>，可以看到linux的网站。</p>
-<p>那么，wsl的新版本网络配置也就成功了…………</p>
-<p>…………</p>
-<p><strong>吗？</strong></p>
-<h3 id="_5">解决遗留的坑</h3>
-<p>很遗憾地告诉大家，我上面给出的配置文件<strong>少了一句话</strong>，而这句话才是本文的重点。为什么会单独拿出来讲，这是因为我在20分钟查找资料的过程，<strong>没有一篇文章</strong>讲到这个。现在我们先来看看问题在哪里。</p>
-<p>首先，我们要先知道windows的IP地址，不要求上百度看公网IP，只要一个局域网内的外部IP，也就是你电脑直连路由器分配给你的IP，假设是192.168.1.101，那么我现在在浏览器访问<code>http://192.168.1.101</code>，可以成功看到宿主机创建的网站。</p>
-<p>现在在让我们访问<code>http://192.168.1.101:81</code>，也就是linux下的网站端口，结果发现，<strong>无法访问！</strong></p>
-<p>也就是说：</p>
+<p>因此，metaweblog可以满足你的需要</p>
+<h2 id="3-metaweblog">3. 如何使用Metaweblog</h2>
+<p>在使用本项目前，你首先需要了解一下metaweblog的原理以及如何使用。</p>
+<p>目前，有关metaweblog的官网已经崩了，但是你仍然可以<a href="https://rpc.cnblogs.com/metaweblog/example">在这里</a>查到它的api。</p>
+<p><img alt="image-20220519123223269" src="https://repo.sxrhhh.top/2854299-20220519123224856-94407514.png" /></p>
+<p>如图所示，有很多的方法（函数）可供调用。显然，你可以按照它的指示调用方法，实现博客的增删查改和媒体文件的上传。</p>
+<p><strong>在这张图里，我们看到的是博客园的api调用界面，而别的网站则不一定有这样的界面，但是你可以自己尝试它们的api是否开放。下面是各大博客网站的api地址</strong></p>
 <ul>
-<li>localhost:81  可以！</li>
-<li>192.168.1.101:81  不行！</li>
+<li>博客园：<a href="https://rpc.cnblogs.com/metaweblog/你的用户名">https://rpc.cnblogs.com/metaweblog/你的用户名</a>,你可以在你的<a href="https://i.cnblogs.com/Configure.aspx">后台设置</a>里查看有关设置</li>
+<li>开源中国：<a href="https://my.oschina.net/action/xmlrpc">https://my.oschina.net/action/xmlrpc</a></li>
+<li>51cto：<a href="http://imguowei.blog.51cto.com/xmlrpc.php">http://imguowei.blog.51cto.com/xmlrpc.php</a></li>
+<li>网易（163）：<a href="http://os.blog.163.com/word/">http://os.blog.163.com/word/</a></li>
+<li>typecho 博客：<a href="http://xx.com/action/xmlrpc">http://xx.com/action/xmlrpc</a>，其中 xx.com 为你的博客网址。如果 typecho 还没有进行 urlrewrite，则为 <a href="http://xx.com/index.php/action/xmlrpc">http://xx.com/index.php/action/xmlrpc</a></li>
+<li>
+<p>新浪博客： <a href="http://upload.move.blog.sina.com.cn/blog_rebuild/blog/xmlrpc.php">http://upload.move.blog.sina.com.cn/blog_rebuild/blog/xmlrpc.php</a> 新浪博客的 API 已关闭了</p>
+</li>
+<li>
+<p>CSDN: <a href="http://write.blog.csdn.net/xmlrpc/index">http://write.blog.csdn.net/xmlrpc/index</a>,可惜CSDN的api也关闭了</p>
+</li>
+<li>自建wordpress博客: <a href="http://www.example.com/xmlrpc.php">http://www.example.com/xmlrpc.php</a>,其中<code>www.example.com</code>是你的网站地址域名.</li>
 </ul>
-<p>那就奇了怪了，我也是成功在官网找到响应的配置选项，只要在最后加上那么一行：<code>hostAddressLoopback=true</code>就行了。</p>
-<p>最后的配置文件：</p>
-<pre><code>[experimental]
-networkingMode=mirrored
-dnsTunneling=true
-firewall=true
-autoProxy=true
-hostAddressLoopback=true
+<h2 id="4">4. 本项目介绍</h2>
+<p><strong>然而, 对于各种语言, metaweblog的实现也不一样</strong>.因此,你需要去寻找各种语言的实现方法.在网上,你可以查到python如何实现metaweblog，C#更是有专门的api，极大地方便了使用者调用。那么，java呢？很抱歉，网上有关java实现metaweblog的文章少之又少。为了解决这种情况，笔者做出了名为JavaMetaweblogClient的api，方便java爱好者去调用，去实现。</p>
+<h3 id="41-metaweblogjava">4.1 metaweblog与java之间的关系映射</h3>
+<p>如果你看了api的介绍，你就会知道，这个api是给多个语言使用的，所以很多的数据类型java都没有。那么我们就需要一个映射表。本项目通过<code>apache</code> 的<code>xmlrpc</code>实现，所以我们可以查看他的<a href="https://ws.apache.org/xmlrpc/types.html">官方文档</a></p>
+<p><img alt="image-20220519125713720" src="https://repo.sxrhhh.top/2854299-20220519125715384-654727151.png" /></p>
+<p>这些就是你要去了解的。<strong>其中，<code>struct</code>的类型对应到java里面是<code>Map&lt;String,Object&gt;</code>。但是你并不需要如此，在本项目中，我已经将struct打包成了一个类对象，例如Post，里面的成员变量就是<code>dateTime</code> <code>description</code> <code>title</code> <code>categories</code>四个</strong>.需要用的时候就依次把变量填入即可。</p>
+<p>这时，你在使用这些方法时就会更加的得心应手。</p>
+<h3 id="42-javametaweblogclient">4.2 使用JavaMetaweblogClient</h3>
+<p>本项目本质上只实现了Client，但是很明显我们只需要client，服务器的事由博客方来干。那么我们就要来了解一下如何使用api。</p>
+<p>打开本项目的java文档，你会看见Client类上有教程，但是在这里我还是会再打一遍。</p>
+<p>使用方法大致分为以下三步：(以新建一个博客文章为例) </p>
+<ol>
+<li>你要创建一个Client对象</li>
+<li>准备好参数</li>
+<li>上传命令,并处理异常</li>
+</ol>
+<p>这里我们以newPost方法为例：</p>
+<pre><code class="language-java">public static void newPostTest() {
+   // 准备好命令所需参数(新建Post对象)
+    Post post = new Post(new Date(), &quot;# This is a post\n&gt; You can see the Post\n&quot;, &quot;Test&quot;);
+    // 准备好返回值(自己看方法注释的返回类型)
+    String result = null;
+    // 创建连接客户端
+    try {   // 自己解决抛出的异常
+        Client client = new Client(&quot;https://www.cycode.club/xmlrpc.php&quot;);
+        result = client.newPost(&quot;default&quot;, &quot;S*******u&quot;, &quot;******&quot;, post, false);
+    } catch (MalformedURLException e) {
+        e.printStackTrace();    // 一般为URL格式错误
+    } catch (XmlRpcException e) {
+        e.printStackTrace();    // 一般为参数不全、服务器错误、URL输入错误
+    }
+    // 输出结果
+    System.out.println(result);
+    }
 </code></pre>
-<p>重启wsl，问题解决，~~我的游戏服务器也能进入了，只是服务器列表不显示[滑稽]~~</p>
-<h2 id="_6">尾声</h2>
-<p>我在这里贴出wsl2关于mirrored模式的一些其他配置选项，可以更好的帮助各位配置wsl。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">设置名称</th>
-<th style="text-align: left;">值</th>
-<th style="text-align: left;">默认值</th>
-<th style="text-align: left;">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>useWindowsDnsCache</code>**</td>
-<td style="text-align: left;">bool</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">仅当 <code>experimental.dnsTunneling</code> 设置为 true 时才适用。 如果此选项设置为 false，则从 Linux 隧道传输的 DNS 请求将绕过 Windows 中的缓存名称，以始终将请求放在网络上。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>bestEffortDnsParsing</code>**</td>
-<td style="text-align: left;">bool</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">仅当 <code>experimental.dnsTunneling</code> 设置为 true 时才适用。 如果设置为 true，Windows 将从 DNS 请求中提取问题并尝试解决该问题，从而忽略未知记录。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>initialAutoProxyTimeout</code>*</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">1000</td>
-<td style="text-align: left;">仅当 <code>experimental.autoProxy</code> 设置为 true 时才适用。 配置启动 WSL 容器时，WSL 等待检索 HTTP 代理信息的时长（以毫秒为单位）。 如果代理设置在此时间之后解析，则必须重启 WSL 实例才能使用检索到的代理设置。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>ignoredPorts</code>**</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Null</td>
-<td style="text-align: left;">仅当 <code>experimental.networkingMode</code> 设置为 <code>mirrored</code> 时才适用。 指定 Linux 应用程序可以绑定到哪些端口（即使该端口已在 Windows 中使用）。 通过此设置，应用程序能够仅侦听 Linux 中的流量端口，因此即使该端口在 Windows 上用于其他用途，这些应用程序也不会被阻止。 例如，WSL 将允许绑定到 Linux for Docker Desktop 中的端口 53，因为它只侦听来自 Linux 容器中的请求。 应在逗号分隔列表中设置格式，例如：<code>3000,9000,9090</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>hostAddressLoopback</code>**</td>
-<td style="text-align: left;">bool</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">仅当 <code>experimental.networkingMode</code> 设置为 <code>mirrored</code> 时才适用。 如果设置为 True，将会允许容器通过分配给主机的 IP 地址连接到主机，或允许主机通过此方式连接到容器。 请注意，始终可以使用 127.0.0.1 环回地址 - 此选项也允许使用所有额外分配的本地 IP 地址。</td>
-</tr>
-</tbody>
-</table>
-<p>具有 <code>path</code> 值的条目必须是带有转义反斜杠的 Windows 路径，例如：<code>C:\\Temp\\myCustomKernel</code></p>
-<p>具有 <code>size</code> 值的条目后面必须跟上大小的单位，例如 <code>8GB</code> 或 <code>512MB</code>。</p>
-<p>值类型后带有 * 的条目仅在 Windows 11 中可用。</p>
-<p>值类型后显示 ** 的条目需要 <a href="https://blogs.windows.com/windows-insider/2023/09/14/releasing-windows-11-build-22621-2359-to-the-release-preview-channel/">Windows 版本 22H2</a> 或更高版本。</p>
-<hr />
-<p>作者：Sxrhhh</p>
-<p>个人网站：<a href="https://www.sxrhhh.top/">https://www.sxrhhh.top</a></p>
-<p>博客园：<a href="https://www.cnblogs.com/sxrhhh/">Sxrhhh - 博客园 (cnblogs.com)</a></p>
-<p>转载请注明出处.</p>
-<p>在个人网站持续更新中……</p>
+<p>其中的核心代码只有一条：</p>
+<pre><code class="language-java">result = client.newPost(&quot;default&quot;, &quot;S*****u&quot;, &quot;*****&quot;, post, false);
+</code></pre>
+<p>至于其他的代码，通常IDE会自己生成，以及提醒你参数的填入。其中Post参数需要直接填入本项目已创建好的<code>Post</code>类，而不是自己写一个<code>Map&lt;String,Object&gt;</code>.</p>
+<h2 id="5">5. 最后的话</h2>
+<p>作为新手程序员和他的第一个api,有很多的信息都在javadoc文档里。如果有什么问题，尽量去查看docs文档，有很多位置都可以查看文档。</p>
+<ol>
+<li>下载使用的jar包内的docs文件夹</li>
+<li>github上的<a href="https://github.com/cycode0527/JavaMetaweblogClient">项目地址</a>中的docs文件夹</li>
+<li>~~docs文件夹的<a href="https://www.sxrhhh.top/JavaMetaweblogClient/docs">托管地址</a>~~<strong>(过期)</strong></li>
+</ol>
+<h2 id="faq">FAQ</h2>
+<ol>
+<li>
+<p><strong>Q：目前程序有什么已知的问题吗？</strong></p>
+<p><strong>A</strong>：本项目就是apache的xmlrpc实现的套壳，如果有什么问题，大多是xmlrpc的问题，毕竟现在用xmlrpc的人已经很少了。</p>
+<p>不过，我依旧发现了如下问题：</p>
+<ul>
+<li>getPost方法与wordpress上的editor.md插件冲突</li>
+</ul>
+</li>
+<li>
+<p><strong>Q：我想知道哪里有详细的教程。</strong></p>
+</li>
+</ol>
+<p><strong>A</strong>：本人是新手程序员，管理教程会非常的麻烦，但我大量的帮助文档都写死在程序里了，查看javadoc文档获得的信息会比在这里大得多。可以查看本文档第五项查看javadoc地址。</p>
+<h2 id="_1">联系我</h2>
+<ul>
+<li>email: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#104;&#104;&#115;&#120;&#114;&#64;&#113;&#113;&#46;&#99;&#111;&#109;">&#104;&#104;&#104;&#115;&#120;&#114;&#64;&#113;&#113;&#46;&#99;&#111;&#109;</a></li>
+<li>QQ: 1914913486</li>
+<li>博客园: <a href="https://www.cnblogs.com/sxrhhh">https://www.cnblogs.com/sxrhhh</a></li>
+<li>github: <a href="https://github.com/cycode0527">https://github.com/cycode0527</a></li>
+<li>个人网站: <a href="https://www.sxrhhh.top">https://www.sxrhhh.top</a>(还在实验中)</li>
+</ul>
 
 
 

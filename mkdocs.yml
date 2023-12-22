@@ -7,6 +7,7 @@ nav:
   - 博客: 
     - 博客主页: blog/index.md
     - 关于: blog/about.md
+  - 网站词云: tags.md
   - 关于本站: about.md
 
 theme:
@@ -36,8 +37,10 @@ theme:
     - navigation.top  # 回到顶部
 
 plugins:
-  - search:
+  - search
   - blog  # 内置博客插件
+  - tags:
+      tags_file: tags.md
     
 extra_css:
   - stylesheets/extra.css

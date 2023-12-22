@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://test.sxrhhh.top/blog/2023/12/14/connect-to-wsl/">
+        <link rel="canonical" href="http://test.sxrhhh.top/blog/2023/11/07/writeup-of-hackergame2023/">
       
       
-        <link rel="prev" href="../../../11/25/priority-about-operator/">
+        <link rel="prev" href="../../../07/14/raspberrypi-omv-nas/">
       
+      
+        <link rel="next" href="../../25/priority-about-operator/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>新版本下如何通过外部网络访问wsl - Sxrhhh的个人小站</title>
+        <title>HackerGame部分题解 - Sxrhhh的个人小站</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wsl" class="md-skip">
+        <a href="#hackergame" class="md-skip">
           跳转至
         </a>
       
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              新版本下如何通过外部网络访问wsl
+              HackerGame部分题解
             
           </span>
         </div>
@@ -731,8 +733,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -741,64 +741,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#hackergame" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hackergame 启动！
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      研究起因
+      猫咪小测
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      旧版本端口转发方案
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      旧版本桥接模式方案
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      新版本镜像网络模式方案
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="新版本镜像网络模式方案">
+    <nav class="md-nav" aria-label="猫咪小测">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#wsl_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      wsl版本检测
+      图书馆借阅
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#wsl_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      配置wsl文件
+      鸡的密度
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#linux" class="md-nav__link">
     <span class="md-ellipsis">
-      解决遗留的坑
+      linux编译选项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mypy" class="md-nav__link">
+    <span class="md-ellipsis">
+      mypy死循环
     </span>
   </a>
   
@@ -810,9 +801,147 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      更深更暗
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30" class="md-nav__link">
+    <span class="md-ellipsis">
+      旅行照片3.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="旅行照片3.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第1-2问
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      赛博井字棋
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      尾声
+      组委会模拟器
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      虫
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-yaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON ⊂ YAML?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON ⊂ YAML?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yaml12" class="md-nav__link">
+    <span class="md-ellipsis">
+      yaml1.2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yaml11" class="md-nav__link">
+    <span class="md-ellipsis">
+      yaml1.1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitgit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git？Git！
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      http集邮册
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-for-everyone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker for Everyone
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    <span class="md-ellipsis">
+      惜字如金 2.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      高频率星球
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      最后的话
     </span>
   </a>
   
@@ -855,7 +984,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-12-14 00:00:00" class="md-ellipsis">2023年12月14日</time>
+                        <time datetime="2023-11-07 00:00:00" class="md-ellipsis">2023年11月7日</time>
                       </div>
                     </li>
                     
@@ -866,7 +995,7 @@
                           <span class="md-ellipsis">
                             分类于
                             
-                              <a href="../../../../category/%E8%BF%90%E7%BB%B4/">运维</a></span>
+                              <a href="../../../../category/ctf/">CTF</a></span>
                         </div>
                       </li>
                     
@@ -877,7 +1006,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 2 分钟阅读时间
+                              需要 5 分钟阅读时间
                             
                           </span>
                         </div>
@@ -903,145 +1032,276 @@
     
     
     
-      <a href="../../../../../tags/#wsl" class="md-tag">wsl</a>
+      <a href="../../../../../tags/#ctf" class="md-tag">CTF</a>
     
   
     
     
     
-      <a href="../../../../../tags/#" class="md-tag">服务器</a>
+      <a href="../../../../../tags/#hackergame" class="md-tag">HackerGame</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../tags/#" class="md-tag">网络安全</a>
     
   
 </nav>
 
 
 
-<h1 id="wsl">新版本下如何通过外部网络访问wsl</h1>
-<p>众所周知，wsl2是windows下的linux子系统，并且采用类似于虚拟机NAT的管理方式。一般情况下，外部网络很难直接访问到wsl上的服务，除非使用端口转发。而现在，微软更新了wsl 2.0.0，采用镜像网络配置，完美解决了所有网络上的问题。</p>
+  <h1>HackerGame部分题解</h1>
+
+<p>来自Sxrhhh，得分2350，组内排名第10
+该文章改编自本人提交的WriteUP，并进行了少量为博客发布而优化的修改</p>
 <!-- more -->
 
-<h2 id="_1">研究起因</h2>
-<p><strong><em><a href="#1">想直接看新版本解决方案的点这里</a></em></strong></p>
-<p>由于在编译他人代码时需要linux环境，我就放在了wsl下编译运行，然后在本地，我就尝试用<code>ifconfig</code>得到的虚拟机ip，成功连接上了wsl服务器。但是，当我试图用局域网下其他设备连接时，很显然，根本不可能连接上。<strong>这是因为wsl2采用了类似于NAT的网络模式，windows作为宿主机，隔离了局域网下其他设备和wsl的连接。</strong>为了外部访问wsl，我也试过一些方法。</p>
-<h2 id="_2">旧版本端口转发方案</h2>
-<p>在旧版本，常用的方法是端口转发，根据官方文档，在有管理员权限的powershell下，输入如下指令：</p>
-<pre><code class="language-powershell">netsh interface portproxy add v4tov4 listenport=&lt;yourPortToForward&gt; listenaddress=0.0.0.0 connectport=&lt;yourPortToConnectToInWSL&gt; connectaddress=(wsl hostname -I)
+<h2 id="hackergame">Hackergame 启动！</h2>
+<p>在界面内随便读两句后，提交，发现URL内出现了<code>similarity</code>参数，将其改为任意大于100的数字即可。</p>
+<h2 id="_1">猫咪小测</h2>
+<h3 id="_2">图书馆借阅</h3>
+<p>要查看这本书，来到中科大图书馆官网查询：<a href="https://lib.ustc.edu.cn/">中国科学技术大学图书馆 (ustc.edu.cn)</a></p>
+<p>如果查不出来，缩减其中的关键字，如图：</p>
+<p><img alt="image-20231104151134203" src="https://repo.sxrhhh.top/image-20231104151134203.png" /></p>
+<p>显然是其中第一本书，点击查看馆藏，找到西区的书，将鼠标悬停即可发现其楼层：</p>
+<p><img alt="image-20231104151250213" src="https://repo.sxrhhh.top/image-20231104151250213.png" /></p>
+<p>答案即为12。</p>
+<h3 id="_3">鸡的密度</h3>
+<p>打开arXiv网站，找到天体物理astro-ph板块，搜索chicken关键字，找到目标论文，发现答案，如图：</p>
+<p><img alt="image-20231104151600601" src="https://repo.sxrhhh.top/image-20231104151600601.png" /></p>
+<p>答案即为23。</p>
+<h3 id="linux">linux编译选项</h3>
+<p>先找到linux内核配置详解，如：<a href="https://blog.csdn.net/xclshwd/article/details/86523941">史上最全linux内核配置详解-CSDN博客</a>，全文搜索“拥塞”，可找到：</p>
+<p><img alt="image-20231104152311404" src="https://repo.sxrhhh.top/image-20231104152311404.png" /></p>
+<p>锁定关键字：“Cubic”，查询linux下编译选项位置，锁定文件/proc/config.gz，用自己的linux系统打开它，综合搜索"TCP", "BBR", "cubic"，锁定配置位置</p>
+<pre><code>CONFIG_TCP_CONG_CUBIC=y
+CONFIG_DEFAULT_TCP_CONG=&quot;cubic&quot;
 </code></pre>
+<p>由第一行可知，配置拥塞算法的选项可能为“CONFIG_TCP_CONG_BBR”，填入答案。</p>
+<hr />
+<p>另外由官方题解可知，在google中搜索kernal config bbr即可知道答案，因此要求学会使用google并且会用英文提问。</p>
+<h3 id="mypy">mypy死循环</h3>
+<p>翻译" Python 的类型检查和停机问题一样困难"为英文，得到“Python's type checking is just as difficult as the downtime problem”，修改其中专有名词，如：</p>
+<pre><code>停机问题: halting problem
+</code></pre>
+<p>将其放入google搜索，第一条即为所在论文<a href="https://drops.dagstuhl.de/opus/volltexte/2023/18237/pdf/LIPIcs-ECOOP-2023-44.pdf">《Python Type Hints Are Turing Complete》 </a></p>
+<p>在论文头部，找到散落在文章各处的标识，即为所在会议：</p>
+<p><img alt="image-20231104153830853" src="https://repo.sxrhhh.top/image-20231104153830853.png" /></p>
+<p>答案即为ECOOP。</p>
+<hr />
+<p>根据官方题解可知，比赛开始时搜索权重并没有那么高。在我做出这道题时，我可以搜到在arxiv上的信息，从而得知论文标题，进而搜索到论文本身。</p>
+<h2 id="_4">更深更暗</h2>
+<p>按下F12，打开元素，搜索flag，找到其所在位置。</p>
+<hr />
+<p>另外，根据官方题解，用性能较差的设备访问该网页，上下滑动加载时可隐约发现flag。因此，我使用vim插件，不断翻动网页最上端和最下端，并录屏，发现了flag：</p>
+<p><img alt="fec5b8647adfc8467c2e95c21ca1f69f" src="https://repo.sxrhhh.top/fec5b8647adfc8467c2e95c21ca1f69f.png" /></p>
+<h2 id="30">旅行照片3.0</h2>
+<h3 id="1-2">第1-2问</h3>
+<p>百度识图，可知图一奖牌是诺贝尔物理学奖，获得者来自东京大学，与下午各图对应。</p>
+<p>查询东京大学诺贝尔物理学奖得主及其生卒年，可知最小的为梶田隆章，查询其wiki，发现其研究所为东京大学宇宙射线研究所（ICRR）</p>
+<p>对于第一问，由文中信息得知，碰面时间为今年暑假，于是在确认第二问正确概率足够大的时候，由2023-06-01开始，手动爆破，发现正确时间为2023-08-10。</p>
+<h2 id="_5">赛博井字棋</h2>
+<p>用fiddler抓包，找到payload，每次发包记得使用上次服务器发送的set-cookie作为这次发包的cookie，用于继承棋盘数据。</p>
+<p>利用此方法，可以做到强行覆盖AI已经下好了的地方，可以无视AI下棋的位置直接练成一条线，获得flag。</p>
+<h2 id="_6">组委会模拟器</h2>
+<p>用fiddler抓包，尝试几个操作，发现了/api/getMessages和/api/deleteMessage两个访问地址，并且cookies没有改变。记录下cookie值和payload格式，以及返回的json。</p>
+<p>另外，在1000条消息滚完后，会对/api/getflag请求，并给出失败的提示。发现其http正文并无特别，认为flag获取的判断条件在服务端，完成任务后直接访问该api即可。</p>
+<p>分析json：</p>
+<pre><code class="language-json">{
+    &quot;messages&quot;: [{},{},{}...],
+    &quot;server_starttime&quot;: &quot;2023-11-04...&quot;
+}
+</code></pre>
+<p>其中，messages中有1000个json对象，其构造为：</p>
+<pre><code class="language-json">{
+    &quot;delay&quot;: 0.3544464666,  # 消息在请求发出后多少秒时显示出来
+    &quot;text&quot;: &quot;flag为hack[asdfadf]&quot;    # 包含了消息的内容
+}
+</code></pre>
+<p>分析完json，我们写下如下python脚本：</p>
+<pre><code class="language-python">import requests
+import json
+import time
+cookies = {&quot;session&quot;:&quot;eyJ0b2tlbxxxxxxxxxxxxxxxxxxZNOEgyOGd4RUZPxxxxxxxx0.ZT3CWA.ftFGbkFPfzyULVYVwTIfmTQRgxw&quot;}   # 内含Token数据,须保留好
+url = &quot;http://202.38.93.111:10021/api/&quot;
+header = {&quot;Content-Type&quot;: &quot;application/json&quot;}
+r = requests.post(url=url+&quot;getMessages&quot;, cookies=cookies)   # 开始获取消息
+js = r.json()
+
+time.sleep(float(js['messages'][0]['delay']))
+for i in range(0, 1000):
+    if(i &gt;= 2):
+        delay = float(js['messages'][i]['delay'] - js['messages'][i-1]['delay']) - 0.015    # 延时删除
+        if delay &lt; 0:
+            delay = 0
+
+        time.sleep(delay)
+    if 'hack[' in str(js['messages'][i]):
+        print(i)    # 便于查看当前删除的ID数
+        pl = {&quot;id&quot;: i} # 删除报文的payload
+        requests.post(url=url+&quot;deleteMessage&quot;, cookies=cookies, headers=header, data=json.dumps(pl))
+
+</code></pre>
+<p>经过测试，如果不对删除消息这一行为进行延时，会出现“消息还没出就被撤回”的荒谬情况，返回的错误信息称其为”时空穿越“。因此，我们必须要延时删除。</p>
+<p>在脚本运行过程中，我们需要用fiddler时刻关注deleteflag的结果，因为python下的time.sleep()并不精确，如果误差累计超过3秒，即失败。因此需要手动校准。根据推测，sleep的误差为15ms，采用-0.015的校准也正好。</p>
+<p>完成1000条delete命令都返回success时，手动访问getflag，即可获得flag。</p>
+<h2 id="_7">虫</h2>
+<p>题目给了一个wav文件，并附有hint：国际空间站。认为是SSTV编码。</p>
+<p>下载安装RX-SSTV并查询如何使用即可。</p>
+<h2 id="json-yaml">JSON ⊂ YAML?</h2>
 <blockquote>
-<p>在此示例中，需要更新 <code>&lt;yourPortToForward&gt;</code> 到端口号，例如 <code>listenport=4000</code>。 <code>listenaddress=0.0.0.0</code> 表示将接受来自任何 IP 地址的传入请求。 侦听地址指定要侦听的 IPv4 地址，可以更改为以下值：IP 地址、计算机 NetBIOS 名称或计算机 DNS 名称。 如果未指定地址，则默认值为本地计算机。 需要将 <code>&lt;yourPortToConnectToInWSL&gt;</code> 值更新为希望 WSL 连接的端口号，例如 <code>connectport=4000</code>。 最后，<code>connectaddress</code> 值必须是通过 WSL 2 安装的 Linux 分发版的 IP 地址（WSL 2 VM 地址），可通过输入命令：<code>wsl.exe hostname -I</code> 找到。</p>
-<p>---官方文档</p>
+<p>组内一整大题一血，小小高兴一手</p>
 </blockquote>
-<p>然后，我将wsl中的<code>8303</code>端口映射在了windows下的<code>8304</code>端口下，我看到，在wsl中，服务器照常运行。</p>
-<pre><code class="language-powershell">netstat -ano | findstr 8304
+<p>分析任务目标，要求在给定终端内输入一个<strong>合法的</strong>json，其意义与yaml1.1不一样，或者yaml1.2解析报错。</p>
+<h3 id="yaml12">yaml1.2</h3>
+<p>可笑，我查询yaml和json区别时，无意间发现，yaml可能不接受相同的键值。这句话，初步认为是第二题的答案。于是只要提交一个有两个相同key的json即可完成，如：</p>
+<pre><code class="language-json">{
+    &quot;key&quot;: 1,
+    &quot;key&quot;: 2
+}
 </code></pre>
-<p>也能看到8304端口正常监听。但是，在我访问wsl运行的游戏服务器~~（游戏名：DDraceNetwork）~~，客户端显示“udp疑似被拦截”。本来我认为这是端口转发失败了，但是我忽然注意到本地8304端口只有tcp。于是查询了有关资料，得到了<code>netsh</code>只支持tcp的结论。因此，netsh方案失败。</p>
-<h2 id="_3">旧版本桥接模式方案</h2>
-<p>后来，我希望用hyper-v创建一个虚拟交换机，相当于一个可通外网的虚拟网卡，并让wsl连接。结果，出现了许多问题。</p>
+<p>成功获得第二题答案。</p>
+<h3 id="yaml11">yaml1.1</h3>
+<p>这一题要求找到json和yaml间意义不一样的字符串。各大搜索引擎都不太靠谱。于是，将问题细致化后，询问了newbing，给出了如下回答：</p>
+<p><img alt="ce4541f90e8cdec6f4f3c336d719b68" src="https://repo.sxrhhh.top/ce4541f90e8cdec6f4f3c336d719b68.png" /></p>
+<p>显然，1e1这个科学计数法数字两者不兼容，构建payload:</p>
+<pre><code class="language-json">{
+    &quot;num&quot;: 1e2
+}
+</code></pre>
+<p>获得第一题答案。</p>
+<h2 id="gitgit">Git？Git！</h2>
+<p>本体考察git的时空回溯和文件差异比较</p>
+<pre><code class="language-bash">git reflog  #查看各版本
+ea49f0c (HEAD -&gt; main) HEAD@{0}: commit: Trim trailing spaces
+15fd0a1 (origin/main, origin/HEAD) HEAD@{1}: reset: moving to HEAD~
+505e1a3 HEAD@{2}: commit: Trim trailing spaces
+15fd0a1 (origin/main, origin/HEAD) HEAD@{3}: clone: from https://github.com/dair-ai/ML-Course-Notes.git
+</code></pre>
+<p>显然，目前处于ea49f0c版本，使用git diff指令查看差异</p>
+<pre><code class="language-bash">git diff 505e   #由于第二/四版本号一致,可认为第三个版本为回退版本,比较差异
+   &lt;/tr&gt;
+-  &lt;!-- flag{TheRe5_@lwAy5_a_R3GreT_pi1l_1n_G1t} --&gt;
++
+   &lt;tr&gt;
+</code></pre>
+<p>发现flag。</p>
+<h2 id="http">http集邮册</h2>
+<p>请参见官方题解</p>
+<h2 id="docker-for-everyone">Docker for Everyone</h2>
+<p>链接题目，进入了一个终端服务器，列出根目录，发现<code>/flag</code>，软连接到<code>/dev/shm/flag</code>，为root只读文件。</p>
+<p>由题干可知，我们的用户属于docker，因此可以运用各种docker命令。因此，我们可以利用docker提权，将宿主机目录映射到容器内，再进入容器成为root查看修改被映射的文件。</p>
+<pre><code class="language-bash">docker run -it --rm -v /flag:/flag alpine
+</code></pre>
+<p>运用<code>-v</code>选项,成功映射宿主机上的/flag。现在我们就是容器里的root，当然可以查看/flag了</p>
+<pre><code class="language-bash">cat /flag
+</code></pre>
+<h2 id="20">惜字如金 2.0</h2>
+<p>先来看看这串代码：</p>
+<pre><code class="language-python">#!/usr/bin/python3
+
+# Th siz of th fil may reduc after XZRJification
+
+def check_equals(left, right):
+    # check whether left == right or not
+    if left != right: exit(1)
+
+def get_cod_dict():
+    # prepar th cod dict
+    cod_dict = []   # 这里开始的变量名可以选择修改
+    cod_dict += ['nymeh1niwemflcir}echaet']
+    cod_dict += ['a3g7}kidgojernoetlsup?h']
+    cod_dict += ['ulw!f5soadrhwnrsnstnoeq']
+    cod_dict += ['ct{l-findiehaai{oveatas']
+    cod_dict += ['ty9kxborszstguyd?!blm-p']
+    check_equals(set(len(s) for s in cod_dict), {24})
+    return ''.join(cod_dict)
+
+def decrypt_data(input_codes):
+    # retriev th decrypted data
+    cod_dict = get_cod_dict()
+    output_chars = [cod_dict[c] for c in input_codes]
+    return ''.join(output_chars)
+
+if __nam__ == '__main__':   # 看看这个，这里name很明显少了e
+    # check som obvious things
+    check_equals('creat', 'cr' + 'at')
+    check_equals('referer', 'refer' + 'rer')
+    # check th flag
+    flag = decrypt_data([53, 41, 85, 109, 75, 1, 33, 48, 77, 90,
+                         17, 118, 36, 25, 13, 89, 90, 3, 63, 25,
+                         31, 77, 27, 60, 3, 118, 24, 62, 54, 61,
+                         25, 63, 77, 36, 5, 32, 60, 67, 113, 28])
+    check_equals(flag.index('flag{'), 0)
+    check_equals(flag.index('}'), len(flag) - 1)
+    # print th flag
+    print(flag)
+
+</code></pre>
+<p>综合分析代码和题干，可以知道，末尾为e的单词和有两个相同字母紧邻的单词都被和谐了。那么我们观察代码，可以找到一些地方有违和感</p>
 <ul>
-<li>当前版本下，wsl2已不支持更改连接方式为<code>bridge</code>桥接模式，从根本上杜绝了这一方法</li>
-<li>当我创建了虚拟交换机后并将其接入网桥，他直接<strong>把我Windows下的网络干废了</strong>。</li>
-<li>~~试图用Vmware创建交换机，结果根本找不到选项~~</li>
+<li>if <strong>name</strong> == '<strong>main</strong>': 是python文件启动入口，需要修复</li>
+<li>code_dict很明显是某个字典的变量名，可以选择修复</li>
+<li>注释里面少了很多东西，但是可以不修复</li>
 </ul>
-<p>最后，我发现了官网给出了新方案！</p>
-<p><a id="1"></a></p>
-<h2 id="_4">新版本镜像网络模式方案</h2>
-<p>由于本人入坑wsl时间晚，在此之前，我对wsl1只是道听途说。据我了解，wsl1建立在兼容层上，与windows共存，因此wsl1的网络配置与windows一致，外部网络也可以很轻松地接入wsl。而wsl2则是基于hyper-v的虚拟机，采用的是新一套的NAT方案，较为独立。所以对于wsl2也要用和普通虚拟机一样的网络方案，如NAT转发和桥接。</p>
-<p>而现在，在Windows<code>23H2</code>更新中，或是<code>22H2</code>中的insider，wsl2更新了镜像网络解决方案，这个方案将会解决几乎一切wsl上的网络问题。<strong>而此方法，也将随着时间推移，成为wsl2的默认解决方案</strong>。</p>
-<p>在此贴出微软官方文档：</p>
-<p><a href="https://learn.microsoft.com/zh-cn/windows/wsl/networking">使用 WSL 访问网络应用程序 | Microsoft Learn</a></p>
-<h3 id="wsl_1">wsl版本检测</h3>
-<p>要启用镜像网络模式，首先要保证你的windows系统是23H2以上，或是加入了windows体验计划。除此之外，由于版本更新已有一段时间，如果你不确定是否可以使用，可以在cmd输入<code>wsl --version</code>查看wsl版本是否是<code>2.0.0</code>以上。如果是，那就可以。</p>
-<h3 id="wsl_2">配置wsl文件</h3>
-<p>在windows用户根目录下，新建个名为<code>.wslconfig</code>的文件，选择合适的编辑器打开它。</p>
-<blockquote>
-<p>如果不知道自己的用户根目录，可以在cmd下输入<code>echo %USERPROFILE</code>，即可看到路径</p>
-<p>经过实验，我甚至发现上面的命令只能在cmd命令提示符下执行，powershell还不行！！！</p>
-</blockquote>
-<p>在文件中输入如下内容：</p>
-<pre><code>[experimental]
-networkingMode=mirrored
-dnsTunneling=true
-firewall=true
-autoProxy=true
+<p>那么现在，我们开始代码审计：</p>
+<hr />
+<pre><code class="language-python">check_equals(set(len(s) for s in code_dict), {24})
 </code></pre>
-<p>然后，执行<code>wsl --shutdown</code>，等待大约8秒后重新启动wsl，即可成功改变网络策略。</p>
-<p>你可以通过在wsl虚拟机内执行<code>ifconfig</code>，看到原本有的IP地址现在没了，即可证明mirrored模式启用成功。现在你可以用phpstudy等软件在windows下建立一个网站，然后用linux访问，会发现linux可以访问windows的服务。</p>
-<p>比如说：我在windows下用80端口建立的网站，在linux下执行<code>curl localhost</code>，显示的是windows的网站。</p>
-<p>再比如说：我在linux下用apache在81端口建立了个网站，在windows下用浏览器访问<code>http://localhost:81</code>，可以看到linux的网站。</p>
-<p>那么，wsl的新版本网络配置也就成功了…………</p>
-<p>…………</p>
-<p><strong>吗？</strong></p>
-<h3 id="_5">解决遗留的坑</h3>
-<p>很遗憾地告诉大家，我上面给出的配置文件<strong>少了一句话</strong>，而这句话才是本文的重点。为什么会单独拿出来讲，这是因为我在20分钟查找资料的过程，<strong>没有一篇文章</strong>讲到这个。现在我们先来看看问题在哪里。</p>
-<p>首先，我们要先知道windows的IP地址，不要求上百度看公网IP，只要一个局域网内的外部IP，也就是你电脑直连路由器分配给你的IP，假设是192.168.1.101，那么我现在在浏览器访问<code>http://192.168.1.101</code>，可以成功看到宿主机创建的网站。</p>
-<p>现在在让我们访问<code>http://192.168.1.101:81</code>，也就是linux下的网站端口，结果发现，<strong>无法访问！</strong></p>
-<p>也就是说：</p>
-<ul>
-<li>localhost:81  可以！</li>
-<li>192.168.1.101:81  不行！</li>
-</ul>
-<p>那就奇了怪了，我也是成功在官网找到响应的配置选项，只要在最后加上那么一行：<code>hostAddressLoopback=true</code>就行了。</p>
-<p>最后的配置文件：</p>
-<pre><code>[experimental]
-networkingMode=mirrored
-dnsTunneling=true
-firewall=true
-autoProxy=true
-hostAddressLoopback=true
+<p>这里，我们发现要求code_dict的每一行都为24个元素，而事实上每一行元素个数为23，我们可以将每一行末尾加上0来备用。</p>
+<pre><code class="language-python">    code_dict = []  
+    code_dict += ['nymeh1niwemflcir}echaet0']   # 保证了元素个数为24备用
+    code_dict += ['a3g7}kidgojernoetlsup?h0']
+    code_dict += ['ulw!f5soadrhwnrsnstnoeq0']
+    code_dict += ['ct{l-findiehaai{oveatas0']
+    code_dict += ['ty9kxborszstguyd?!blm-p0']
 </code></pre>
-<p>重启wsl，问题解决，~~我的游戏服务器也能进入了，只是服务器列表不显示[滑稽]~~</p>
-<h2 id="_6">尾声</h2>
-<p>我在这里贴出wsl2关于mirrored模式的一些其他配置选项，可以更好的帮助各位配置wsl。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">设置名称</th>
-<th style="text-align: left;">值</th>
-<th style="text-align: left;">默认值</th>
-<th style="text-align: left;">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>useWindowsDnsCache</code>**</td>
-<td style="text-align: left;">bool</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">仅当 <code>experimental.dnsTunneling</code> 设置为 true 时才适用。 如果此选项设置为 false，则从 Linux 隧道传输的 DNS 请求将绕过 Windows 中的缓存名称，以始终将请求放在网络上。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>bestEffortDnsParsing</code>**</td>
-<td style="text-align: left;">bool</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">仅当 <code>experimental.dnsTunneling</code> 设置为 true 时才适用。 如果设置为 true，Windows 将从 DNS 请求中提取问题并尝试解决该问题，从而忽略未知记录。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>initialAutoProxyTimeout</code>*</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">1000</td>
-<td style="text-align: left;">仅当 <code>experimental.autoProxy</code> 设置为 true 时才适用。 配置启动 WSL 容器时，WSL 等待检索 HTTP 代理信息的时长（以毫秒为单位）。 如果代理设置在此时间之后解析，则必须重启 WSL 实例才能使用检索到的代理设置。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>ignoredPorts</code>**</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Null</td>
-<td style="text-align: left;">仅当 <code>experimental.networkingMode</code> 设置为 <code>mirrored</code> 时才适用。 指定 Linux 应用程序可以绑定到哪些端口（即使该端口已在 Windows 中使用）。 通过此设置，应用程序能够仅侦听 Linux 中的流量端口，因此即使该端口在 Windows 上用于其他用途，这些应用程序也不会被阻止。 例如，WSL 将允许绑定到 Linux for Docker Desktop 中的端口 53，因为它只侦听来自 Linux 容器中的请求。 应在逗号分隔列表中设置格式，例如：<code>3000,9000,9090</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>hostAddressLoopback</code>**</td>
-<td style="text-align: left;">bool</td>
-<td style="text-align: left;">false</td>
-<td style="text-align: left;">仅当 <code>experimental.networkingMode</code> 设置为 <code>mirrored</code> 时才适用。 如果设置为 True，将会允许容器通过分配给主机的 IP 地址连接到主机，或允许主机通过此方式连接到容器。 请注意，始终可以使用 127.0.0.1 环回地址 - 此选项也允许使用所有额外分配的本地 IP 地址。</td>
-</tr>
-</tbody>
-</table>
-<p>具有 <code>path</code> 值的条目必须是带有转义反斜杠的 Windows 路径，例如：<code>C:\\Temp\\myCustomKernel</code></p>
-<p>具有 <code>size</code> 值的条目后面必须跟上大小的单位，例如 <code>8GB</code> 或 <code>512MB</code>。</p>
-<p>值类型后带有 * 的条目仅在 Windows 11 中可用。</p>
-<p>值类型后显示 ** 的条目需要 <a href="https://blogs.windows.com/windows-insider/2023/09/14/releasing-windows-11-build-22621-2359-to-the-release-preview-channel/">Windows 版本 22H2</a> 或更高版本。</p>
+<hr />
+<p>然后看到</p>
+<pre><code class="language-python">    check_equals('creat', 'cr' + 'at')
+    check_equals('referer', 'refer' + 'rer')
+</code></pre>
+<p>很明显，这里会不合格，我们检查到有字符串被和谐了，改正即可：</p>
+<pre><code class="language-python">    check_equals('creat', 'cre' + 'at') # creat
+    check_equals('referrer', 'refer' + 'rer') # referer
+</code></pre>
+<hr />
+<p>最后，我们发现flag要求前几位和最后一位为特定字符，按照提供的数字，我们向code_dict添加字符：</p>
+<pre><code class="language-python">    code_dict += ['nymeh1niwemflcir}echaet0']    #24
+    code_dict += ['a3g7}kidgojernoetllsup?h']    #48
+    code_dict += ['ulw!ff5soadrhwnrsnstnoeq']    #72
+    code_dict += ['ct{{l-findiehaai{oveatas']    #96
+    code_dict += ['ty9kxborszstgguyd?!blm-p']    #120
+</code></pre>
+<p>我们发现，我们填入的字符正好符合了和谐的标准：</p>
+<pre><code class="language-python">    code_dict += ['xxxxxxxxxxxxxxxxxxxxxxxx']    #24
+    code_dict += ['xxxxxxxxxxxxxxxxxllxxxxx']    #48
+    code_dict += ['xxxxffxxxxxxxxxxxxxxxxxx']    #72
+    code_dict += ['xx{{xxxxxxxxxxxxxxxxxxxx']    #96
+    code_dict += ['xxxxxxxxxxxxggxxxxxxxxxx']    #120
+</code></pre>
+<p>运行代码，得到了flag。</p>
+<hr />
+<p>ps：我发现这题目code_dict第四行有问题，<code>haai</code>很明显是漏掉惜字如金了。看来出题人为了防止被意外和谐了什么东西，基本上都是自己手动“惜字如金”的。。</p>
+<h2 id="_8">高频率星球</h2>
+<p>这题很简单，首先下载下来文件，在linux下用asciinema打开：</p>
+<pre><code class="language-bash">asciinema cat asciinema_restore.rec &gt; test.txt
+</code></pre>
+<p>然后，我用vscode打开了这个txt文件，将文件开头输入的无关字符，以及运用ctrl+F查找删除中间500多个翻页字符，得到了一个js文件，命名为flag.js，并运行：</p>
+<pre><code class="language-bash">node flag.js
+</code></pre>
+<p>输出了flag</p>
+<hr />
+<p>ps：在得到flag.js后，我发现他的sha1编码和题目所给的不太一样，根据官方wp发现，如果在文件末尾加一行空行就会完全一样了。当然，既然输出了flag，那就不要怀疑自己，直接提交吧。</p>
+<h2 id="_9">最后的话</h2>
+<p>在文件最后，我还是感谢一下HackerGame组委会，以及XDSEC的支持，给我一个参加这种类ctf比赛的机会。我学到了很多，也感到了这种比赛的乐趣，希望接下来的HackerGame会越办越好，我也能为XDSEC出一份力！</p>
 <hr />
 <p>作者：Sxrhhh</p>
-<p>个人网站：<a href="https://www.sxrhhh.top/">https://www.sxrhhh.top</a></p>
-<p>博客园：<a href="https://www.cnblogs.com/sxrhhh/">Sxrhhh - 博客园 (cnblogs.com)</a></p>
+<p>个人网站：<a href="https://www.sxrhhh.top">https://www.sxrhhh.top</a></p>
+<p>HackerGame2023官方网站：<a href="https://hack.lug.ustc.edu.cn">https://hack.lug.ustc.edu.cn</a></p>
+<p>HackerGame2023官方题解：<a href="https://github.com/USTC-Hackergame/hackergame2023-writeups">https://github.com/USTC-Hackergame/hackergame2023-writeups</a></p>
+<p>XDSEC官方网站：<a href="https://www.xdsec.org">https://www.xdsec.org</a></p>
 <p>转载请注明出处.</p>
 <p>在个人网站持续更新中……</p>
 

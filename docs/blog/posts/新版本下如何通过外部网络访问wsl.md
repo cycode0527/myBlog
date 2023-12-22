@@ -2,6 +2,8 @@
 date: 2023-12-14
 slug: connect-to-wsl
 categories:
+    - 运维
+tags:
     - wsl
     - 服务器
 ---

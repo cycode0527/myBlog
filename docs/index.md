@@ -1,17 +1,7 @@
-# Welcome to MkDocs
+# 欢迎来到Sxrhhh的个人小站
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+这里是Sxrhhh的个人小站。这次博客成功迁移成功，但是我还没有想好怎么做主页。那就先这样吧。
 
-## Commands
+点击[这里](blog/index.md)即可查看我的文章哦~~
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+左下角是来自PotionMaker的Pio酱，很好看，我去帮他找了很多衣服，快去帮他换换衣服。
