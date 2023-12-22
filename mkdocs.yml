@@ -80,7 +80,6 @@ markdown_extensions:
   # 用于html中的md语法,包括注释
   - attr_list
   - md_in_html
-  - pymdownx.superfences
 
   # 启用图标
   - pymdownx.emoji:
@@ -92,4 +91,15 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 
+copyright: 版权所有 &copy; 2023 - 2023 Sxrhhh
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cycode0527
+      name: Github
+    
+    - icon: material/email
+      link: mailto:sxrhhh.live@outlook.com
+      name: 邮我吧->sxrhhh.live@outlook.com
 
