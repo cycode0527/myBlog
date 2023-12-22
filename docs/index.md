@@ -16,7 +16,7 @@ hide:
 
     查看我的文章，回首成长之路。
 
-    [:octicons-arrow-right-24: 博客](#)
+    [:octicons-arrow-right-24: 博客](blog/index.md)
 
 -   **抓住关键词**
     
@@ -24,7 +24,7 @@ hide:
 
     在众多关键词中，找到你想要的，查看它。
 
-    [:octicons-arrow-right-24: 网站词云](#)
+    [:octicons-arrow-right-24: 网站词云](tags.md)
 
 -   **这是做什么的**
     
@@ -32,7 +32,7 @@ hide:
 
     来到关于界面，查看作者搭建网站背后的故事
 
-    [:octicons-arrow-right-24: 关于本站](#)
+    [:octicons-arrow-right-24: 关于本站](about.md)
 
 </div>
 
