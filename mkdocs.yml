@@ -1,12 +1,11 @@
 site_name: Sxrhhh的个人小站
-site_url: http://test.sxrhhh.top
+site_url: http://www.sxrhhh.top
 
 
 nav:
   - 主页: index.md
   - 博客: 
     - 博客主页: blog/index.md
-    - 关于: blog/about.md
   - 网站词云: tags.md
   - 关于本站: about.md
 
@@ -36,6 +35,9 @@ theme:
     - navigation.path # 文章显示导航路径
     - navigation.top  # 回到顶部
 
+    - content.code.copy # 启用代码块复制
+    - content.code.annotate # 启用代码注释
+
 plugins:
   - search
   - blog  # 内置博客插件
@@ -44,3 +46,50 @@ plugins:
     
 extra_css:
   - stylesheets/extra.css
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      permalink_title: 永久链接
+
+  - pymdownx.arithmatex:
+      generic: true
+
+  # 语法高亮代码块
+  - pymdownx.highlight: 
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+  # 内容选项卡
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # 增加markdown语法
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+  # 用于html中的md语法,包括注释
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+
+  # 启用图标
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_javascript:
+  - dist/katex.js 
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+

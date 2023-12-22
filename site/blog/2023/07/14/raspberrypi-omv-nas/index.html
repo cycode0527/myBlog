@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="http://test.sxrhhh.top/blog/2023/07/14/raspberrypi-omv-nas/">
+        <link rel="canonical" href="http://www.sxrhhh.top/blog/2023/07/14/raspberrypi-omv-nas/">
       
       
         <link rel="prev" href="../../../06/21/fever-in-ttrss/">
@@ -49,6 +49,8 @@
     
     
       <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
     <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -401,27 +403,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    关于
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
     
@@ -432,10 +413,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -446,8 +427,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             归档
           </label>
@@ -523,10 +504,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -537,8 +518,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             分类
           </label>
@@ -1023,7 +1004,7 @@
 
 
 
-<h1 id="omvnas">通过树莓派+OMV建立自己的NAS</h1>
+<h1 id="omvnas">通过树莓派+OMV建立自己的NAS<a class="headerlink" href="#omvnas" title="永久链接">&para;</a></h1>
 <p>最近看到家中吃灰的树莓派，我突发奇想：不如把它做成NAS。虽然肯定不如专业的NAS稳定，容量也才可怜的32G，但是这样让我练练尝尝鲜也未尝不可。说干就干！</p>
 <!-- more -->
 
@@ -1033,7 +1014,7 @@
 <p>在这里先给出我的参考资料，毕竟网上资料鱼龙混杂，官方文档才是最好的！！！</p>
 <p><a href="https://wiki.omv-extras.org/doku.php?id=omv6:raspberry_pi_install">在树莓派上安装OMV（英文）</a></p>
 <p><a href="https://wiki.omv-extras.org/doku.php?id=omv6:new_user_guide">OMV新用户手册（英文）</a></p>
-<h2 id="1">1. 材料准备</h2>
+<h2 id="1">1. 材料准备<a class="headerlink" href="#1" title="永久链接">&para;</a></h2>
 <p>硬件设备：</p>
 <ul>
 <li>树莓派3B+一个</li>
@@ -1049,9 +1030,9 @@
 <li>Windows Terminal或是Putty等终端软件。</li>
 <li>会简单使用Linux系统的大脑</li>
 </ul>
-<h2 id="2">2. 准备系统</h2>
+<h2 id="2">2. 准备系统<a class="headerlink" href="#2" title="永久链接">&para;</a></h2>
 <p>现在万事俱备，开始制作咱们的树莓派了</p>
-<h3 id="21">2.1 烧录系统</h3>
+<h3 id="21">2.1 烧录系统<a class="headerlink" href="#21" title="永久链接">&para;</a></h3>
 <p>首先，将我们的TF卡插入读卡器中，连接上电脑记住它的盘符，然后打开Raspberry Pi Imager</p>
 <p>打开软件，选择操作系统，由于OMV的安装与存储策略，我们<strong>必须选择精简版的64位系统</strong></p>
 <p><img alt="选择操作系统1" src="https://repo.sxrhhh.top/picgoimage-20230714173738097.png" /></p>
@@ -1064,7 +1045,7 @@
 <p>打开ssh服务，并且设置用户名和密码，用户名可以为<code>pi</code>，密码需要用心设置，这是你的管理员密码，root账号已被锁定。</p>
 <p><strong>注：请不要将用户名修改为<code>admin</code>，这是OMV的默认管理员账号，会引起冲突。</strong></p>
 <p><img alt="设置ssh与密码" src="https://repo.sxrhhh.top/picgoimage-20230714174350920.png" /></p>
-<p>~~然后是设置WiFi，这个是无线连接树莓派的必要条件，有网线的可以略过此步骤~~。</p>
+<p><del>然后是设置WiFi，这个是无线连接树莓派的必要条件，有网线的可以略过此步骤</del>。</p>
 <p><strong>接下来的<code>配置wifi</code>请去除勾选，因为即使配置完成，也会在安装OMV后删除有关wifi的一切配置。</strong></p>
 <p>如果错过以上两个步骤，可以通过修改TF卡目录下文件完成WiFi和ssh的设置</p>
 <p><img alt="取消配置wifi" src="https://repo.sxrhhh.top/picgoimage-20230718170333903.png" /></p>
@@ -1073,64 +1054,64 @@
 <p>好了，现在可以完成设置，开始烧录了！</p>
 <p><strong>再次提醒，开始烧录后原TF卡内数据将全部丢失！！！</strong></p>
 <p>等待进度条结束，便烧录完成，拔下TF卡插入树莓派通电吧！</p>
-<h3 id="22">2.2 配置网络</h3>
-<h4 id="221">2.2.1 连接树莓派</h4>
+<h3 id="22">2.2 配置网络<a class="headerlink" href="#22" title="永久链接">&para;</a></h3>
+<h4 id="221">2.2.1 连接树莓派<a class="headerlink" href="#221" title="永久链接">&para;</a></h4>
 <p>在连接到树莓派之前，你需要查看树莓派和路由器的IP地址，才可以连接。</p>
 <p><strong>首先将你的树莓派的网线连接到路由器上</strong>，在本机上，打开Windows Terminal（以下简称cmd），输入<code>ipconfig</code>，查看默认网关。</p>
 <p><img alt="找到路由器IP" src="https://repo.sxrhhh.top/picgoimage-20230714175709588.png" /></p>
 <p>随后，在浏览器中访问路由器，找到树莓派的IP地址</p>
 <p><img alt="找到树莓派IP" src="https://repo.sxrhhh.top/picgoimage-20230714180058425.png" /></p>
 <p>然后便可在cmd中连接树莓派了</p>
-<pre><code class="language-shell">ssh pi@192.168.0.120
-</code></pre>
-<h4 id="222-hosts">2.2.2 更改本机hosts（可选）</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>pi@192.168.0.120
+</span></code></pre></div>
+<h4 id="222-hosts">2.2.2 更改本机hosts（可选）<a class="headerlink" href="#222-hosts" title="永久链接">&para;</a></h4>
 <p>为了方便自己的连接，在部署完内网穿透之前，我们可以在windows本机上修改hosts文件</p>
 <p>打开<code>"C:\Windows\System32\drivers\etc\hosts"</code></p>
 <p>加入</p>
-<pre><code>192.168.0.120 pi.example.com #建议是你自己的域名，为以后的穿透做准备
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>192.168.0.120 pi.example.com #建议是你自己的域名，为以后的穿透做准备
+</span></code></pre></div>
 <p>通过管理员模式保存文件，然后在cmd中ping试试</p>
-<pre><code class="language-shell">ping pi.example.com
-</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ping<span class="w"> </span>pi.example.com
+</span></code></pre></div>
 <p>完成，以后可以用这个主机名连接了。</p>
-<pre><code class="language-shell">ssh pi@pi.example.com
-</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh<span class="w"> </span>pi@pi.example.com
+</span></code></pre></div>
 <p>## 3. 安装OMV</p>
-<h3 id="31">3.1 升级系统</h3>
+<h3 id="31">3.1 升级系统<a class="headerlink" href="#31" title="永久链接">&para;</a></h3>
 <p>在安装OMV之前，我们先接入树莓派，进行一下系统的升级</p>
-<pre><code class="language-bash">sudo apt-get update
-sudo apt-get -y upgrade
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>upgrade
+</span></code></pre></div>
 <p>然后重启</p>
-<pre><code class="language-bash">sudo reboot
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>reboot
+</span></code></pre></div>
 <p><strong>请注意：在接下来的每次重启后，如果发现ssh无法连接树莓派，请到路由器上重新查看树莓派的IP地址</strong></p>
-<h3 id="32">3.2 自动安装脚本</h3>
+<h3 id="32">3.2 自动安装脚本<a class="headerlink" href="#32" title="永久链接">&para;</a></h3>
 <p>在树莓派上安装OMV非常简单，只需要运行官方提供的自动安装脚本即可一键安装。</p>
-<pre><code class="language-bash">wget -O - https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install | sudo bash
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>wget<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
+</span></code></pre></div>
 <p>如果遇到网络问题（被墙）等问题，可以选择直接下载<code>install</code>文件，然后通过ftp软件导入树莓派直接安装。</p>
-<pre><code class="language-bash">sudo bash ./install
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>bash<span class="w"> </span>./install
+</span></code></pre></div>
 <p>经过漫长的等待，如果没出现问题，他会提示自动重启，随后你将自动断开连接。</p>
 <blockquote>
 <p>根据多种因素，运行此脚本最多可能需要 30 分钟。</p>
 <p>​                 ——OMV官网</p>
 </blockquote>
 <p>现在，我们的OMV就已经安装完毕，可以进行配置了。</p>
-<h2 id="4-omv">4. 配置OMV</h2>
-<h3 id="41">4.1 基础配置</h3>
+<h2 id="4-omv">4. 配置OMV<a class="headerlink" href="#4-omv" title="永久链接">&para;</a></h2>
+<h3 id="41">4.1 基础配置<a class="headerlink" href="#41" title="永久链接">&para;</a></h3>
 <p>在浏览器中打开树莓派的IP地址，就可以看到登陆界面，输入你的用户名和密码。</p>
 <p>用户名：<code>admin</code> ，默认密码：<code>openmediavault</code></p>
-<h4 id="411">4.1.1 打开仪表盘</h4>
+<h4 id="411">4.1.1 打开仪表盘<a class="headerlink" href="#411" title="永久链接">&para;</a></h4>
 <p>进入网页，我们点击设置</p>
 <p><img alt="打开设置" src="https://repo.sxrhhh.top/picgoomv6ug_-_dash.jpg" /></p>
 <p>将里面的所有选项全部勾上，保存。然后你就能看到仪表盘了。</p>
 <p><img alt="仪表盘" src="https://repo.sxrhhh.top/picgoimage-20230718202017641.png" /></p>
-<h4 id="412">4.1.2 更改密码</h4>
+<h4 id="412">4.1.2 更改密码<a class="headerlink" href="#412" title="永久链接">&para;</a></h4>
 <p>打开下图界面，更改密码</p>
 <p><img alt="更改密码" src="https://repo.sxrhhh.top/picgoimage-20230718202329297.png" /></p>
-<h4 id="413">4.1.3 调整登出时间</h4>
+<h4 id="413">4.1.3 调整登出时间<a class="headerlink" href="#413" title="永久链接">&para;</a></h4>
 <p>点击下图设置，调整登出时间，可以保证你不会一离开电脑就登出的烦恼。</p>
 <p><img alt="登出时间" src="https://repo.sxrhhh.top/picgoimage-20230718202525161.png" /></p>
 <p>随后，保存，点击黄框中的确定，应用配置。</p>
@@ -1138,15 +1119,15 @@ sudo apt-get -y upgrade
 <blockquote>
 <p>这个项目有一点不错，就是保存和应用分离，这样保证你可以放心在多个栏目下更改设置，最后统一应用，既有速度，又有安全性，就是有一点小烦。。。</p>
 </blockquote>
-<h4 id="414-omv-extras">4.1.4 安装 OMV-Extras</h4>
+<h4 id="414-omv-extras">4.1.4 安装 OMV-Extras<a class="headerlink" href="#414-omv-extras" title="永久链接">&para;</a></h4>
 <p>ssh连接树莓派，输入如下命令：</p>
-<pre><code class="language-bash">wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/master/install |sudo bash
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>wget<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/master/install<span class="w"> </span><span class="p">|</span>sudo<span class="w"> </span>bash
+</span></code></pre></div>
 <p>同样的，你也可以通过直接下载<code>install</code>文件并导入树莓派来安装。</p>
 <p>在安装成功后，你将看到OMV-Extras出现在菜单栏。</p>
 <p><img alt="菜单栏" src="https://repo.sxrhhh.top/picgoimage-20230718211158064.png" /></p>
-<h3 id="42">4.2 配置存储</h3>
-<h4 id="421">4.2.1 添加文件系统</h4>
+<h3 id="42">4.2 配置存储<a class="headerlink" href="#42" title="永久链接">&para;</a></h3>
+<h4 id="421">4.2.1 添加文件系统<a class="headerlink" href="#421" title="永久链接">&para;</a></h4>
 <p>对于OMV，它不支持系统和数据共用一个磁盘，因此，将你的U盘或移动硬盘插入树莓派的USB接口。</p>
 <p>打开网站后台，选择“磁盘”，然后选择U盘的磁盘，点击上方橡皮擦擦除数据。</p>
 <p><u>如果是系统盘，（如图中的/dev/mmcblk0），则无法擦除数据。</u></p>
@@ -1156,7 +1137,7 @@ sudo apt-get -y upgrade
 <p>随后，依次点击“文件系统”“加号”“EXT4”，选择刚才擦除的U盘，保存，应用。</p>
 <p><img alt="建立文件系统" src="https://repo.sxrhhh.top/picgoimage-20230718214047319.png" /></p>
 <p>在经历了一段时间的等待后，我们看见了如上图所示的文件系统Online标识，意味着我们文件系统建立成功！</p>
-<h4 id="422">4.2.2 创建网络共享</h4>
+<h4 id="422">4.2.2 创建网络共享<a class="headerlink" href="#422" title="永久链接">&para;</a></h4>
 <p>做NAS，必然需要的是网络共享数据，那么我们现在就来将刚才创建好的文件系统共享吧！</p>
 <p><u>下图勘误：第二栏文件系统并非默认，而是选择刚才创建好的文件系统</u></p>
 <p><img alt="共享文件夹" src="https://repo.sxrhhh.top/picgoimage-20230718214857678.png" /></p>
@@ -1249,10 +1230,16 @@ sudo apt-get -y upgrade
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../../../../dist/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
       
     
   </body>

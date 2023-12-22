@@ -16,7 +16,7 @@ tags:
 
 ## 研究起因
 
-***[想直接看新版本解决方案的点这里](#1)***
+***[想直接看新版本解决方案的点这里](#_4)***
 
 由于在编译他人代码时需要linux环境，我就放在了wsl下编译运行，然后在本地，我就尝试用`ifconfig`得到的虚拟机ip，成功连接上了wsl服务器。但是，当我试图用局域网下其他设备连接时，很显然，根本不可能连接上。**这是因为wsl2采用了类似于NAT的网络模式，windows作为宿主机，隔离了局域网下其他设备和wsl的连接。**为了外部访问wsl，我也试过一些方法。
 
@@ -50,8 +50,6 @@ netstat -ano | findstr 8304
 
 最后，我发现了官网给出了新方案！
 
-<a id="1"></a>
-
 ## 新版本镜像网络模式方案
 
 由于本人入坑wsl时间晚，在此之前，我对wsl1只是道听途说。据我了解，wsl1建立在兼容层上，与windows共存，因此wsl1的网络配置与windows一致，外部网络也可以很轻松地接入wsl。而wsl2则是基于hyper-v的虚拟机，采用的是新一套的NAT方案，较为独立。所以对于wsl2也要用和普通虚拟机一样的网络方案，如NAT转发和桥接。
@@ -76,7 +74,7 @@ netstat -ano | findstr 8304
 
 在文件中输入如下内容：
 
-```
+```cfg
 [experimental]
 networkingMode=mirrored
 dnsTunneling=true
@@ -115,7 +113,7 @@ autoProxy=true
 
 最后的配置文件：
 
-```
+```cfg hl_lines="6"
 [experimental]
 networkingMode=mirrored
 dnsTunneling=true
