@@ -5,6 +5,7 @@ categories:
 tags: 
     - 网站建设
     - Git
+slug: self-host-git-for-website
 readtime: 10
 ---
 
