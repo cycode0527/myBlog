@@ -1,0 +1,1264 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://www.sxrhhh.top/blog/2023/12/26/%E7%8B%AC%E7%AB%8B%E4%BA%8E-github%E6%9B%B4%E6%96%B9%E4%BE%BF%E5%9C%B0%E7%AE%A1%E7%90%86%E8%87%AA%E5%B7%B1%E7%9A%84%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%9D%A5%E8%AF%95%E8%AF%95%E8%BF%99%E5%A5%97%E8%87%AA%E6%89%98%E7%AE%A1-git-%E4%BB%93%E5%BA%93%E6%96%B9%E6%A1%88/">
+      
+      
+        <link rel="prev" href="../../14/connect-to-wsl/">
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>独立于 Github，更方便地管理自己的静态网站？来试试这套自托管 Git 仓库方案！ - Sxrhhh 的个人小站</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#github-git" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../../.." title="Sxrhhh 的个人小站" class="md-header__button md-logo" aria-label="Sxrhhh 的个人小站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sxrhhh 的个人小站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              独立于 Github，更方便地管理自己的静态网站？来试试这套自托管 Git 仓库方案！
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  博客
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+    
+  
+  网站词云
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  关于本站
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Sxrhhh 的个人小站" class="md-nav__button md-logo" aria-label="Sxrhhh 的个人小站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sxrhhh 的个人小站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    博客
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            博客
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文章列表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    归档
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            归档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    分类
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            分类
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ctf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CTF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    博客写作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    程序开发
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    编程语言
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/%E8%BF%90%E7%BB%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    运维
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    网站词云
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    关于本站
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      服务器结构简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pc" class="md-nav__link">
+    <span class="md-ellipsis">
+      在自己的 PC 上构建网站
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      建立远程 Git 服务器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="建立远程 Git 服务器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Github 的仓库方案
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      建立 git 用户管理仓库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      将客户端与 git 服务器同步
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      建立 web 服务器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="建立 web 服务器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      将 web 服务器连接到 Git 服务器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建 Apache 虚拟主机
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      实时同步 web 网站目录
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      验收成果
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      网站维护碎碎念
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    回到主页
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    元数据
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2023-12-26 00:00:00" class="md-ellipsis">2023年12月26日</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z"/></svg>
+                          <span class="md-ellipsis">
+                            分类于
+                            
+                              <a href="../../../../category/%E8%BF%90%E7%BB%B4/">运维</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              需要 10 分钟阅读时间
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+  
+
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../../../../../tags/#" class="md-tag">网站建设</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../tags/#git" class="md-tag">Git</a>
+    
+  
+</nav>
+
+
+
+<h1 id="github-git">独立于 Github，更方便地管理自己的静态网站？来试试这套自托管 Git 仓库方案！<a class="headerlink" href="#github-git" title="永久链接">&para;</a></h1>
+<p>就在前几天，我成功地将我自己的网站由 wordpress 迁移为了静态网站。不过说是迁移，但是域名保持不变，本质上就是把将网站文件夹一整个换了遍。我选择的是 mkdocs 的网站框架，在一般情况下，我们选用 Github Pages 作为网站托管方案。但是这一次，我想仍然保留在自己的服务器上。但是我还是想要享受到     git 版本管理网站的快捷感，怎么办呢？这篇文章提供的 Git 自托管方案便可以为你解决这一烦恼！</p>
+<!-- more -->
+
+<h2 id="_1">服务器结构简介<a class="headerlink" href="#_1" title="永久链接">&para;</a></h2>
+<p>这套方案可以实现一个非常方便的编写博客的方法。你可以在自己电脑上写好文章，生成网站，并且直接<code>git push</code>即可部署到自己的服务器上，一气呵成，一般情况下完全不需要登陆远程服务器。</p>
+<p>在讲述方案之前，我先说明一下这套方案采用的服务器结构。</p>
+<ul>
+<li>本地客户端：在本地，也就是我们用来写文章的 Windows 系统，<strong>在下文，我称之为客户端</strong>。客户端上，我们需要安装<code>Git</code>，并且我们要会用<code>git</code>提交文件。<code>git</code>的安装方法和使用方法在此不做赘述，相信各位试图搭建静态网站的读者，<code>git</code>的用法肯定是有所涉猎的。（当然，如果你的主力机是 Linux 系统的话也完全没有问题，将这篇文章涉及的 Windows 目录结构和命令使用翻译为 Linux 版本的，想必对你来说并不难。）</li>
+<li>远程 Git 仓库：如果我们不想要将网站依托于 Github 这个网站，那么我们就得要自己建立一个 Git 服务器。通过这个 Git 服务器，我们接受来自客户端的 Git 请求来储存网站。</li>
+<li>远程网站服务器：这个服务器就是实际上的 web 服务器。这一次，我采用的是<code>apache</code>服务器，通过虚拟主机方式，建立网络站点，并且实时同步 Git 服务器的内容，实现网站的更新。</li>
+</ul>
+<p>通过这一套流程，我们就可以在本地写好文章，放在相应的网站位置，生成预览、提交文件，从而完成网站更新的一整套流程。</p>
+<p>如下图，便为这一套系统的基本框架了，非常的简单。</p>
+<p><img alt="image-20231225225154806" src="https://repo.sxrhhh.top/image-20231225225154806.png" /></p>
+<h2 id="pc">在自己的 PC 上构建网站<a class="headerlink" href="#pc" title="永久链接">&para;</a></h2>
+<p>构建网站的第一步，便是构建自己网站。要构建静态网站，有很多的解决方案，比较著名的就有<code>Hexo</code>,<code>Mkdocs</code>,<code>Hugo</code>,<code>Jekyll</code>等，甚至你还可以自己手写前端 CSS 和 JS 生成 html 文件。不管采用那种方案，最后的要求便是你要有一个<code>site</code>文件夹，或者叫其他名字，他的里面便是网站所有的被挂在前端的文件，包括 html 之类的玩意。我们的 Apache 服务器的文件目录便最终会指向它。
+这次，我采用的 Mkdocs 由<code>python</code>编写而成，它的一个名为<code>mkdocs material</code>的主题显得非常简洁美观，所以我选择了它。和其他运行环境不同的是，这一次我们所有的网站环境全部会部署在本地，远程服务器<strong>完全不需要</strong>。这也很好理解，毕竟远程服务器只要展示网站文件就够了，生成网站的任务落在了客户端的头上。
+Mkdocs 采用一个叫做<code>mkdocs build</code>的命令来构建网站文件夹，我们每一次用 git 提交文件之前都会进行一次这样的构建。现在，我们来建立那个 git 服务器。</p>
+<h2 id="git">建立远程 Git 服务器<a class="headerlink" href="#git" title="永久链接">&para;</a></h2>
+<p>要自由方便地管理网站文件，离不开的就是一个 Git 服务器。我们将会在远程服务器上搭建一个 Git 服务器。与想象中的不同，他不需要也没必要像 <code>GitLab</code> 那样配置复杂。与之相反的是，这件事出乎意料的简单。在此之前，我先带各位回忆一下 Github 上的 git 服务器长什么样。</p>
+<h3 id="github">Github 的仓库方案<a class="headerlink" href="#github" title="永久链接">&para;</a></h3>
+<p>在 Github 上，如果我们需要克隆一个存储库，我们需要诸如以下命令：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:cycode0527/learngit.git
+</span></code></pre></div>
+<p>可以看到，这条命令采用 <code>ssh</code> 的方式链接的 Github 服务器，并且克隆了上面的 <code>cycode0527/learngit.git</code> 的仓库。但是这个克隆并不是一个简单的复制，在服务器上，它叫 <code>xxx.git</code> ，克隆到了本地，他就变成了一个叫做 <code>xxx</code> 的文件夹，里面有一个叫做 <code>.git</code>的隐藏文件夹。这其中的差别其实就是：<strong>Git 服务器上的 git 仓库叫做裸仓库</strong>。裸仓库没有“工作区”的概念，所有的数据全部保存在一个文件夹内，不需要直接操控其中的文件，只要干好 Git 服务器一件事就行。</p>
+<p>再次看向上面那条 <code>clone</code> 命令，你可能还会注意到 <code>git@github.com</code>这一小节。只要你用过 <code>ssh</code> 这条命令，你应该就会清楚，这是指人家 Github 服务器上的一个叫做 git 的用户名。我们在克隆仓库时，就会连接到 github.com 的 git 用户，并且读取你（cycode0527）的 xxx.git 文件。搞清楚这一点，我们就清楚了，<strong>在远程服务器上，有一个负责处理 git 请求和存储的用户，叫做 “git” 。</strong></p>
+<h3 id="git_1">建立 git 用户管理仓库<a class="headerlink" href="#git_1" title="永久链接">&para;</a></h3>
+<p>现在，我们就可以在远程服务端建立 git 用户了。</p>
+<p>首先，我们要让服务器支持 git ，直接安装即可。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span><span class="c1">#(1)! </span>
+</span></code></pre></div>
+<ol>
+<li>本条命令为 CentOS 使用，其他操作系统可自行更改</li>
+</ol>
+<p>然后，我们建立 git 用户和用户组，用来运行 git 服务。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>groupadd<span class="w"> </span>git
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>useradd<span class="w"> </span>git<span class="w"> </span>-g<span class="w"> </span>git<span class="w">  </span><span class="c1">#(1)! </span>
+</span></code></pre></div>
+<ol>
+<li>建立用户 git 并加入 git 用户组</li>
+</ol>
+<p>用这种方式创建的用户，系统会默认创建好它的家目录。我们现在创建一个仓库吧。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>/home/git
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>mkdir<span class="w"> </span>repo<span class="w">  </span><span class="c1">#(1)!</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">cd</span><span class="w"> </span>repo
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>git<span class="w"> </span>init<span class="w"> </span>--bare<span class="w"> </span>website.git<span class="w"> </span><span class="c1">#(2)!</span>
+</span></code></pre></div>
+<ol>
+<li>创建了一个叫做 repo 的文件夹,用于存放各种仓库</li>
+<li>建立一个名为 website 的仓库,--bare参数就是创建裸仓库。<br>
+输出结果: 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Initialized empty Git repository in /home/git/repo/website.git
+</span></code></pre></div></li>
+</ol>
+<p>最后我们调整一下仓库的所有者，以防止你刚才创建 git 用户所用的 root 用户忘记切回来，导致 git 用户家目录下全是 root 的文件。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>git:git<span class="w"> </span>/home/git/repo
+</span></code></pre></div>
+<p>现在，这个 git 服务器已经建好了，下一步要做的就是将客户端连接到这个服务器。</p>
+<h3 id="git_2">将客户端与 git 服务器同步<a class="headerlink" href="#git_2" title="永久链接">&para;</a></h3>
+<p>现在我们要做的就是，通过 <code>clone</code> 命令，将客户端的文件夹与远程 git 服务器建立映射。（当然，你也可以通过已有的网站目录，用 <code>git remote add</code> 的命令与新的服务器建立映射关系。）</p>
+<p>为了在与远程服务器同步时不在输入密码，我们选用的是 <code>ssh</code> 的连接方式，但是在此之前，我们需要将自己客户端上的 ssh 公钥发给远程服务器的 git 用户，从此登陆 git 用户就不用密码了，更为方便的提交网站更改。</p>
+<p>首先看一下自己的家目录下有没有 <code>.ssh</code> 文件夹，这个目录处在 <code>C:\Users\&lt;你的用户名&gt;\.ssh</code> 这里，如果有的话，跳转下一步；没有的话，请看如何生成一个 ssh 公钥。</p>
+<p>现在打开你的 <code>windows</code> 终端，或者是 <code>cmd</code>、<code>powershell</code>、<code>git bash</code> 之类的玩意，输入如下命令：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa
+</span></code></pre></div>
+<p>然后连按三个回车，ssh 密钥对就生成好了。现在再进入家目录下的 <code>.ssh</code> 文件夹，找到一个后缀名为 <code>.pub</code> 的文件，<strong>不要双击打开，右键打开方式，找一个记事本或是 vscode 等能打开文本文件的软件打开这个文件</strong>，将里面的内容尽数复制出来。</p>
+<p>然后我们来到远程服务器，登录到 git 用户，建立 ssh 用户验证文件：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>~
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>mkdir<span class="w"> </span>.ssh
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>vim<span class="w"> </span>.ssh/authorized_keys
+</span></code></pre></div>
+<p>我们用 vim 打开了这个叫做 authorized_keys 的文件，然后把复制好的 ssh 公钥粘贴进去，保存并退出。<del>（各位应该知道 vim 怎么操作吧……）</del></p>
+<p>现在你可以试验一下，登录到 git 用户还需要密码不。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ssh<span class="w"> </span>git@www.sxrhhh.top
+</span></code></pre></div>
+<p>如果直接进去了，说明 ssh 已经不需要密码了，那么 git 的一切操作也可以不用密码快速进行。</p>
+<p>在客户端下：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git@www.sxrhhh.top:/home/git/repo/website.git
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>git<span class="w"> </span>clone<span class="w"> </span>git@www.sxrhhh.top:repo/website.git<span class="w">   </span><span class="c1">#(1)!</span>
+</span></code></pre></div>
+<ol>
+<li>是的，冒号后面的路径就是相对于 git 用户家目录的相对路径</li>
+</ol>
+<p>好了，如果你的电脑上出现了 <code>website</code> 文件夹并且里面还有 <code>.git</code> 隐藏文件，那么就成功了！</p>
+<p>现在，你就可以将你的网站文件放进去，欢快地 <code>mkdocs build</code>, <code>git add .</code>,<code>git commit</code>, <code>git push</code>了。</p>
+<div class="admonition info">
+<p class="admonition-title">编写 <code>.gitignore</code> 文件</p>
+<p>为了防止在写网站时一些乱七八糟的更改影响 git 的跟踪文件，我们要提前写好一个 <code>.gitignore</code> 文件，阻止它们进入 git 的跟踪。</p>
+<div class="language-bash highlight"><span class="filename">.gitignore</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>.vscode<span class="w"> </span><span class="c1">#(1)! </span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>*~<span class="w">  </span><span class="c1">#(2)!</span>
+</span></code></pre></div>
+<ol>
+<li>防止用 vscode 管理网站的时候工作区更改</li>
+<li>防止用vim编辑网站文件时留下一堆储存文件</li>
+</ol>
+<p>后面我们还会往里面加一点东西，这个请读者留意一下。</p>
+</div>
+<h2 id="web">建立 web 服务器<a class="headerlink" href="#web" title="永久链接">&para;</a></h2>
+<p>现在，我们已经搭建好了这一套管理系统的核心结构，那么最后一步，就是将上传的网站文件夹发给 Apache 服务器，让它帮忙共享这个文件夹。</p>
+<p>我们知道，git 服务器上的文件是不能直接用的。我们还是需要用 <code>clone</code> 和 <code>pull</code> 的方法将文件提取出来。这一次我们操作的是 <code>root</code> 用户，这在权限管理上是不可取的，但是在这次的方案中，我们搭建的是静态网站，对 apache 用户的写入权限要求不高。另外，apache 是一个 "nologin" 的用户，他不能使用诸如 <code>git</code>  之类的命令，局限性过大。为了更好管理 web 文件夹，我们采用 root 用户登陆。当然，为了安全，你完全可以再创建一个名字类似于 <code>www-data</code> 的普通用户来给 apache 用。</p>
+<p>现在我们就开始新建文件夹吧！</p>
+<h3 id="web-git">将 web 服务器连接到 Git 服务器<a class="headerlink" href="#web-git" title="永久链接">&para;</a></h3>
+<p>首先，我们要让 root 用户被 git 用户认证，原因和之前一样。即使在同一台机子上的 root 用户，想要 ssh 连接另一个用户照样需要认证。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub<span class="w"> </span>&gt;&gt;<span class="w"> </span>/home/git/.ssh/authorized_keys<span class="w"> </span><span class="c1">#(1)!</span>
+</span></code></pre></div>
+<ol>
+<li>将root用户的ssh公钥加入到git用户的认证文件中。请确保在上一步中你已经创建了这个文件。</li>
+</ol>
+<p>我们在根目录下创建一个文件夹，用来存储网站。当然你也可以在 <code>/var/www/</code> 下面建立，主要是我这个文件夹算是比较特殊，拎出来单独处理。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mkdir<span class="w"> </span>/www
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">cd</span><span class="w"> </span>/www
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>git<span class="w"> </span>clone<span class="w"> </span>git@localhost:repo/website.git<span class="w">    </span><span class="c1">#(1)!</span>
+</span></code></pre></div>
+<ol>
+<li>哈哈,来自远程的localhost。如果你不确定，你可以把localhost改成你服务器域名。</li>
+</ol>
+<p>如果一切顺利，你会有一个 <code>/www/website</code> 文件夹，在这个文件夹里面又有一个存放构建完毕的 <code>site</code> 文件夹。那么，<code>/www/website/site</code> 就是你的网站的文件系统路径了。记住它！</p>
+<h3 id="apache">创建 Apache 虚拟主机<a class="headerlink" href="#apache" title="永久链接">&para;</a></h3>
+<p>如果你先前没有见过网站，你完全可以通过修改 <code>DocumentRoot</code> 的参数来直接运行服务器。但是建立过网站的同学都知道，虚拟主机还是挺重要的。所用的方法我有另一篇博客写过了，网上也有很多教程和官方文档，这里长话短说。</p>
+<p>这里以 <code>CentOS</code> 和 <code>fedora</code> 之类的使用 <code>rpm</code> 包管理器的系统为例，apache 的服务名字叫 <code>httpd</code>，配置文件在 <code>/etc/httpd/</code> 下，其他系统，譬如 <code>ubuntu</code> 下的 apache 可能被称作 <code>apache2</code> ，目录结构也不太一致。请各位同学自行查找相应配置方法，但是下面的配置文件内容不会有问题。（当然文件路径你也要根据自己实际情况修改）</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">cd</span><span class="w"> </span>/etc/httpd/conf.d
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>vim<span class="w"> </span>vhost.conf<span class="w">  </span><span class="c1">#(1)!</span>
+</span></code></pre></div>
+<ol>
+<li>建立了一个叫做vhost.conf的文件，如果你有其他相同作用的文件，请打开它。</li>
+</ol>
+<div class="language-text highlight"><span class="filename">vhost.conf</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>&lt;VirtualHost *:80&gt;
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    # 如果这个是你第一个虚拟主机，那么它也会成为你apache的默认共享位置
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    ServerName www.sxrhhh.top   # 请自行更改为你自己的域名
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    DocumentRoot &quot;/www/website/site&quot;
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    &lt;Directory /www/website/site&gt;
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    AllowOverride All
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    Require all granted
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    &lt;/Directory&gt;
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    # 下面的是用来强制跳转https用的,可以暂时不写。
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    RewriteEngine on
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    RewriteCond %{SERVER_PORT} !^443$
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>    RewriteRule ^(.*)$ https://%{SERVER_NAME}$1 [L,R]
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>&lt;/VirtualHost&gt;
+</span></code></pre></div>
+<p>或者，我们去掉那些没用的，可以直接复制下面的：</p>
+<div class="language-text highlight"><span class="filename">vhost.conf</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>&lt;VirtualHost *:80&gt;
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    ServerName www.example.com
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    DocumentRoot &quot;/www/website/site&quot;
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    &lt;Directory /www/website/site&gt;
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    AllowOverride All
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    Require all granted
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    &lt;/Directory&gt;
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>&lt;/VirtualHost&gt;
+</span></code></pre></div>
+<p>保存并退出，重启 Apache，看一下能否访问到自己的网站。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>apachectl<span class="w"> </span>restart
+</span></code></pre></div>
+<p>如果一切安好，你现在就可以看到浏览器能访问到你自己的域名网站。</p>
+<div class="admonition info">
+<p class="admonition-title">注意</p>
+<p>在此还是确认一下，在测试浏览器访问的时候，请确保你的域名服务商解析了你的域名到远程服务器上，或者你在本地客户端更改了 hosts 文件。否则你不可能用你的域名访问到服务器。</p>
+</div>
+<h3 id="web_1">实时同步 web 网站目录<a class="headerlink" href="#web_1" title="永久链接">&para;</a></h3>
+<p>我们在每一次用 <code>git push</code> 更新网站后还得要上 root 用户去 <code>git pull</code> 一下才能完成更新部署，太麻烦了。这时候，我们就要请出 <code>crontab</code> 这个自动任务管理工具了。</p>
+<p>首先我们要写好一个更新脚本：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">cd</span><span class="w"> </span>/www/website/
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>touch<span class="w"> </span>update<span class="w"> </span>update_log<span class="w"> </span>update_err
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>vim<span class="w"> </span>update<span class="w">  </span><span class="c1">#(1)!</span>
+</span></code></pre></div>
+<ol>
+<li>这个就是更新脚本,坑爹的一个点就是文件名不能带小数点,要不然crontab会出问题。</li>
+</ol>
+<div class="language-bash highlight"><span class="filename">update</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">cd</span><span class="w"> </span>/www/website
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>/bin/git<span class="w"> </span>pull<span class="w"> </span><span class="m">1</span>&gt;&gt;./update_log<span class="w"> </span><span class="m">2</span>&gt;&gt;./update_err
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># 上面那个 1&gt;&gt;./update_log 这一条是记录git pull的日志,如果更新频率够快,它会很快占用比你的网站还大。所以当你的网站已稳定运行后，你可以将这一段改为 1&gt;/dev/null</span>
+</span></code></pre></div>
+<p>我们建立了两个文件，叫 update_log 和 update_err 作为同步结果的日志收集。你现在可以直接运行来测试。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>bash<span class="w"> </span>./update
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>cat<span class="w"> </span>update_log
+</span></code></pre></div>
+<p>看一下 update_log 有没有多出一条回显信息。如果有，说明 pull 成功，已经完成了一次 Git 服务器到 web 服务器的同步。</p>
+<p>现在我们要利用 <code>crontab</code> 实现实时同步。原理也很简单，就是每分钟运行一次 <code>update</code> 脚本。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>crontab<span class="w"> </span>-e
+</span></code></pre></div>
+<p>在打开的页面中，我们在最后加入这么一条：</p>
+<div class="language-text highlight"><span class="filename">crontab -e</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>* * * * * /bin/bash /www/website/update &gt; /dev/null 2&gt;&amp;1
+</span></code></pre></div>
+<p>上面这一条可以让我们每一分钟都执行一次 <code>update</code> 脚本。<code>&gt;/dev/null</code> 后面的内容是用来防止 crontab 发一些奇怪的邮件的。</p>
+<p>完成之后，你就可以时不时地看一眼你的 update_log 文件，看一眼它有没有每分钟都更新一次。</p>
+<p>最后，我们将这几个文件加入到 <code>.gitignore</code> 文件里，确保它们只在本地运行。</p>
+<div class="language-bash highlight"><span class="filename">.gitignore</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>.vscode
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>*~
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>./update*
+</span></code></pre></div>
+<h2 id="_2">验收成果<a class="headerlink" href="#_2" title="永久链接">&para;</a></h2>
+<p>现在，我们的两个服务器和一个客户端上应该搞的东西都已经完成了，可以开始验收成果了！</p>
+<p>首先，我们在客户端上写好网站内容，放置好博客文章，构建，发送！</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>mkdocs<span class="w"> </span>serve<span class="w">    </span><span class="c1">#(1)!</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>mkdocs<span class="w"> </span>build
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;website updated&quot;</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>git<span class="w"> </span>push
+</span></code></pre></div>
+<ol>
+<li>通过虚拟服务器实时检验网站更改</li>
+</ol>
+<p>如果一切顺利，你会在1分钟以内看到你的网站成功发生了改变。从此，你只要在 vscode 中操作好文章，vscode 就能做好从撰写文章、yaml 编写和网站上传等多种工作，怎么样，学会了吗？</p>
+<h2 id="_3">网站维护碎碎念<a class="headerlink" href="#_3" title="永久链接">&para;</a></h2>
+<p>在最后，我还是多提醒一些事项，防止有人在这里学习第一次建站。</p>
+<p>首先，完成工作后，你的域名一定要解析到你的服务器，否则你的域名就没有用，而且 Apache 的虚拟主机策略也有可能让你的网站无法使用。</p>
+<p>然后，记得使用 SSL 技术，也就是将你的网站升级为 <code>https</code> ，一方面是安全，另一方面是浏览器的一些自动跳转设置，尤其是以前用类似域名绑定过带 <code>https</code> 的服务器，可能会让你访问自己网站困难，一直跳转到带 <code>https</code> 的同名网址。</p>
+<p>最后就是，如果你想多一份保障，不想完全脱离 Github ，只是网站不想建在那个上面，你还可以在 Github 上建立一个仓库，并且在 <code>update</code> 文件里面去 <code>git push</code> 它。相当于每分钟将网站仓库同步到 Github ，但是并不依赖于它，只是作为一个 Github 的备份策略。</p>
+<hr />
+<p>作者：Sxrhhh</p>
+<p>个人网站：<a href="https://www.sxrhhh.top/">https://www.sxrhhh.top</a></p>
+<p>博客园：<a href="https://www.cnblogs.com/sxrhhh/">Sxrhhh - 博客园 (cnblogs.com)</a></p>
+<p>转载请注明出处.</p>
+<p>在个人网站持续更新中……</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+
+
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      版权所有 &copy; 2023 - 2023 Sxrhhh
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/cycode0527" target="_blank" rel="noopener" title="Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:sxrhhh.live@outlook.com" target="_blank" rel="noopener" title="邮我吧-&gt;sxrhhh.live@outlook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+
+<!-- <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script> -->
+<script src="/dist/live2d/autoload.js"></script>
+
+
+<script type="text/javascript" color="89,136,207" opacity='0.7' zIndex="-2" count="99" src="/dist/canvas-nest.js"></script>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../../../../dist/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

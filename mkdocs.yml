@@ -1,4 +1,4 @@
-site_name: Sxrhhh的个人小站
+site_name: Sxrhhh 的个人小站
 site_url: http://www.sxrhhh.top
 
 
@@ -85,6 +85,10 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  
+  # 启用告诫
+  - admonition
+  - pymdownx.details
 
 extra_javascript:
   - dist/katex.js 
