@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#java" class="md-skip">
+        <a href="#如何生成一个java文档" class="md-skip">
           跳转至
         </a>
       
@@ -747,7 +747,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-api" class="md-nav__link">
+  <a href="#1-什么是api文档" class="md-nav__link">
     <span class="md-ellipsis">
       1. 什么是api文档？
     </span>
@@ -756,7 +756,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-java" class="md-nav__link">
+  <a href="#2-写好java文档注释" class="md-nav__link">
     <span class="md-ellipsis">
       2. 写好java文档注释
     </span>
@@ -765,7 +765,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-api" class="md-nav__link">
+  <a href="#3-利用命令行制作一个api文档" class="md-nav__link">
     <span class="md-ellipsis">
       3. 利用命令行制作一个api文档
     </span>
@@ -774,7 +774,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-ideadoc" class="md-nav__link">
+  <a href="#4-使用idea生成doc文档" class="md-nav__link">
     <span class="md-ellipsis">
       4. 使用IDEA生成doc文档
     </span>
@@ -873,23 +873,23 @@
     
     
     
-      <a href="../../../../../tags/#" class="md-tag">写作</a>
+      <a href="../../../../../tags/#写作" class="md-tag">写作</a>
     
   
 </nav>
 
 
 
-<h1 id="java">如何生成一个java文档<a class="headerlink" href="#java" title="永久链接">&para;</a></h1>
+<h1 id="如何生成一个java文档">如何生成一个java文档<a class="headerlink" href="#如何生成一个java文档" title="永久链接">&para;</a></h1>
 <p>众所周知，一个程序给别人看可能可以看懂，几万行程序就不一定了。在更多的时候，我们并不需要让别人知道我们的程序是怎么写的，只需要告诉他们怎么用的。那么，api文档就发挥了它的作用。</p>
 <!-- more -->
 
 <hr />
-<h2 id="1-api">1. 什么是api文档？<a class="headerlink" href="#1-api" title="永久链接">&para;</a></h2>
+<h2 id="1-什么是api文档">1. 什么是api文档？<a class="headerlink" href="#1-什么是api文档" title="永久链接">&para;</a></h2>
 <p>顾名思义，文档是给人看的，那么api文档就是告诉别人我的程序要怎么用。一个最典型的例子就是JDK8的帮助文档，如图：<a href="https://docs.oracle.com/javase/8/docs/api/">JDK8文档链接)</a></p>
 <p><img alt="image-20220427122437430" src="https://repo.sxrhhh.top/2854299-20220427122444981-1551499804.png" /></p>
 <p>一看：一目了然，想找什么都有，极大地方便了我们这种<strong>使用</strong>JDK的人。</p>
-<h2 id="2-java">2. 写好java文档注释<a class="headerlink" href="#2-java" title="永久链接">&para;</a></h2>
+<h2 id="2-写好java文档注释">2. 写好java文档注释<a class="headerlink" href="#2-写好java文档注释" title="永久链接">&para;</a></h2>
 <p>既然要生成文档，我们就需要一个写好文档注释，在类和方法前使用/*<em> xxx </em>/来进行文档注释</p>
 <table>
 <thead>
@@ -996,7 +996,7 @@
 <p>以及我自己的：</p>
 <p><img alt="image-20220427131244224" src="https://repo.sxrhhh.top/2854299-20220427131248367-618323699.png" /></p>
 <p>这样，就写好了文档注释。</p>
-<h2 id="3-api">3. 利用命令行制作一个api文档<a class="headerlink" href="#3-api" title="永久链接">&para;</a></h2>
+<h2 id="3-利用命令行制作一个api文档">3. 利用命令行制作一个api文档<a class="headerlink" href="#3-利用命令行制作一个api文档" title="永久链接">&para;</a></h2>
 <p>打开cmd，来到项目目录，一个命令<code>javadoc</code>极大地方便了我们</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>javadoc<span class="w"> </span>-encoding<span class="w"> </span>UTF-8<span class="w"> </span>-charset<span class="w"> </span>UTF-8<span class="w"> </span>Doc.java
 </span></code></pre></div>
@@ -1006,7 +1006,7 @@
 <p>重点是<code>index.html</code>。如果你们有学习或了解过网站组成的话，就会知道index.html是网站目录下的索引，打开它相当于打开了一个页面。</p>
 <p>打开它，一个熟悉的窗口：</p>
 <p><img alt="image-20220427125146050" src="https://repo.sxrhhh.top/2854299-20220427125149045-1326341225.png" /></p>
-<h2 id="4-ideadoc">4. 使用IDEA生成doc文档<a class="headerlink" href="#4-ideadoc" title="永久链接">&para;</a></h2>
+<h2 id="4-使用idea生成doc文档">4. 使用IDEA生成doc文档<a class="headerlink" href="#4-使用idea生成doc文档" title="永久链接">&para;</a></h2>
 <p>不知道你们有没有开始用IDEA来写java程序，反正我最近是转IDEA了，确实舒服。那我还是扯两句如何生成doc：</p>
 <p><img alt="image-20220427131957916" src="https://repo.sxrhhh.top/2854299-20220427132002172-1928773838.png" /></p>
 <p><img alt="image-20220427133404529" src="https://repo.sxrhhh.top/2854299-20220427133407525-379996067.png" /></p>

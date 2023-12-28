@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wsl" class="md-skip">
+        <a href="#新版本下如何通过外部网络访问wsl" class="md-skip">
           跳转至
         </a>
       
@@ -747,7 +747,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#研究起因" class="md-nav__link">
     <span class="md-ellipsis">
       研究起因
     </span>
@@ -756,7 +756,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#旧版本端口转发方案" class="md-nav__link">
     <span class="md-ellipsis">
       旧版本端口转发方案
     </span>
@@ -765,7 +765,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#旧版本桥接模式方案" class="md-nav__link">
     <span class="md-ellipsis">
       旧版本桥接模式方案
     </span>
@@ -774,7 +774,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#新版本镜像网络模式方案" class="md-nav__link">
     <span class="md-ellipsis">
       新版本镜像网络模式方案
     </span>
@@ -784,7 +784,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#wsl_1" class="md-nav__link">
+  <a href="#wsl版本检测" class="md-nav__link">
     <span class="md-ellipsis">
       wsl版本检测
     </span>
@@ -793,7 +793,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#wsl_2" class="md-nav__link">
+  <a href="#配置wsl文件" class="md-nav__link">
     <span class="md-ellipsis">
       配置wsl文件
     </span>
@@ -802,7 +802,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#解决遗留的坑" class="md-nav__link">
     <span class="md-ellipsis">
       解决遗留的坑
     </span>
@@ -816,7 +816,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#尾声" class="md-nav__link">
     <span class="md-ellipsis">
       尾声
     </span>
@@ -915,21 +915,21 @@
     
     
     
-      <a href="../../../../../tags/#" class="md-tag">服务器</a>
+      <a href="../../../../../tags/#服务器" class="md-tag">服务器</a>
     
   
 </nav>
 
 
 
-<h1 id="wsl">新版本下如何通过外部网络访问wsl<a class="headerlink" href="#wsl" title="永久链接">&para;</a></h1>
+<h1 id="新版本下如何通过外部网络访问wsl">新版本下如何通过外部网络访问wsl<a class="headerlink" href="#新版本下如何通过外部网络访问wsl" title="永久链接">&para;</a></h1>
 <p>众所周知，wsl2是windows下的linux子系统，并且采用类似于虚拟机NAT的管理方式。一般情况下，外部网络很难直接访问到wsl上的服务，除非使用端口转发。而现在，微软更新了wsl 2.0.0，采用镜像网络配置，完美解决了所有网络上的问题。</p>
 <!-- more -->
 
-<h2 id="_1">研究起因<a class="headerlink" href="#_1" title="永久链接">&para;</a></h2>
+<h2 id="研究起因">研究起因<a class="headerlink" href="#研究起因" title="永久链接">&para;</a></h2>
 <p><strong><em><a href="#_4">想直接看新版本解决方案的点这里</a></em></strong></p>
 <p>由于在编译他人代码时需要linux环境，我就放在了wsl下编译运行，然后在本地，我就尝试用<code>ifconfig</code>得到的虚拟机ip，成功连接上了wsl服务器。但是，当我试图用局域网下其他设备连接时，很显然，根本不可能连接上。<strong>这是因为wsl2采用了类似于NAT的网络模式，windows作为宿主机，隔离了局域网下其他设备和wsl的连接。</strong>为了外部访问wsl，我也试过一些方法。</p>
-<h2 id="_2">旧版本端口转发方案<a class="headerlink" href="#_2" title="永久链接">&para;</a></h2>
+<h2 id="旧版本端口转发方案">旧版本端口转发方案<a class="headerlink" href="#旧版本端口转发方案" title="永久链接">&para;</a></h2>
 <p>在旧版本，常用的方法是端口转发，根据官方文档，在有管理员权限的powershell下，输入如下指令：</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">add</span> <span class="n">v4tov4</span> <span class="n">listenport</span><span class="p">=&lt;</span><span class="n">yourPortToForward</span><span class="p">&gt;</span> <span class="n">listenaddress</span><span class="p">=</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span> <span class="n">connectport</span><span class="p">=&lt;</span><span class="n">yourPortToConnectToInWSL</span><span class="p">&gt;</span> <span class="n">connectaddress</span><span class="p">=(</span><span class="n">wsl</span> <span class="n">hostname</span> <span class="n">-I</span><span class="p">)</span>
 </span></code></pre></div>
@@ -941,7 +941,7 @@
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">netstat</span> <span class="n">-ano</span> <span class="p">|</span> <span class="n">findstr</span> <span class="n">8304</span>
 </span></code></pre></div>
 <p>也能看到8304端口正常监听。但是，在我访问wsl运行的游戏服务器<sub>~（游戏名：DDraceNetwork）</sub>~，客户端显示“udp疑似被拦截”。本来我认为这是端口转发失败了，但是我忽然注意到本地8304端口只有tcp。于是查询了有关资料，得到了<code>netsh</code>只支持tcp的结论。因此，netsh方案失败。</p>
-<h2 id="_3">旧版本桥接模式方案<a class="headerlink" href="#_3" title="永久链接">&para;</a></h2>
+<h2 id="旧版本桥接模式方案">旧版本桥接模式方案<a class="headerlink" href="#旧版本桥接模式方案" title="永久链接">&para;</a></h2>
 <p>后来，我希望用hyper-v创建一个虚拟交换机，相当于一个可通外网的虚拟网卡，并让wsl连接。结果，出现了许多问题。</p>
 <ul>
 <li>当前版本下，wsl2已不支持更改连接方式为<code>bridge</code>桥接模式，从根本上杜绝了这一方法</li>
@@ -949,14 +949,14 @@
 <li><del>试图用Vmware创建交换机，结果根本找不到选项</del></li>
 </ul>
 <p>最后，我发现了官网给出了新方案！</p>
-<h2 id="_4">新版本镜像网络模式方案<a class="headerlink" href="#_4" title="永久链接">&para;</a></h2>
+<h2 id="新版本镜像网络模式方案">新版本镜像网络模式方案<a class="headerlink" href="#新版本镜像网络模式方案" title="永久链接">&para;</a></h2>
 <p>由于本人入坑wsl时间晚，在此之前，我对wsl1只是道听途说。据我了解，wsl1建立在兼容层上，与windows共存，因此wsl1的网络配置与windows一致，外部网络也可以很轻松地接入wsl。而wsl2则是基于hyper-v的虚拟机，采用的是新一套的NAT方案，较为独立。所以对于wsl2也要用和普通虚拟机一样的网络方案，如NAT转发和桥接。</p>
 <p>而现在，在Windows<code>23H2</code>更新中，或是<code>22H2</code>中的insider，wsl2更新了镜像网络解决方案，这个方案将会解决几乎一切wsl上的网络问题。<strong>而此方法，也将随着时间推移，成为wsl2的默认解决方案</strong>。</p>
 <p>在此贴出微软官方文档：</p>
 <p><a href="https://learn.microsoft.com/zh-cn/windows/wsl/networking">使用 WSL 访问网络应用程序 | Microsoft Learn</a></p>
-<h3 id="wsl_1">wsl版本检测<a class="headerlink" href="#wsl_1" title="永久链接">&para;</a></h3>
+<h3 id="wsl版本检测">wsl版本检测<a class="headerlink" href="#wsl版本检测" title="永久链接">&para;</a></h3>
 <p>要启用镜像网络模式，首先要保证你的windows系统是23H2以上，或是加入了windows体验计划。除此之外，由于版本更新已有一段时间，如果你不确定是否可以使用，可以在cmd输入<code>wsl --version</code>查看wsl版本是否是<code>2.0.0</code>以上。如果是，那就可以。</p>
-<h3 id="wsl_2">配置wsl文件<a class="headerlink" href="#wsl_2" title="永久链接">&para;</a></h3>
+<h3 id="配置wsl文件">配置wsl文件<a class="headerlink" href="#配置wsl文件" title="永久链接">&para;</a></h3>
 <p>在windows用户根目录下，新建个名为<code>.wslconfig</code>的文件，选择合适的编辑器打开它。</p>
 <blockquote>
 <p>如果不知道自己的用户根目录，可以在cmd下输入<code>echo %USERPROFILE</code>，即可看到路径</p>
@@ -976,7 +976,7 @@
 <p>那么，wsl的新版本网络配置也就成功了…………</p>
 <p>…………</p>
 <p><strong>吗？</strong></p>
-<h3 id="_5">解决遗留的坑<a class="headerlink" href="#_5" title="永久链接">&para;</a></h3>
+<h3 id="解决遗留的坑">解决遗留的坑<a class="headerlink" href="#解决遗留的坑" title="永久链接">&para;</a></h3>
 <p>很遗憾地告诉大家，我上面给出的配置文件<strong>少了一句话</strong>，而这句话才是本文的重点。为什么会单独拿出来讲，这是因为我在20分钟查找资料的过程，<strong>没有一篇文章</strong>讲到这个。现在我们先来看看问题在哪里。</p>
 <p>首先，我们要先知道windows的IP地址，不要求上百度看公网IP，只要一个局域网内的外部IP，也就是你电脑直连路由器分配给你的IP，假设是192.168.1.101，那么我现在在浏览器访问<code>http://192.168.1.101</code>，可以成功看到宿主机创建的网站。</p>
 <p>现在在让我们访问<code>http://192.168.1.101:81</code>，也就是linux下的网站端口，结果发现，<strong>无法访问！</strong></p>
@@ -995,7 +995,7 @@
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="hll"><span class="na">hostAddressLoopback</span><span class="o">=</span><span class="s">true</span>
 </span></span></code></pre></div>
 <p>重启wsl，问题解决，<del>我的游戏服务器也能进入了，只是服务器列表不显示[滑稽]</del></p>
-<h2 id="_6">尾声<a class="headerlink" href="#_6" title="永久链接">&para;</a></h2>
+<h2 id="尾声">尾声<a class="headerlink" href="#尾声" title="永久链接">&para;</a></h2>
 <p>我在这里贴出wsl2关于mirrored模式的一些其他配置选项，可以更好的帮助各位配置wsl。</p>
 <table>
 <thead>

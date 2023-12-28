@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#javametaweblogclientmetaweblogjava-" class="md-skip">
+        <a href="#javametaweblogclientmetaweblog的java实现-从此上传博客实现全平台" class="md-skip">
           跳转至
         </a>
       
@@ -747,7 +747,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-metaweblog" class="md-nav__link">
+  <a href="#1-什么是metaweblog" class="md-nav__link">
     <span class="md-ellipsis">
       1. 什么是Metaweblog?
     </span>
@@ -756,7 +756,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-metaweblog" class="md-nav__link">
+  <a href="#2-metaweblog的应用" class="md-nav__link">
     <span class="md-ellipsis">
       2. Metaweblog的应用
     </span>
@@ -765,7 +765,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-metaweblog" class="md-nav__link">
+  <a href="#3-如何使用metaweblog" class="md-nav__link">
     <span class="md-ellipsis">
       3. 如何使用Metaweblog
     </span>
@@ -774,7 +774,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#4-本项目介绍" class="md-nav__link">
     <span class="md-ellipsis">
       4. 本项目介绍
     </span>
@@ -784,7 +784,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-metaweblogjava" class="md-nav__link">
+  <a href="#41-metaweblog与java之间的关系映射" class="md-nav__link">
     <span class="md-ellipsis">
       4.1 metaweblog与java之间的关系映射
     </span>
@@ -793,7 +793,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-javametaweblogclient" class="md-nav__link">
+  <a href="#42-使用javametaweblogclient" class="md-nav__link">
     <span class="md-ellipsis">
       4.2 使用JavaMetaweblogClient
     </span>
@@ -807,7 +807,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
+  <a href="#5-最后的话" class="md-nav__link">
     <span class="md-ellipsis">
       5. 最后的话
     </span>
@@ -825,7 +825,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#联系我" class="md-nav__link">
     <span class="md-ellipsis">
       联系我
     </span>
@@ -937,13 +937,13 @@
 
 
 
-<h1 id="javametaweblogclientmetaweblogjava-">JavaMetaweblogClient,Metaweblog的java实现-从此上传博客实现全平台<a class="headerlink" href="#javametaweblogclientmetaweblogjava-" title="永久链接">&para;</a></h1>
+<h1 id="javametaweblogclientmetaweblog的java实现-从此上传博客实现全平台">JavaMetaweblogClient,Metaweblog的java实现-从此上传博客实现全平台<a class="headerlink" href="#javametaweblogclientmetaweblog的java实现-从此上传博客实现全平台" title="永久链接">&para;</a></h1>
 <p>不知你是否会遇到下面这样的情况:想要通过java上传博客,结果却发现api的使用有些复杂。没关系，这里帮你解决了api的问题。在使用Metaweblog的时候，只需要调用网页上同名的方法就好了，一键发送命令，感受调用api的快感。</p>
 <!-- more -->
 
-<h2 id="1-metaweblog">1. 什么是Metaweblog?<a class="headerlink" href="#1-metaweblog" title="永久链接">&para;</a></h2>
+<h2 id="1-什么是metaweblog">1. 什么是Metaweblog?<a class="headerlink" href="#1-什么是metaweblog" title="永久链接">&para;</a></h2>
 <p>Metaweblog是一个webservice，也就是在网络上使用的api。它基于xml-rpc实现。对于现存的博客平台，例如博客园、开源中国、wordpress等都实现了metaweblog。通过这个api，你可以不登录网页，直接通过一些程序来增删查改你的博客，上传媒体文件。</p>
-<h2 id="2-metaweblog">2. Metaweblog的应用<a class="headerlink" href="#2-metaweblog" title="永久链接">&para;</a></h2>
+<h2 id="2-metaweblog的应用">2. Metaweblog的应用<a class="headerlink" href="#2-metaweblog的应用" title="永久链接">&para;</a></h2>
 <p>metaweblog的适用范围不太广，但是绝对能满足于博客管理的需要。通常，面对下面情况，你就可以使用metaweblog：</p>
 <ul>
 <li>你已经编辑好了一篇博客，保存为markdown文件，想要快速上传博客；</li>
@@ -952,7 +952,7 @@
 <li>你用离线编辑器写博客，但是图片又不想保存在本地，想直接把图片上传到博客服务器里面；</li>
 </ul>
 <p>因此，metaweblog可以满足你的需要</p>
-<h2 id="3-metaweblog">3. 如何使用Metaweblog<a class="headerlink" href="#3-metaweblog" title="永久链接">&para;</a></h2>
+<h2 id="3-如何使用metaweblog">3. 如何使用Metaweblog<a class="headerlink" href="#3-如何使用metaweblog" title="永久链接">&para;</a></h2>
 <p>在使用本项目前，你首先需要了解一下metaweblog的原理以及如何使用。</p>
 <p>目前，有关metaweblog的官网已经崩了，但是你仍然可以<a href="https://rpc.cnblogs.com/metaweblog/example">在这里</a>查到它的api。</p>
 <p><img alt="image-20220519123223269" src="https://repo.sxrhhh.top/2854299-20220519123224856-94407514.png" /></p>
@@ -972,14 +972,14 @@
 </li>
 <li>自建wordpress博客: <a href="http://www.example.com/xmlrpc.php">http://www.example.com/xmlrpc.php</a>,其中<code>www.example.com</code>是你的网站地址域名.</li>
 </ul>
-<h2 id="4">4. 本项目介绍<a class="headerlink" href="#4" title="永久链接">&para;</a></h2>
+<h2 id="4-本项目介绍">4. 本项目介绍<a class="headerlink" href="#4-本项目介绍" title="永久链接">&para;</a></h2>
 <p><strong>然而, 对于各种语言, metaweblog的实现也不一样</strong>.因此,你需要去寻找各种语言的实现方法.在网上,你可以查到python如何实现metaweblog，C#更是有专门的api，极大地方便了使用者调用。那么，java呢？很抱歉，网上有关java实现metaweblog的文章少之又少。为了解决这种情况，笔者做出了名为JavaMetaweblogClient的api，方便java爱好者去调用，去实现。</p>
-<h3 id="41-metaweblogjava">4.1 metaweblog与java之间的关系映射<a class="headerlink" href="#41-metaweblogjava" title="永久链接">&para;</a></h3>
+<h3 id="41-metaweblog与java之间的关系映射">4.1 metaweblog与java之间的关系映射<a class="headerlink" href="#41-metaweblog与java之间的关系映射" title="永久链接">&para;</a></h3>
 <p>如果你看了api的介绍，你就会知道，这个api是给多个语言使用的，所以很多的数据类型java都没有。那么我们就需要一个映射表。本项目通过<code>apache</code> 的<code>xmlrpc</code>实现，所以我们可以查看他的<a href="https://ws.apache.org/xmlrpc/types.html">官方文档</a></p>
 <p><img alt="image-20220519125713720" src="https://repo.sxrhhh.top/2854299-20220519125715384-654727151.png" /></p>
 <p>这些就是你要去了解的。<strong>其中，<code>struct</code>的类型对应到java里面是<code>Map&lt;String,Object&gt;</code>。但是你并不需要如此，在本项目中，我已经将struct打包成了一个类对象，例如Post，里面的成员变量就是<code>dateTime</code> <code>description</code> <code>title</code> <code>categories</code>四个</strong>.需要用的时候就依次把变量填入即可。</p>
 <p>这时，你在使用这些方法时就会更加的得心应手。</p>
-<h3 id="42-javametaweblogclient">4.2 使用JavaMetaweblogClient<a class="headerlink" href="#42-javametaweblogclient" title="永久链接">&para;</a></h3>
+<h3 id="42-使用javametaweblogclient">4.2 使用JavaMetaweblogClient<a class="headerlink" href="#42-使用javametaweblogclient" title="永久链接">&para;</a></h3>
 <p>本项目本质上只实现了Client，但是很明显我们只需要client，服务器的事由博客方来干。那么我们就要来了解一下如何使用api。</p>
 <p>打开本项目的java文档，你会看见Client类上有教程，但是在这里我还是会再打一遍。</p>
 <p>使用方法大致分为以下三步：(以新建一个博客文章为例) </p>
@@ -1011,7 +1011,7 @@
 <div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="na">newPost</span><span class="p">(</span><span class="s">&quot;default&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;S*****u&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;*****&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">post</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 </span></code></pre></div>
 <p>至于其他的代码，通常IDE会自己生成，以及提醒你参数的填入。其中Post参数需要直接填入本项目已创建好的<code>Post</code>类，而不是自己写一个<code>Map&lt;String,Object&gt;</code>.</p>
-<h2 id="5">5. 最后的话<a class="headerlink" href="#5" title="永久链接">&para;</a></h2>
+<h2 id="5-最后的话">5. 最后的话<a class="headerlink" href="#5-最后的话" title="永久链接">&para;</a></h2>
 <p>作为新手程序员和他的第一个api,有很多的信息都在javadoc文档里。如果有什么问题，尽量去查看docs文档，有很多位置都可以查看文档。</p>
 <ol>
 <li>下载使用的jar包内的docs文件夹</li>
@@ -1033,7 +1033,7 @@
 </li>
 </ol>
 <p><strong>A</strong>：本人是新手程序员，管理教程会非常的麻烦，但我大量的帮助文档都写死在程序里了，查看javadoc文档获得的信息会比在这里大得多。可以查看本文档第五项查看javadoc地址。</p>
-<h2 id="_1">联系我<a class="headerlink" href="#_1" title="永久链接">&para;</a></h2>
+<h2 id="联系我">联系我<a class="headerlink" href="#联系我" title="永久链接">&para;</a></h2>
 <ul>
 <li>email: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#104;&#104;&#115;&#120;&#114;&#64;&#113;&#113;&#46;&#99;&#111;&#109;">&#104;&#104;&#104;&#115;&#120;&#114;&#64;&#113;&#113;&#46;&#99;&#111;&#109;</a></li>
 <li>QQ: 1914913486</li>

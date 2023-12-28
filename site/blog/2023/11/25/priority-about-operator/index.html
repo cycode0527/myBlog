@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#关于逻辑运算符和赋值运算符的优先级探讨" class="md-skip">
           跳转至
         </a>
       
@@ -747,7 +747,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#引言" class="md-nav__link">
     <span class="md-ellipsis">
       引言
     </span>
@@ -756,7 +756,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#php" class="md-nav__link">
+  <a href="#php的运算符优先级" class="md-nav__link">
     <span class="md-ellipsis">
       PHP的运算符优先级
     </span>
@@ -765,7 +765,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#其他语言优先级探讨" class="md-nav__link">
     <span class="md-ellipsis">
       其他语言优先级探讨
     </span>
@@ -774,7 +774,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#总结" class="md-nav__link">
     <span class="md-ellipsis">
       总结
     </span>
@@ -867,21 +867,21 @@
     
     
     
-      <a href="../../../../../tags/#" class="md-tag">编程语言</a>
+      <a href="../../../../../tags/#编程语言" class="md-tag">编程语言</a>
     
   
     
     
     
-      <a href="../../../../../tags/#" class="md-tag">运算符</a>
+      <a href="../../../../../tags/#运算符" class="md-tag">运算符</a>
     
   
 </nav>
 
 
 
-<h1 id="_1">关于逻辑运算符和赋值运算符的优先级探讨<a class="headerlink" href="#_1" title="永久链接">&para;</a></h1>
-<h2 id="_2">引言<a class="headerlink" href="#_2" title="永久链接">&para;</a></h2>
+<h1 id="关于逻辑运算符和赋值运算符的优先级探讨">关于逻辑运算符和赋值运算符的优先级探讨<a class="headerlink" href="#关于逻辑运算符和赋值运算符的优先级探讨" title="永久链接">&para;</a></h1>
+<h2 id="引言">引言<a class="headerlink" href="#引言" title="永久链接">&para;</a></h2>
 <p>今日在练习ctf基础题的时候，意外发现如下情况，代码如下：</p>
 <!-- more -->
 
@@ -895,7 +895,7 @@
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="x">}</span>
 </span></code></pre></div>
 <p>显然，<code>v0</code>要做到<code>v1</code> <code>v2</code> <code>v3</code>都为数字。结果查看wp的时候发现，只要<code>v1</code>是数字就行了，后面两个完全不用在意。这就引起我的思考：由于最近大一学业要求我重拾C语言，我已经默认了赋值运算符的优先级非常低，甚至低于逻辑运算符。可是在这里根据wp，这一优先级反过来了。我开始查阅资料。</p>
-<h2 id="php">PHP的运算符优先级<a class="headerlink" href="#php" title="永久链接">&para;</a></h2>
+<h2 id="php的运算符优先级">PHP的运算符优先级<a class="headerlink" href="#php的运算符优先级" title="永久链接">&para;</a></h2>
 <p>以下是php的运算符优先级。</p>
 <table>
 <thead>
@@ -1009,7 +1009,7 @@
 </tbody>
 </table>
 <p>可以看到，php有两套逻辑运算符，分别是<strong>||和&amp;&amp;</strong>、<strong>and和or</strong>，分别架在了赋值运算符的两端。和C语言一样的||和&amp;&amp;优先级比赋值<strong>高</strong>，而和英文表示的and和or优先级比赋值<strong>低</strong>。在使用途中，必须要注意。</p>
-<h2 id="_3">其他语言优先级探讨<a class="headerlink" href="#_3" title="永久链接">&para;</a></h2>
+<h2 id="其他语言优先级探讨">其他语言优先级探讨<a class="headerlink" href="#其他语言优先级探讨" title="永久链接">&para;</a></h2>
 <p>既然PHP的两套逻辑运算符架在赋值运算符两端，那么我们可以思考，其他各种语言的优先级是否也一样。</p>
 <p>下面统计了一下主流语言的情况：</p>
 <table>
@@ -1044,7 +1044,7 @@
 </tbody>
 </table>
 <p>综上所述，我们可以看出，在大部分采用||和&amp;&amp;配置的语言中，这俩的优先级始终比赋值<strong>高</strong>。而像python和Lua这样只有and和or的语言中，其优先级<strong>仍然比赋值高</strong>。最后就是部分两套系统都有的语言，那么很有可能分别架在赋值两边，但也有例外，还需具体分析。</p>
-<h2 id="_4">总结<a class="headerlink" href="#_4" title="永久链接">&para;</a></h2>
+<h2 id="总结">总结<a class="headerlink" href="#总结" title="永久链接">&para;</a></h2>
 <p>观察了各类语言的逻辑和赋值运算符优先级，我们发现各类语言的情况还是既有相同之处，又有一些特色。具体情况还需具体分析。在今后接触不熟悉的语言时，尤其是看到and和or的情况下，我们更要尤为关注其优先级，<strong>不要偷懒去查一查！</strong></p>
 <hr />
 <p>作者：Sxrhhh</p>
