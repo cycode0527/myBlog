@@ -7,7 +7,17 @@ nav:
   - 博客: 
     - 博客主页: blog/index.md
   - 网站词云: tags.md
+  - 想法: 
+    - 想法: idea/index.md
+    - 2023 个人年度总结: idea/2023个人年度总结.md
   - 关于本站: about.md
+  - '':
+    - test: test/index.md
+    - 2a22: test/222.md
+    - 1a11: test/111.md
+
+  
+
 
 theme:
   name: material
@@ -34,9 +44,14 @@ theme:
     - navigation.tabs.sticky  # 选项卡冻结,始终可见
     - navigation.path # 文章显示导航路径
     - navigation.top  # 回到顶部
+    - navigation.indexes  # 合并一级目录导览
 
     - content.code.copy # 启用代码块复制
     - content.code.annotate # 启用代码注释
+
+
+    - navigation.instant  # 启用即时加载
+    - navigation.instant.progress
 
 plugins:
   - search
@@ -46,6 +61,7 @@ plugins:
 
   - tags:
       tags_file: tags.md
+  
     
 extra_css:
   - stylesheets/extra.css
@@ -61,6 +77,11 @@ markdown_extensions:
 
   - pymdownx.arithmatex:
       generic: true
+
+  # 任务列表
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
 
   # 语法高亮代码块
   - pymdownx.highlight: 

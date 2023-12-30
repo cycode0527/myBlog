@@ -3,7 +3,7 @@ hide:
     - navigation
 ---
 
-# 关于本站
+# :material-information: 关于本站
 这里是Sxrhhh的个人小站哦
 
 === "公式测试"

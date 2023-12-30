@@ -114,7 +114,7 @@ result = client.newPost("default", "S*****u", "*****", post, false);
 
 1. 下载使用的jar包内的docs文件夹
 2. github上的[项目地址](https://github.com/cycode0527/JavaMetaweblogClient)中的docs文件夹
-3. ~~docs文件夹的[托管地址](https://www.sxrhhh.top/JavaMetaweblogClient/docs)~~**(过期)**
+3. ~~docs文件夹的[托管地址](https://www.sxrhhh.top/JavaMetaweblogClient/docs)~~**更方便,推荐**
 
 ## FAQ
 

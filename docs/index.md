@@ -3,7 +3,7 @@ hide:
     - navigation
 ---
 
-# 欢迎来到 Sxrhhh 的个人小站
+# :material-home: 欢迎来到 Sxrhhh 的个人小站
 
 这里是 Sxrhhh 的个人小站。这次博客成功迁移成功，但是我还没有想好怎么做主页。那就先这样吧。
 
