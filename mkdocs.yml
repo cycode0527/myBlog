@@ -134,11 +134,15 @@ copyright: 版权所有 &copy; 2023 - 2023 Sxrhhh
 
 extra:
   social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/cycode0527
-      name: Github
+    - icon: material/rss
+      link: https://www.sxrhhh.top/feed
+      name: RSS 订阅
+
     
     - icon: material/email
       link: mailto:sxrhhh.live@outlook.com
       name: 邮我吧->sxrhhh.live@outlook.com
 
+    - icon: fontawesome/brands/github
+      link: /feed
+      name: Github
