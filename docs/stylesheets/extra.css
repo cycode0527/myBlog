@@ -3,3 +3,7 @@
     --md-primary-fg-color--light: #6a94d4;
     --md-primary-fg-color--dark:  #243653;
 }
+
+.md-social {
+    margin: auto;
+}

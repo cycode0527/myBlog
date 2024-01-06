@@ -144,5 +144,5 @@ extra:
       name: 邮我吧->sxrhhh.live@outlook.com
 
     - icon: fontawesome/brands/github
-      link: /feed
+      link: https://www.sxrhhh.top/feed
       name: Github
