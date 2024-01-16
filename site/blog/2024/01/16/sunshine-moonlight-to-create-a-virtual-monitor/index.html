@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="http://www.sxrhhh.top/blog/2023/07/14/raspberrypi-omv-nas/">
+        <link rel="canonical" href="http://www.sxrhhh.top/blog/2024/01/16/sunshine-moonlight-to-create-a-virtual-monitor/">
       
       
-        <link rel="prev" href="../../../06/21/fever-in-ttrss/">
+        <link rel="prev" href="../../../../2023/12/31/summary-in-2023/">
       
-      
-        <link rel="next" href="../../../11/07/writeup-of-hackergame2023/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../../../feed_rss_created.xml">
@@ -25,7 +23,7 @@
     
     
       
-        <title>通过树莓派+OMV建立自己的NAS - Sxrhhh 的个人小站</title>
+        <title>Sunshine + Moonlight 纯软件实现全平台设备作 Linux 副屏 - Sxrhhh 的个人小站</title>
       
     
     
@@ -81,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#通过树莓派omv建立自己的nas" class="md-skip">
+        <a href="#sunshine--moonlight-纯软件实现全平台设备作-linux-副屏" class="md-skip">
           跳转至
         </a>
       
@@ -117,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              通过树莓派+OMV建立自己的NAS
+              Sunshine + Moonlight 纯软件实现全平台设备作 Linux 副屏
             
           </span>
         </div>
@@ -1052,79 +1050,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-材料准备" class="md-nav__link">
+  <a href="#初识-moonlight" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 材料准备
+      初识 Moonlight
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-准备系统" class="md-nav__link">
+  <a href="#部署-sunshine-服务端与-moonlight-客户端" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 准备系统
+      部署 Sunshine 服务端与 Moonlight 客户端
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. 准备系统">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#创建虚拟显示屏" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建虚拟显示屏
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建虚拟显示屏">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-烧录系统" class="md-nav__link">
+  <a href="#写一个创建屏幕的脚本可选" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 烧录系统
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-配置网络" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 配置网络
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.2 配置网络">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#221-连接树莓派" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2.1 连接树莓派
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#222-更改本机hosts可选" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2.2 更改本机hosts（可选）
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#31-升级系统" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 升级系统
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-自动安装脚本" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 自动安装脚本
+      写一个创建屏幕的脚本（可选）
     </span>
   </a>
   
@@ -1136,101 +1092,20 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-配置omv" class="md-nav__link">
+  <a href="#将副屏进行串流" class="md-nav__link">
     <span class="md-ellipsis">
-      4. 配置OMV
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. 配置OMV">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-基础配置" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1 基础配置
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.1 基础配置">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#411-打开仪表盘" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1.1 打开仪表盘
+      将副屏进行串流
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#412-更改密码" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#已知问题" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1.2 更改密码
+      已知问题
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#413-调整登出时间" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1.3 调整登出时间
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#414-安装-omv-extras" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1.4 安装 OMV-Extras
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-配置存储" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2 配置存储
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.2 配置存储">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#421-添加文件系统" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2.1 添加文件系统
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#422-创建网络共享" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2.2 创建网络共享
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1271,7 +1146,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-07-14 00:00:00" class="md-ellipsis">2023年7月14日</time>
+                        <time datetime="2024-01-16 00:00:00" class="md-ellipsis">2024年1月16日</time>
                       </div>
                     </li>
                     
@@ -1293,7 +1168,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 4 分钟阅读时间
+                              需要 7 分钟阅读时间
                             
                           </span>
                         </div>
@@ -1319,178 +1194,176 @@
     
     
     
-      <a href="../../../../../tags/#树莓派" class="md-tag">树莓派</a>
+      <a href="../../../../../tags/#linux" class="md-tag">Linux</a>
     
   
     
     
     
-      <a href="../../../../../tags/#nas" class="md-tag">NAS</a>
+      <a href="../../../../../tags/#笔记本" class="md-tag">笔记本</a>
     
   
 </nav>
 
 
 
-<h1 id="通过树莓派omv建立自己的nas">通过树莓派+OMV建立自己的NAS<a class="headerlink" href="#通过树莓派omv建立自己的nas" title="永久链接">&para;</a></h1>
-<p>最近看到家中吃灰的树莓派，我突发奇想：不如把它做成NAS。虽然肯定不如专业的NAS稳定，容量也才可怜的32G，但是这样让我练练尝尝鲜也未尝不可。说干就干！</p>
+<h1 id="sunshine--moonlight-纯软件实现全平台设备作-linux-副屏">Sunshine + Moonlight 纯软件实现全平台设备作 Linux 副屏<a class="headerlink" href="#sunshine--moonlight-纯软件实现全平台设备作-linux-副屏" title="永久链接">&para;</a></h1>
+<p>最近，我想要通过视频学习一些技术知识，作为笔记本用户，没有外接屏幕显然是十分痛苦的，需要不断切换窗口，并且还会互相遮挡。于是我便萌生了使用身边的平板和手机作为副屏的想法。经过一番查找，发现各种千奇百怪的方法，有的付费，有的卡顿，最主要的就是：大部分方案是基于 Windows 系统的。在其中，我发现 Moonlight 串流方案基于全平台。在此基础上，我解决了一些问题，成功完成副屏延伸。</p>
+<p>在本文中，Moonlight 只是一种串流方案，其实并非本文的重点。想知道重点在哪里吗？那就接着往下看！</p>
 <!-- more -->
 
-<blockquote>
-<p>前排提醒：经过笔者的踩坑，已经证明无线wifi连接树莓派做OMV的NAS不可行，必须要求连接<strong>网线</strong>！！！本文经过多次修改，如果文中出现WiFi相关信息，请忽略。</p>
-</blockquote>
-<p>在这里先给出我的参考资料，毕竟网上资料鱼龙混杂，官方文档才是最好的！！！</p>
-<p><a href="https://wiki.omv-extras.org/doku.php?id=omv6:raspberry_pi_install">在树莓派上安装OMV（英文）</a></p>
-<p><a href="https://wiki.omv-extras.org/doku.php?id=omv6:new_user_guide">OMV新用户手册（英文）</a></p>
-<h2 id="1-材料准备">1. 材料准备<a class="headerlink" href="#1-材料准备" title="永久链接">&para;</a></h2>
-<p>硬件设备：</p>
-<ul>
-<li>树莓派3B+一个</li>
-<li>电源线一根</li>
-<li>网线一根</li>
-<li>32G的TF卡一张</li>
-<li>离你树莓派近的路由器</li>
-<li>容量足够的U盘或移动硬盘</li>
-</ul>
-<p>所需软件：</p>
-<ul>
-<li>Raspberry Pi Imager，官方推出的软件，用于烧录树莓派系统。<a href="https://downloads.raspberrypi.org/imager/imager_latest.exe">官网下载</a></li>
-<li>Windows Terminal或是Putty等终端软件。</li>
-<li>会简单使用Linux系统的大脑</li>
-</ul>
-<h2 id="2-准备系统">2. 准备系统<a class="headerlink" href="#2-准备系统" title="永久链接">&para;</a></h2>
-<p>现在万事俱备，开始制作咱们的树莓派了</p>
-<h3 id="21-烧录系统">2.1 烧录系统<a class="headerlink" href="#21-烧录系统" title="永久链接">&para;</a></h3>
-<p>首先，将我们的TF卡插入读卡器中，连接上电脑记住它的盘符，然后打开Raspberry Pi Imager</p>
-<p>打开软件，选择操作系统，由于OMV的安装与存储策略，我们<strong>必须选择精简版的64位系统</strong></p>
-<p><img alt="选择操作系统1" src="https://repo.sxrhhh.top/picgoimage-20230714173738097.png" /></p>
-<p><img alt="选择操作系统2" src="https://repo.sxrhhh.top/picgoimage-20230714173902815.png" /></p>
-<p>最后选择我们插入TF卡的盘符</p>
-<p><img alt="选择TF卡" src="https://repo.sxrhhh.top/picgoimage-20230714174047249.png" /></p>
-<p><strong>注意，一旦烧录开始，磁盘上的所有数据都会丢失，请注意备份</strong></p>
-<p>然后不要急着开始烧录，点击右下角的设置</p>
-<p><img alt="点击设置" src="https://repo.sxrhhh.top/picgoimage-20230714174307710.png" /></p>
-<p>打开ssh服务，并且设置用户名和密码，用户名可以为<code>pi</code>，密码需要用心设置，这是你的管理员密码，root账号已被锁定。</p>
-<p><strong>注：请不要将用户名修改为<code>admin</code>，这是OMV的默认管理员账号，会引起冲突。</strong></p>
-<p><img alt="设置ssh与密码" src="https://repo.sxrhhh.top/picgoimage-20230714174350920.png" /></p>
-<p><del>然后是设置WiFi，这个是无线连接树莓派的必要条件，有网线的可以略过此步骤</del>。</p>
-<p><strong>接下来的<code>配置wifi</code>请去除勾选，因为即使配置完成，也会在安装OMV后删除有关wifi的一切配置。</strong></p>
-<p>如果错过以上两个步骤，可以通过修改TF卡目录下文件完成WiFi和ssh的设置</p>
-<p><img alt="取消配置wifi" src="https://repo.sxrhhh.top/picgoimage-20230718170333903.png" /></p>
-<p>语言设置保持上海。</p>
-<p><img alt="语言设置" src="https://repo.sxrhhh.top/picgoimage-20230714175024593.png" /></p>
-<p>好了，现在可以完成设置，开始烧录了！</p>
-<p><strong>再次提醒，开始烧录后原TF卡内数据将全部丢失！！！</strong></p>
-<p>等待进度条结束，便烧录完成，拔下TF卡插入树莓派通电吧！</p>
-<h3 id="22-配置网络">2.2 配置网络<a class="headerlink" href="#22-配置网络" title="永久链接">&para;</a></h3>
-<h4 id="221-连接树莓派">2.2.1 连接树莓派<a class="headerlink" href="#221-连接树莓派" title="永久链接">&para;</a></h4>
-<p>在连接到树莓派之前，你需要查看树莓派和路由器的IP地址，才可以连接。</p>
-<p><strong>首先将你的树莓派的网线连接到路由器上</strong>，在本机上，打开Windows Terminal（以下简称cmd），输入<code>ipconfig</code>，查看默认网关。</p>
-<p><img alt="找到路由器IP" src="https://repo.sxrhhh.top/picgoimage-20230714175709588.png" /></p>
-<p>随后，在浏览器中访问路由器，找到树莓派的IP地址</p>
-<p><img alt="找到树莓派IP" src="https://repo.sxrhhh.top/picgoimage-20230714180058425.png" /></p>
-<p>然后便可在cmd中连接树莓派了</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>pi@192.168.0.120
+<h2 id="初识-moonlight">初识 Moonlight<a class="headerlink" href="#初识-moonlight" title="永久链接">&para;</a></h2>
+<p>在完成一系列副屏投屏操作前，我还是先简单介绍一下 Moonlight，这是一个串流软件，可以接收电脑屏幕上的内容和声音，并且可以反过来操控电脑。首先先要了解一点的是：<strong>Moonlight 是一个客户端软件</strong>，换句话说就是，Moonlight 应该安装在手机平板之类的“主控机”上，而不是像我电脑那样的“受控机”。那么显然，想要接收到电脑发出的串流信息，电脑本身必须要有一个服务端软件来发送串流。下面就是一个大坑。</p>
+<p>我第一次接触到 Moonlight 的时候，是在研究 Steamlink 的平替，那个时候，我想要一个不同于 Steamlink 的方案，用来手机连接电脑玩一些 steam 上的视觉小说游戏 <del>(嗯，也就是 galgame)</del>，而网上有关方案，大部分都推荐 Moonlight，但是所有这类文章，无一不陈述一个所谓的建议：<strong>建议使用 N卡 的用户使用 Moonlight 串流，并且开启 Nvidia Geforce 上的一个 SHIELD 功能</strong>，利用那个玩意作为电脑上的串流服务端，配套上如今 SHIELD 功能消失的解决方法，可谓井井有条，方案详细。一言以蔽之：<strong>脱裤子放屁</strong>。</p>
+<p>原谅我话说那么难听，但是铺天盖地的 Nvidia Shield 的方案不仅难用，而且缺少了国内的支持，最主要的是我当时没有成功串流，只好放弃 Moonlight 方案，继续 Steamlink。如此方案，混淆了我的视听，让我没能深究背后的那个<strong>备用方案</strong>。直到我更换了 Fedora 这个 Linux 发行版作为主力操作系统，我在很清楚 Linux 上面没有 Nvidia Geforce Experience 这个软件的情况下，排除了一切有关这个的方案继续探究 Moonlight，这才找到 Moonlight 是有一个配套的服务端 —— Sunshine 的。</p>
+<p>很显然，作为一个连接串流用的软件，有一个专用的配套的服务端，才更加符合我们的常识。事实也证明了，<strong>局域网下 Sunshine + Moonlight 方案，拥有无异于物理显示屏的体验</strong>。</p>
+<h2 id="部署-sunshine-服务端与-moonlight-客户端">部署 Sunshine 服务端与 Moonlight 客户端<a class="headerlink" href="#部署-sunshine-服务端与-moonlight-客户端" title="永久链接">&para;</a></h2>
+<p>想要完成副屏的连接，第一步就是要完成手机与电脑间最最最基本的串流，也就是同屏串流。其基本效果和 Steamlink 一致，都是能将电脑的视频音频转发到手机上，并且手机上也有办法操控电脑。现在可以在我们的 Linux 系统上部署 Sunshine 服务端了。</p>
+<p>首先我们来到 Sunshine 的 Github 官网：<a href="https://github.com/LizardByte/Sunshine/releases">https://github.com/LizardByte/Sunshine/releases</a>，可以看到有几十种不同的发行包，支持 Linux 各大发行版和 Windows 版本，不确定支不支持 MacOS。但最重要的是，无论是 Sunshine 还是 Moonlight，都提供 AppImage 版本的软件包，不同于各大发行版上的包管理器，这种软件包是真正意义上的跨发行版，全 Linux 统一使用。因为我使用的是 Fedora 39, 不确定用官方提供的 38 版本的包会不会出问题，就统一采用了 AppImage 包。现在，下载下来改个名字放在你用户的 bin 目录下。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mv<span class="w"> </span>~/下载/sunshine.AppImage<span class="w"> </span>~/bin/sunshine
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>~/bin/sunshine<span class="w">    </span><span class="c1">#(1)! </span>
 </span></code></pre></div>
-<h4 id="222-更改本机hosts可选">2.2.2 更改本机hosts（可选）<a class="headerlink" href="#222-更改本机hosts可选" title="永久链接">&para;</a></h4>
-<p>为了方便自己的连接，在部署完内网穿透之前，我们可以在windows本机上修改hosts文件</p>
-<p>打开<code>"C:\Windows\System32\drivers\etc\hosts"</code></p>
-<p>加入</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>192.168.0.120 pi.example.com #建议是你自己的域名，为以后的穿透做准备
+<ol>
+<li>AppImage 程序可以直接终端运行，但是先给个执行权限。很惭愧，我自己为了图省事，全部给的是777权限。</li>
+</ol>
+<p>本例中的 <code>~/bin/</code> 目录应当是一个你方便管理的，并且处在 PATH 环境变量下，方便你直接终端输入运行。在我的电脑上，我设置为 <code>~/bin</code> 而不是 <code>~/bin/.local/bin</code>来方便我管理。如果你采用的是 zsh 作为 默认 shell, 你可能已经把这个目录作为执行目录了，请自行 <code>echo $PATH</code> 查看。</p>
+<p>接下来，终端运行 <code>sunshine</code> 命令，你就会发现你桌面右下角的系统托盘上多了一处地方，可以右键打开 web 管理器。为什么要这么描述？因为在我的电脑上，sunshine 在系统托盘上根本没有图标。</p>
+<figure>
+<p><img alt="sunshine 任务栏" src="https://repo.sxrhhh.top/undefined7330e753652fd1e765ccb6a14b3cc4d2.jpg" />   <figcaption>刚换 Linux, 这上面的 qq 截图死活截不到右键菜单，无奈，请选择你的拍屏导师.jpg</figcaption> </p>
+</figure>
+<p>点击任务栏上面的那个 Open Sunshine，你就会被跳转到 Sunshine 的web 管理页面，会要求你新建一个账户和密码。这一套账号密码是用来以后登陆后台管理的，与 Moonlight 主控机那边无关。毕竟串流相当于全权交出电脑管理权限，web 页面的端口号要是爆了，能访问到你电脑的陌生设备可就能来帮你管理电脑了，所以设置账号密码也很重要。</p>
+<div class="admonition tip">
+<p class="admonition-title">小贴士</p>
+<p>你要是忘了账号密码，可以直接终端输入 <code>sunshine --creds</code> 重置新的账号密码。</p>
+</div>
+<p>其实挺好玩，毕竟这一套帐密系统说是有账号密码，其实就是要你依次输入两个密码，我看不到账号的作用在哪里。</p>
+<p>然后就是 Moonlight 主控端了，在任意一个你想要作为副屏的设备，比如手机、安卓平板、ipad、另一台电脑、甚至是 Steamdeck 和 Switch，都可以下载安装 Moonlight。各个平台不再赘述，操作方法大同小异。在安装完成 Moonlight 后，<strong>先确保设备和电脑连接在同一个路由器下</strong>，然后，打开 Moonlight ，等待软件找到你的电脑 Host。如果找不到，直接 IP 连接也是一个好主意。</p>
+<div class="admonition info">
+<p class="admonition-title">吐槽</p>
+<p>如果你在确认同一个网段下，确实无法连接到电脑，可以选择检查你电脑的防火墙设置。和 Windows 下的防火墙不一样，Linux 下的防火墙是基于端口和 tcp/udp 协议的。毕竟个人桌面电脑不会跑什么公网服务，为了图省事，我直接把 firewalld 给 disable 了。</p>
+</div>
+<p>当你第一次连接到电脑时，Moonlight 会给出一个 PIN 码要求服务端确认。你可以点击右下角的弹窗提醒，也可以手动进入到 web 后台输入 PIN 码。</p>
+<p><img alt="image-20240115215240866" src="https://repo.sxrhhh.top/undefinedimage-20240115215240866.png" /></p>
+<p>根据终端命令给出的提示，你似乎还可以通过 <code>sunshine -0 xxxx</code> 这样的方式在终端输入 PIN 码来连接，但是我还没有测试。</p>
+<p>如果一切顺利，你应该能够看到手机和电脑的画面同步了，并且手机上滑动屏幕还能操控鼠标移动。如果手机或平板有外接键盘，你甚至可以用那个键盘来打字。</p>
+<h2 id="创建虚拟显示屏">创建虚拟显示屏<a class="headerlink" href="#创建虚拟显示屏" title="永久链接">&para;</a></h2>
+<p>如果你是试图在 Linux 上串流游戏的，那么到这也就结束了。但我们目的并不停滞于此，我们想要的是一个副屏，能够把手机平板当作电脑显示屏的方案。很明显，我们现在只能手机电脑同步画面，想要一个新的显示屏用来串流，我们采用什么方法呢？<strong>这才是本文的重点</strong>。</p>
+<p>在网上一部分的教程中，有人提出使用 HDMI 欺骗器用来创建一个屏幕。作为 Linux 系统，几乎所有设备都可以虚拟一个，那么还要连接一个欺骗器的方案肯定不符合我们的预期，我们需要一个纯软件的方案。一部分教程给出了一些第三方虚拟屏幕软件，基本都是 Windows 下的，既然是设备层面地去虚拟一个显示器，用 wine 去兼容的方案肯定不符合预期。还有一个方案提出下载一个叫 virtscreen 的应用，它有 AppImage 的包，很可惜它无法在我的设备上运行，即使我的系统完全符合要求，更何况这个软件局限于 Xorg 的 X11 桌面，不支持 Wayland。</p>
+<p>最后，我在一个叫做 deskreen 的副屏方案的 issue 区找到了一个建立副屏的方案：<a href="https://github.com/pavlobu/deskreen/issues/42">https://github.com/pavlobu/deskreen/issues/42</a>。他采用了 Linux 下 X 桌面原生的屏幕管理器 <code>xrandr</code></p>
+<p>。虽然同样不支持 Wayland，但是我相信 Wayland 下一定有一个对位的管理器可以用类似的方法实现本文方案。</p>
+<div class="admonition tip">
+<p class="admonition-title">小贴士</p>
+<p>据 <a href="https://blog.chyk.ink/2022/07/17/linux-virtual-display/">千雪的咖啡厅</a> 博客下描述，Wayland 用户应该可以用一个叫做 <code>krfb-virtualmonitor</code> 的命令行工具来创建虚拟显示屏，有可能比 X11 还要快。</p>
+</div>
+<p>这里提到了 deskreen 这个方案，但是我没有使用，可能是因为我不太喜欢用 web 这样的形式来扩展副屏，显得怪怪的。</p>
+<p>现在我们打开终端，输入 <code>xrandr</code> ，就可以看到 X11 桌面下，你目前已经连接了几个显示屏。在正常情况下，你一般只会有一个显示屏显示 <code>connected</code> 。</p>
+<p><img alt="image-20240116132622658" src="https://repo.sxrhhh.top/undefinedimage-20240116132622658.png" /></p>
+<p>在我的电脑上，显示已经连接了一个叫做 <code>eDP</code> 的屏幕，紧跟着一堆 <code>DisplayPort</code> ，因为我的电脑是笔记本，所以是这个样子。根据电脑不同，这些名字还可能会有诸如 <code>HDMI-0</code> 、<code>DVI-D-0</code> 之类的设备名。</p>
+<p>在图中，我们还能看到 <code>DisplayPort-0</code> 下面已经有了一个类似分辨率的东西，这是因为我已经配置完了，否则这一项会和下面的 1-7 完全一样。在这里你也能看到 <code>165.00</code> 旁边有一个 <code>*</code> 号，这表示这块屏幕已经向外输出视频了。</p>
+<div class="admonition tip">
+<p class="admonition-title">小贴士</p>
+<p>在这里，我们采用的是现有的未连接通道，如果你不想要如此使用，而是自己虚拟一个显示屏，又或者是确实没有空余的未连接通道，你可以移步至千雪大佬的博客：<a href="https://blog.chyk.ink/2022/07/17/linux-virtual-display/">千雪的咖啡厅</a>，那里会有新建一个显示屏的方法</p>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>xrandr<span class="w"> </span>--addmode<span class="w"> </span>DisplayPort-0<span class="w"> </span>1920x1080<span class="w"> </span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>xrandr<span class="w"> </span>--output<span class="w"> </span>DisplayPort-0<span class="w"> </span>--mode<span class="w"> </span>1920x1080<span class="w"> </span>--left-of<span class="w"> </span>eDP
 </span></code></pre></div>
-<p>通过管理员模式保存文件，然后在cmd中ping试试</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ping<span class="w"> </span>pi.example.com
+<p>核心命令就是这么两行，<strong>不要直接复制粘贴，请先往下看，然后根据自己的电脑情况修改参数</strong>。</p>
+<p>其中第一行表示给 <code>DisplayPort-0</code> 添加一个分辨率 mode，然后第二行就是要求这块屏幕输出内容了。那么这块屏幕应当与主屏幕连接以作为副屏使用，我们需要为它安排一个位置，注意最后两个参数 <code>--left-of eDP</code> ，很好理解，第一个参数就是表明我们创建的新屏幕应当放在第二个参数（我们主屏幕）的哪一个方位。本例中就是把副屏放在主屏幕的左边。这个方位一般有四种：<code>--left-of</code>、<code>--right-of</code>、<code>--above</code>、<code>--below</code>，这四个参数顾名思义，不多解释。</p>
+<p>当你敲完第二个命令的时候，你的屏幕应该会闪烁一下，就跟 Windows 下调整完显示设置那样，整个桌面都刷新了。加入你设置的参数是 <code>--left-of</code> ，那么你把鼠标往最左边移动，就会发现左边的屏幕打通了，可以多往左移动一大段距离，再移回来。很明显，已经成功创建了一个虚拟屏幕。</p>
+<p>如果你想关掉这个屏幕，也就是停止输出，可以执行：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>xrandr --output DisplayPort-0 --off
 </span></code></pre></div>
-<p>完成，以后可以用这个主机名连接了。</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh<span class="w"> </span>pi@pi.example.com
-</span></code></pre></div>
-<p>## 3. 安装OMV</p>
-<h3 id="31-升级系统">3.1 升级系统<a class="headerlink" href="#31-升级系统" title="永久链接">&para;</a></h3>
-<p>在安装OMV之前，我们先接入树莓派，进行一下系统的升级</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>upgrade
-</span></code></pre></div>
-<p>然后重启</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>reboot
-</span></code></pre></div>
-<p><strong>请注意：在接下来的每次重启后，如果发现ssh无法连接树莓派，请到路由器上重新查看树莓派的IP地址</strong></p>
-<h3 id="32-自动安装脚本">3.2 自动安装脚本<a class="headerlink" href="#32-自动安装脚本" title="永久链接">&para;</a></h3>
-<p>在树莓派上安装OMV非常简单，只需要运行官方提供的自动安装脚本即可一键安装。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>wget<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
-</span></code></pre></div>
-<p>如果遇到网络问题（被墙）等问题，可以选择直接下载<code>install</code>文件，然后通过ftp软件导入树莓派直接安装。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>bash<span class="w"> </span>./install
-</span></code></pre></div>
-<p>经过漫长的等待，如果没出现问题，他会提示自动重启，随后你将自动断开连接。</p>
-<blockquote>
-<p>根据多种因素，运行此脚本最多可能需要 30 分钟。</p>
-<p>​                 ——OMV官网</p>
-</blockquote>
-<p>现在，我们的OMV就已经安装完毕，可以进行配置了。</p>
-<h2 id="4-配置omv">4. 配置OMV<a class="headerlink" href="#4-配置omv" title="永久链接">&para;</a></h2>
-<h3 id="41-基础配置">4.1 基础配置<a class="headerlink" href="#41-基础配置" title="永久链接">&para;</a></h3>
-<p>在浏览器中打开树莓派的IP地址，就可以看到登陆界面，输入你的用户名和密码。</p>
-<p>用户名：<code>admin</code> ，默认密码：<code>openmediavault</code></p>
-<h4 id="411-打开仪表盘">4.1.1 打开仪表盘<a class="headerlink" href="#411-打开仪表盘" title="永久链接">&para;</a></h4>
-<p>进入网页，我们点击设置</p>
-<p><img alt="打开设置" src="https://repo.sxrhhh.top/picgoomv6ug_-_dash.jpg" /></p>
-<p>将里面的所有选项全部勾上，保存。然后你就能看到仪表盘了。</p>
-<p><img alt="仪表盘" src="https://repo.sxrhhh.top/picgoimage-20230718202017641.png" /></p>
-<h4 id="412-更改密码">4.1.2 更改密码<a class="headerlink" href="#412-更改密码" title="永久链接">&para;</a></h4>
-<p>打开下图界面，更改密码</p>
-<p><img alt="更改密码" src="https://repo.sxrhhh.top/picgoimage-20230718202329297.png" /></p>
-<h4 id="413-调整登出时间">4.1.3 调整登出时间<a class="headerlink" href="#413-调整登出时间" title="永久链接">&para;</a></h4>
-<p>点击下图设置，调整登出时间，可以保证你不会一离开电脑就登出的烦恼。</p>
-<p><img alt="登出时间" src="https://repo.sxrhhh.top/picgoimage-20230718202525161.png" /></p>
-<p>随后，保存，点击黄框中的确定，应用配置。</p>
-<p><img alt="黄框应用配置" src="https://repo.sxrhhh.top/picgoimage-20230718202827619.png" /></p>
-<blockquote>
-<p>这个项目有一点不错，就是保存和应用分离，这样保证你可以放心在多个栏目下更改设置，最后统一应用，既有速度，又有安全性，就是有一点小烦。。。</p>
-</blockquote>
-<h4 id="414-安装-omv-extras">4.1.4 安装 OMV-Extras<a class="headerlink" href="#414-安装-omv-extras" title="永久链接">&para;</a></h4>
-<p>ssh连接树莓派，输入如下命令：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>wget<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/master/install<span class="w"> </span><span class="p">|</span>sudo<span class="w"> </span>bash
-</span></code></pre></div>
-<p>同样的，你也可以通过直接下载<code>install</code>文件并导入树莓派来安装。</p>
-<p>在安装成功后，你将看到OMV-Extras出现在菜单栏。</p>
-<p><img alt="菜单栏" src="https://repo.sxrhhh.top/picgoimage-20230718211158064.png" /></p>
-<h3 id="42-配置存储">4.2 配置存储<a class="headerlink" href="#42-配置存储" title="永久链接">&para;</a></h3>
-<h4 id="421-添加文件系统">4.2.1 添加文件系统<a class="headerlink" href="#421-添加文件系统" title="永久链接">&para;</a></h4>
-<p>对于OMV，它不支持系统和数据共用一个磁盘，因此，将你的U盘或移动硬盘插入树莓派的USB接口。</p>
-<p>打开网站后台，选择“磁盘”，然后选择U盘的磁盘，点击上方橡皮擦擦除数据。</p>
-<p><u>如果是系统盘，（如图中的/dev/mmcblk0），则无法擦除数据。</u></p>
-<p><img alt="磁盘界面" src="https://repo.sxrhhh.top/picgoimage-20230718213702086.png" /></p>
-<p>然后，点击<strong>“快速”</strong>进行擦除数据。</p>
-<p><strong>注：擦除后U盘内所有数据都将丢失且无法恢复，请注意备份</strong></p>
-<p>随后，依次点击“文件系统”“加号”“EXT4”，选择刚才擦除的U盘，保存，应用。</p>
-<p><img alt="建立文件系统" src="https://repo.sxrhhh.top/picgoimage-20230718214047319.png" /></p>
-<p>在经历了一段时间的等待后，我们看见了如上图所示的文件系统Online标识，意味着我们文件系统建立成功！</p>
-<h4 id="422-创建网络共享">4.2.2 创建网络共享<a class="headerlink" href="#422-创建网络共享" title="永久链接">&para;</a></h4>
-<p>做NAS，必然需要的是网络共享数据，那么我们现在就来将刚才创建好的文件系统共享吧！</p>
-<p><u>下图勘误：第二栏文件系统并非默认，而是选择刚才创建好的文件系统</u></p>
-<p><img alt="共享文件夹" src="https://repo.sxrhhh.top/picgoimage-20230718214857678.png" /></p>
-<p>随后打开 SMB/CIF“Samba网络共享</p>
-<p>如下图：</p>
-<p><img alt="打开SMB" src="https://repo.sxrhhh.top/picgoimage-20230718215727688.png" /></p>
-<p>打开SMB的设置，勾上最上方的启动（enabled），保存，应用。</p>
-<p>随后打开下方共享，新建SMB共享，如下图所示。</p>
-<p><img alt="新建SMB共享" src="https://repo.sxrhhh.top/picgoimage-20230718220005434.png" /></p>
-<p>勾上下图红框中所有选项，注意第一栏为刚才的共享文件夹，第三栏为“允许访客”。其余选项全部保持默认。</p>
-<p><img alt="SMB设置" src="https://repo.sxrhhh.top/picgoimage-20230718220220178.png" /></p>
-<p>最后保存并应用设置。</p>
-<p>最后结果应当如此：</p>
-<p><img alt="SMB结果" src="https://repo.sxrhhh.top/picgoimage-20230718220449259.png" /></p>
-<p>在最后，我们来到windows本机的“网络”，找到树莓派，双击进入。在此之前你可能需要等待几分钟。</p>
-<p><img alt="网络1" src="https://repo.sxrhhh.top/picgoimage-20230718222004116.png" /></p>
-<p><img alt="网络2" src="https://repo.sxrhhh.top/picgoimage-20230718222022061.png" /></p>
-<p><img alt="网络3" src="https://repo.sxrhhh.top/picgoimage-20230718222055606.png" /></p>
-<p>并且，他还可以像正常驱动器一样复制粘贴，新建文件夹和各种东西，非常的赞！！！</p>
-<p>你还可以通过映射驱动器路径将它放在更外面的位置方便存储。</p>
-<p><img alt="已映射驱动器路径" src="https://repo.sxrhhh.top/picgoimage-20230718222504237.png" /></p>
+<h3 id="写一个创建屏幕的脚本可选">写一个创建屏幕的脚本（可选）<a class="headerlink" href="#写一个创建屏幕的脚本可选" title="永久链接">&para;</a></h3>
+<p>这里的一切关于屏幕的改动都不是持久的，也就是说，电脑重启，甚至是桌面重启都会导致设置丢失，新屏幕消失不见。为了方便我们动态管理屏幕，我们不采用持久化的处理，而是写一个方便自己管理的脚本。于是，我利用我学习 shell 时长不到 10min 的技术，勉强写了一个能用的脚本，但确实方便很多。</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">vmonitor.sh</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>xrandr<span class="w"> </span>--addmode<span class="w"> </span>DisplayPort-0<span class="w"> </span>1920x1080<span class="w"> </span><span class="c1">#(1)! </span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">then</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">        </span>vmonitor<span class="w"> </span>--help
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;below&quot;</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="k">then</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">        </span>xrandr<span class="w"> </span>--output<span class="w"> </span>DisplayPort-0<span class="w"> </span>--mode<span class="w"> </span>1920x1080<span class="w"> </span>--below<span class="w"> </span>eDP
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;left&quot;</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="k">then</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">        </span>xrandr<span class="w"> </span>--output<span class="w"> </span>DisplayPort-0<span class="w"> </span>--mode<span class="w"> </span>1920x1080<span class="w"> </span>--left-of<span class="w"> </span>eDP
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;right&quot;</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="k">then</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">        </span>xrandr<span class="w"> </span>--output<span class="w"> </span>DisplayPort-0<span class="w"> </span>--mode<span class="w"> </span>1920x1080<span class="w"> </span>--right-of<span class="w"> </span>eDP
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;above&quot;</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="k">then</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">        </span>xrandr<span class="w"> </span>--output<span class="w"> </span>DisplayPort-0<span class="w"> </span>--mode<span class="w"> </span>1920x1080<span class="w"> </span>--above<span class="w"> </span>eDP
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;off&quot;</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="k">then</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="w">        </span>xrandr<span class="w"> </span>--output<span class="w"> </span>DisplayPort-0<span class="w"> </span>--off
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;--help&quot;</span><span class="w"> </span><span class="o">]</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="k">then</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  参数：&quot;</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  below           在主屏幕下方创建一个虚拟屏幕&quot;</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  above           在主屏幕上方创建一个虚拟屏幕&quot;</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  left            在主屏幕左方创建一个虚拟屏幕&quot;</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  right           在主屏幕右方创建一个虚拟屏幕&quot;</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  off             关闭虚拟屏幕&quot;</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="k">else</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">        </span>vmonitor<span class="w"> </span>--help
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="k">fi</span>
+</span></code></pre></div></td></tr></table></div>
+<ol>
+<li>该脚本下所有命令重复执行都是安全的，所以我把这句话直接放在了第一行</li>
+</ol>
+<p>然后我再把这个脚本软连接到 <code>~/bin</code> 下，这样一来，我就可以方便的用类似于终端命令的方法去快速地创建虚拟屏幕了。比如 <code>vmonitor left</code> 或者是 <code>vmonitor off</code>。各位可以自己去自定义。</p>
+<h2 id="将副屏进行串流">将副屏进行串流<a class="headerlink" href="#将副屏进行串流" title="永久链接">&para;</a></h2>
+<p>现在便是我们的最后一步。我们创建好了一个副屏，鼠标也是顺利地进入了那块地方，但是我们却没有办法看到。现在，拿出平板放在一边，我们要进入 Sunshine 去设置串流位置，也就是说让平板能够显示我们的副屏。</p>
+<p>首先是在终端打开 Sunshine, 观察它的输出信息，可以看见有一列的显示屏编号：</p>
+<p><img alt="image-20240116192259024" src="https://repo.sxrhhh.top/undefinedimage-20240116192259024.png" /></p>
+<p>可以看到，我们的 <code>DisplayPort-0</code> 在终端上显示为 1 号，记录一下，这将是我们串流的默认通道。</p>
+<p>然后进入到 Sunshine 的 Web 后台，找到显示器设置，将你的显示器编号输入进去。</p>
+<figure>
+<p><img alt="image-20240116192851250" src="https://repo.sxrhhh.top/undefinedimage-20240116192851250.png" /> <figcaption>可以看到红框部分也是提示了我们，显示器编号应该去哪里找</figcaption> </p>
+</figure>
+<p>现在，重启平板上的 Moonlight，重新连接电脑，你就会发现一件奇怪的事——平板黑屏了。如果你把鼠标移过去倒也能看到鼠标，但是就是没有画面。</p>
+<p>其实这个问题倒也不是问题，如果你曾经因为桌面卡死而执行过 <code>killall plasmashell</code> 这种命令就会知道，其实只是没有桌面系统，也就是任务栏、桌面图片和一些控件，但是已经开启了的应用是可以在上面运行的。换句话讲，你现在把你主屏幕上的一些应用直接拖到左边副屏上，就已经可以使用了！</p>
+<p>大功告成！！！</p>
+<h2 id="已知问题">已知问题<a class="headerlink" href="#已知问题" title="永久链接">&para;</a></h2>
+<p>在测试途中，倒也发现了一些问题。</p>
+<p>首先就是在 Moonlight 连接状态时，如果你像我一样写好了 <code>vmonitor</code> 脚本，并且依次执行 <code>vmonitor off</code> 、<code>vmonitor left</code> 就会发现副屏切换回主屏幕界面，然后再切回副屏界面，所有应用保存在副屏。这个很符合预期。</p>
+<p><strong>但是</strong>，如果我们在已经关闭了副屏的基础上，也就是 <code>vmonitor off</code> 的情况下，在终端运行了 <code>sunshine</code> ，很有可能会造成 KDE 卡死，除了鼠标所有东西都不动了。我的解决方案是：切换到 TTY 下，运行 <code>sudo systemctl restart sddm</code> 来重启窗口管理器解决问题，代价就是一些已经开好了的桌面应用需要重新开启。</p>
+<p>因此，每次开启电脑或是重启桌面后，必须先要运行 <code>xrandr</code> 命令，或是像我那样的 <code>vmonitor</code> 脚本，再运行 Sunshine, 防止桌面卡死。</p>
+<p>第二点就是在 Moonlight 串流成功后，电脑会首先将声音扬声器转移到 Moonlight 控制端，也就是平板发出了声音。如果我再在任务栏将声音通道转回来，我的电脑会恢复发出声音的情况，但是我的平板并不会停止发出声音。我在声音设置下将除了耳机以外所有音频通道全部静音也无济于事。我的解决方案便是将平板在物理层面上静音，也就是设置设备的扬声器。</p>
 <hr />
-<p>作者：Sxrhhh</p>
-<p>个人网站：<a href="https://www.sxrhhh.top">https://www.sxrhhh.top</a></p>
-<p>转载请注明出处.</p>
+<p>作者：Sxrhhh </p>
+<p>个人网站：<a href="https://www.sxrhhh.top/">https://www.sxrhhh.top</a>  </p>
+<p>博客园：<a href="https://www.cnblogs.com/sxrhhh/">Sxrhhh - 博客园 (cnblogs.com)</a> </p>
+<p>转载请注明出处. </p>
 <p>在个人网站持续更新中……</p>
 
 

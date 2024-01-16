@@ -11,7 +11,7 @@ nav:
     - 想法: idea/index.md
     - 2023 个人年度总结: idea/2023个人年度总结.md
   - 关于本站: about.md
-  - '':
+  - test:
     - test: test/index.md
     - 2a22: test/222.md
     - 1a11: test/111.md
