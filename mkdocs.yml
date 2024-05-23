@@ -8,8 +8,10 @@ nav:
     - 博客主页: blog/index.md
   - 网站词云: tags.md
   - 想法: 
+    # - 想法: idea/index.md
+    # - 2023 个人年度总结: idea/2023个人年度总结.md
     - 想法: idea/index.md
-    - 2023 个人年度总结: idea/2023个人年度总结.md
+
   - 关于本站: about.md
   - test:
     - test: test/index.md
@@ -58,6 +60,10 @@ plugins:
   - blog:  # 内置博客插件
       post_excerpt: required  # 强制使用摘录
       blog_toc: true  # 可以使用目录查看帖子
+    
+  - blog:
+      blog_toc: true
+      blog_dir: idea
 
   - tags:
       tags_file: tags.md
