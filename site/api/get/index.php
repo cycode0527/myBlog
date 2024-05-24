@@ -41,5 +41,7 @@ if (isset($json['expressions']))
     foreach ($json['expressions'] as $k => $v) foreach($v as $k2 => $expression)
         if ($k2 == 'file') $json['expressions'][$k][$k2] = '../model/' . $modelName . '/' . $expression;
 
+$json['flag'] = '来都来了，去首页评论一下呗，这样我会很高兴的！（不要剧透哦）';
+
 header("Content-type: application/json");
 echo $jsonCompatible->json_encode($json);
