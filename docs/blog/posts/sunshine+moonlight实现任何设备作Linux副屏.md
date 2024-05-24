@@ -5,6 +5,7 @@ categories:
 tags: 
     - Linux
     - 笔记本
+    - Sunshine
 slug: sunshine-moonlight-to-create-a-virtual-monitor
 readtime: 7
 
