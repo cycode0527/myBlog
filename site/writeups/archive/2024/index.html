@@ -1199,6 +1199,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#每日一题--swpuctf-2021-新生赛hardrce" class="md-nav__link">
+    <span class="md-ellipsis">
+      每日一题 —— [SWPUCTF 2021 新生赛]hardrce
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#每日一题--hdctf-2023searchmaster" class="md-nav__link">
     <span class="md-ellipsis">
       每日一题 —— [HDCTF 2023]SearchMaster
@@ -1507,6 +1516,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#每日一题--swpuctf-2021-新生赛hardrce" class="md-nav__link">
+    <span class="md-ellipsis">
+      每日一题 —— [SWPUCTF 2021 新生赛]hardrce
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#每日一题--hdctf-2023searchmaster" class="md-nav__link">
     <span class="md-ellipsis">
       每日一题 —— [HDCTF 2023]SearchMaster
@@ -1538,6 +1556,40 @@
         <li class="md-meta__item">
           <time datetime="2024-05-25 00:00:00">2024年5月25日</time></li>
         
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="每日一题--swpuctf-2021-新生赛hardrce"><a class="toclink" href="../../2024/05/25/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--swpuctf-2021-%E6%96%B0%E7%94%9F%E8%B5%9Bhardrce/">每日一题 —— [SWPUCTF 2021 新生赛]hardrce</a></h2>
+<blockquote>
+<p>题目地址：<a href="https://www.nssctf.cn/problem/439">https://www.nssctf.cn/problem/439</a></p>
+</blockquote>
+
+    <nav class="md-post__action">
+      <a href="../../2024/05/25/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--swpuctf-2021-%E6%96%B0%E7%94%9F%E8%B5%9Bhardrce/">
+        继续阅读
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-05-25 00:00:00">2024年5月25日</time></li>
+        
           <li class="md-meta__item">
             分类于
             
@@ -1557,16 +1609,10 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="每日一题--hdctf-2023searchmaster"><a class="toclink" href="../../2024/05/25/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--hdctf-2023searchmaster/">每日一题 —— [HDCTF 2023]SearchMaster</a></h2>
-<p>进入网页，可以看到右边有提示：you can post me a data. 于是，我们利用 POST 请求提交一个变量为 <code>data</code> 的参数。可以看到，我们给 <code>data</code> 赋的值，会在网页正中央回显。</p>
-<p>再看到右边提示：模板都一样我很抱歉，说明这道题考点有可能是 SSTI 模板注入。我进入到了左边作者的博客中，并没有发现什么有用的提示。通过插件，我发现题目网页是 php 项目。于是 bing 搜索关键词：php ssti,发现有几种框架可能会有 SSTI，分别是 twig 和 Smarty. 我们给 <code>data</code> 传入参数 <code>{{123+123}}</code> ，发现网页报错了，泄漏了网页的框架为 <code>Smarty</code> 。</p>
-<p>现在，我们根据网上资料，先给 <code>data</code> 赋值为 <code>{$smarty.version}</code> ，发现回显为 <code>4.1.0</code>。然后，我们继续百度 Sweaty 4.1.0 RCE，得到 payload 的格式为：<code>{if system('cat /flag_13_searchmaster')}{/if}</code>。其中，第一个 if 后面的语句可以任意替换，完成 RCE 漏洞。</p>
-<hr />
-<p>ps: 如果根据作者博客的框架，搜索 hexo 的模板注入，我们会发现一个 payload: <code>{% include_code ../../../../../../../../etc/passwd %}</code> , 然而当我们将此 payload 提交后，会发现作者手动过滤了此注入。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>no way! but you can see my blog~:Boogipop&#39;s Blog
-</span></code></pre></div>
-<p>说明我们需要另寻他路。</p>
-<hr />
-<p>ps2: 其实我也想通过这方法出一道题，来推广一下自己的博客。撞车了（bushi</p>
+<blockquote>
+<p>题目地址：<a href="https://www.nssctf.cn/problem/439">https://www.nssctf.cn/problem/439</a></p>
+</blockquote>
+
     <nav class="md-post__action">
       <a href="../../2024/05/25/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--hdctf-2023searchmaster/">
         继续阅读

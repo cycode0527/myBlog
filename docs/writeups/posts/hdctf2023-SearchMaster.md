@@ -10,6 +10,10 @@ tags:
 ---
 # 每日一题 —— [HDCTF 2023]SearchMaster
 
+> 题目地址：<https://www.nssctf.cn/problem/439>
+
+<!-- more -->
+
 进入网页，可以看到右边有提示：you can post me a data. 于是，我们利用 POST 请求提交一个变量为 `data` 的参数。可以看到，我们给 `data` 赋的值，会在网页正中央回显。
 
 再看到右边提示：模板都一样我很抱歉，说明这道题考点有可能是 SSTI 模板注入。我进入到了左边作者的博客中，并没有发现什么有用的提示。通过插件，我发现题目网页是 php 项目。于是 bing 搜索关键词：php ssti,发现有几种框架可能会有 SSTI，分别是 twig 和 Smarty. 我们给 `data` 传入参数 `{{123+123}}` ，发现网页报错了，泄漏了网页的框架为 `Smarty` 。
