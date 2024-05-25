@@ -11,6 +11,8 @@ nav:
     # - 想法: idea/index.md
     # - 2023 个人年度总结: idea/2023个人年度总结.md
     - 想法: idea/index.md
+  - Writeups:
+    - Writeups: writeups/index.md
 
   - 关于本站: about.md
   - test:
@@ -64,6 +66,10 @@ plugins:
   - blog:
       blog_toc: true
       blog_dir: idea
+
+  - blog:
+      blog_toc: true
+      blog_dir: writeups
 
   - tags:
       tags_file: tags.md

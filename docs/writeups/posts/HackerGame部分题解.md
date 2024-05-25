@@ -2,7 +2,7 @@
 date: 2023-11-07
 slug: writeup-of-hackergame2023
 categories:
-    - CTF
+    - HackerGame
 tags:
     - CTF
     - HackerGame

@@ -1,10 +1,11 @@
 ---
 date: 2024-05-12
 categories:
-    - CTF
+    - 网络安全
 tags: 
     - Java
     - 反序列化
+    - CTF
 slug: learning-java-urldns
 readtime: 9
 
