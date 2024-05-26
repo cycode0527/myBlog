@@ -8,6 +8,11 @@ tag:
     - php伪协议
 ---
 # 每日一题 —— [SWPUCTF 2022 新生赛]ez_ez_php
+
+> 题目地址： <https://www.nssctf.cn/problem/2640>    
+
+<!-- more -->
+
 非常简单的一道题。首先盲猜 flag 在 `./flag.php` 下，使用 php 伪协议读取：
 
 ```
