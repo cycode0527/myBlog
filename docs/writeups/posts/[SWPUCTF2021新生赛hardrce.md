@@ -1,6 +1,6 @@
 ---
 date: 2024-05-25
-categroies: 
+categories: 
     - SWPUCTF
 tag:
     - RCE

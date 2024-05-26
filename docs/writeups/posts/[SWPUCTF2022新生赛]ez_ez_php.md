@@ -1,6 +1,6 @@
 ---
 date: 2024-05-26
-categroies: 
+categories: 
     - SWPUCTF
 tag:
     - PHP
