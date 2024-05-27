@@ -11,7 +11,7 @@
         <link rel="canonical" href="http://www.sxrhhh.top/writeups/category/swpuctf/">
       
       
-        <link rel="prev" href="../hackergame/">
+        <link rel="prev" href="../nustctf/">
       
       
         <link rel="next" href="../../archive/2024/">
@@ -1213,6 +1213,8 @@
       
         
       
+        
+      
     
     
     
@@ -1303,6 +1305,29 @@
   
   <span class="md-ellipsis">
     HackerGame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../nustctf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NUSTCTF
   </span>
   
 
@@ -1646,18 +1671,7 @@
 <blockquote>
 <p>题目地址： <a href="https://www.nssctf.cn/problem/384">https://www.nssctf.cn/problem/384</a></p>
 </blockquote>
-<p>进去给出了代码，可以看到要求传入两个参数：get 一个 <code>json</code> ; post 一个 <code>id</code>.</p>
-<p>打开 HackBar， 直接 post 一个 <code>id=wllbNB</code>, 然后根据代码，我们对 <code>json</code> 参数需要有以下要求：</p>
-<ol>
-<li>是一个合法的 json 字符串</li>
-<li>该 json 对象内有 <code>"x": "wllm"</code> 这个键值对</li>
-</ol>
-<p>所以我们直接构造 <code>json</code> 参数： </p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>?json={&quot;x&quot;:&quot;wllm&quot;}
-</span></code></pre></div>
-<p>两个一起提交，最终得到 flag. 非常非常简单的一道题。</p>
-<hr />
-<p>拓展：php 中存在一个叫做 <code>json_decode</code> 的函数，这个函数的作用就是解析 json 字符串。通常来讲这个函数有两个参数，即： <code>json_decode(string, bool)</code> 。第一个参数 string 类型，表示被解析的 json 字符串。而第二个参数表示解析成的 php 对象。 true 即转换成数组，而 false 就转换成普通的 php 对象。</p>
+
     <nav class="md-post__action">
       <a href="../../2024/05/27/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--swpuctf-2021-%E6%96%B0%E7%94%9F%E8%B5%9Bjicao/">
         继续阅读
