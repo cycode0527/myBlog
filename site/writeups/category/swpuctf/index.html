@@ -1369,6 +1369,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#每日一题--swpuctf-2021-新生赛jicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      每日一题 —— [SWPUCTF 2021 新生赛]jicao
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#每日一题--swpuctf-2022-新生赛ez_ez_php" class="md-nav__link">
     <span class="md-ellipsis">
       每日一题 —— [SWPUCTF 2022 新生赛]ez_ez_php
@@ -1566,6 +1575,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#每日一题--swpuctf-2021-新生赛jicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      每日一题 —— [SWPUCTF 2021 新生赛]jicao
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#每日一题--swpuctf-2022-新生赛ez_ez_php" class="md-nav__link">
     <span class="md-ellipsis">
       每日一题 —— [SWPUCTF 2022 新生赛]ez_ez_php
@@ -1597,6 +1615,56 @@
       <header class="md-typeset">
         <h1 id="swpuctf">SWPUCTF<a class="headerlink" href="#swpuctf" title="永久链接">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-05-27 00:00:00">2024年5月27日</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="./" class="md-meta__link">SWPUCTF</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="每日一题--swpuctf-2021-新生赛jicao"><a class="toclink" href="../../2024/05/27/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--swpuctf-2021-%E6%96%B0%E7%94%9F%E8%B5%9Bjicao/">每日一题 —— [SWPUCTF 2021 新生赛]jicao</a></h2>
+<blockquote>
+<p>题目地址： <a href="https://www.nssctf.cn/problem/384">https://www.nssctf.cn/problem/384</a></p>
+</blockquote>
+<p>进去给出了代码，可以看到要求传入两个参数：get 一个 <code>json</code> ; post 一个 <code>id</code>.</p>
+<p>打开 HackBar， 直接 post 一个 <code>id=wllbNB</code>, 然后根据代码，我们对 <code>json</code> 参数需要有以下要求：</p>
+<ol>
+<li>是一个合法的 json 字符串</li>
+<li>该 json 对象内有 <code>"x": "wllm"</code> 这个键值对</li>
+</ol>
+<p>所以我们直接构造 <code>json</code> 参数： </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>?json={&quot;x&quot;:&quot;wllm&quot;}
+</span></code></pre></div>
+<p>两个一起提交，最终得到 flag. 非常非常简单的一道题。</p>
+<hr />
+<p>拓展：php 中存在一个叫做 <code>json_decode</code> 的函数，这个函数的作用就是解析 json 字符串。通常来讲这个函数有两个参数，即： <code>json_decode(string, bool)</code> 。第一个参数 string 类型，表示被解析的 json 字符串。而第二个参数表示解析成的 php 对象。 true 即转换成数组，而 false 就转换成普通的 php 对象。</p>
+    <nav class="md-post__action">
+      <a href="../../2024/05/27/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--swpuctf-2021-%E6%96%B0%E7%94%9F%E8%B5%9Bjicao/">
+        继续阅读
+      </a>
+    </nav>
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
