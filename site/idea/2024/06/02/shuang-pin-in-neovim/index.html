@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="http://www.sxrhhh.top/idea/2024/05/25/how-to-stream-sunshine-or-steamlink-in-fedora40/">
+        <link rel="canonical" href="http://www.sxrhhh.top/idea/2024/06/02/shuang-pin-in-neovim/">
       
       
-        <link rel="prev" href="../../../../2023/12/31/summary-in-2023/">
+        <link rel="prev" href="../../../05/25/how-to-stream-sunshine-or-steamlink-in-fedora40/">
       
-      
-        <link rel="next" href="../../../06/02/shuang-pin-in-neovim/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../../../feed_rss_created.xml">
@@ -25,7 +23,7 @@
     
     
       
-        <title>如何在 fedora 40 下畅快地串流 Sunshine 或者 Steam Link - Sxrhhh 的个人小站</title>
+        <title>vim 下的双拼跳转？ - Sxrhhh 的个人小站</title>
       
     
     
@@ -81,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#如何在-fedora-40-下畅快地串流-sunshine-或者-steam-link" class="md-skip">
+        <a href="#vim-下的双拼跳转" class="md-skip">
           跳转至
         </a>
       
@@ -117,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              如何在 fedora 40 下畅快地串流 Sunshine 或者 Steam Link
+              vim 下的双拼跳转？
             
           </span>
         </div>
@@ -1636,7 +1634,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2024-05-25 00:00:00" class="md-ellipsis">2024年5月25日</time>
+                        <time datetime="2024-06-02 00:00:00" class="md-ellipsis">2024年6月2日</time>
                       </div>
                     </li>
                     
@@ -1676,16 +1674,33 @@
     <article class="md-content__inner md-typeset">
       
         
+  
+  
+
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../../../../../tags/#vim" class="md-tag">vim</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../tags/#双拼" class="md-tag">双拼</a>
+    
+  
+</nav>
 
 
-<h1 id="如何在-fedora-40-下畅快地串流-sunshine-或者-steam-link">如何在 fedora 40 下畅快地串流 Sunshine 或者 Steam Link<a class="headerlink" href="#如何在-fedora-40-下畅快地串流-sunshine-或者-steam-link" title="永久链接">&para;</a></h1>
-<p>省流：回滚到 X11 。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo dnf install plasma-workspace-x11
-</span></code></pre></div>
-<p>哈哈。。。</p>
-<hr />
-<p>不是开玩笑，今天折腾了半天，wayland 下真的莫名其妙的权限管理，让各种串流软件失效，而且解决步骤及其麻烦，至少在我的电脑上行不通，可能是我菜吧。但是每个软件都麻烦的搞一次，今天是 Sunshine, 明天是 Steam Link, 后天估计就是 OpenVNC 了。不想冒这个险，就回滚了。挺好的，X11 先用着吧。</p>
-<p>这 blog 实在是太没有营养了，就归类这里吧（笑</p>
+
+<h1 id="vim-下的双拼跳转">vim 下的双拼跳转？<a class="headerlink" href="#vim-下的双拼跳转" title="永久链接">&para;</a></h1>
+<p>我做梦也想象不到，我打的双拼竟然可以适合编辑器，换句话说，因为每个字只用两个字母表示，所以大佬们可以很方便地做插件，固定两个字母跳转到你想要去的地方</p>
+<p>我这两天开始摆弄 neovim, 然后摆弄 hop.nvim ，这个插件。最后发现有这么一个项目，他给各个跳转插件都写了中文版。我用了，小鹤双拼，感觉良好。</p>
+<p>我意外的发现，我写的双拼，在 vim 中也可以用。双拼的哲学，竟然出人意料地和 vim 契合了。</p>
+<p>项目地址：<a href="https://github.com/zzhirong/hop-zh-by-flypy">https://github.com/zzhirong/hop-zh-by-flypy</a></p>
+<p>中文 nvim 收集地址：<a href="https://github.com/noearc/nvim-zh">https://github.com/noearc/nvim-zh</a></p>
 
 
 
