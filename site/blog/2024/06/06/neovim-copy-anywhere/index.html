@@ -1912,7 +1912,7 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>clipboard: provider returned invalid data
 </span></code></pre></div>
 <p>这个报错每一次粘贴都会出现，还是红字非常刺眼。我对此很难受，所以还需要想办法解决这个问题。解决思路就是：<strong>因为我们预期的粘贴命令是粘贴 neovim 自己的 <code>y</code> 复制，所以我们只需要让 paste 可以返回 <code>""</code> 临时寄存器的内容就可以了。</strong></p>
-<p>一下就是我的配置，把上面的配置替换成下面这个：</p>
+<p>以下就是我的配置，把上面的配置替换成下面这个：</p>
 <div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nf">my_paste</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="kr">return</span> <span class="kr">function</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
@@ -1957,16 +1957,23 @@
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># 好像还有一些，为了避免误人子弟还是建议自己去查一下</span>
 </span></code></pre></div></p>
 <p>这样，tmux 就会把内容发送给本地终端。</p>
-<blockquote>
-<p>勘误：上文说到，neovim 不会认为你的终端是来自远程 ssh 连接的。其实这句话是不对的，<code>$SSH_TTY</code> 环境变量是否设置，取决于你的 tmux 实在什么环境下开启的。那么如果你是 tmux 和直连混用的人，你需要这么配置</p>
+<div class="admonition warning">
+<p class="admonition-title">勘误</p>
+<p>上文说到，neovim 不会认为你的终端是来自远程 ssh 连接的。其实这句话是不对的，<code>$SSH_TTY</code> 环境变量是否设置，取决于你的 tmux 实在什么环境下开启的。那么如果你是 tmux 和直连混用的人，你需要这么配置</p>
 <p>首先先 <code>echo $TERM</code> 检查一下你的终端类型。通常情况下，当我直连终端时，这个值为 <code>xterm-256color</code>，当使用 tmux 的时候，这个值会变成 <code>tmux-256color</code>。</p>
 <p>然后，改写我之前的 lua 配置，利用 <code>if (os.getenv('TERM') == 'tmux-256color')</code> 判断。具体的配置教程可以参考 <code>:help g:clipboard</code>, 也可以参考网上教程。</p>
-</blockquote>
+</div>
 <h2 id="5-配置-wsl">5. 配置 wsl<a class="headerlink" href="#5-配置-wsl" title="永久链接">&para;</a></h2>
-<p>到了这里，我很高兴的告诉你，在我的设备上(wsl 2.1.0, neovim 0.10.0)，只需要一个 <code>opt clipboard:append('unnamedplus')</code>，wsl 就会自动和系统剪贴板交换，虽然使用 <code>win+R</code> 快捷键可能不一定能看见。</p>
+<p>到了这里，我很高兴的告诉你，在我的设备上(wsl 2.1.0, neovim 0.10.0)，只需要一个 <code>opt clipboard:append('unnamedplus')</code>，wsl 就会自动和系统剪贴板交换，虽然使用 <code>win+V</code> 快捷键查看系统剪贴板可能不一定能看见。</p>
 <p>如果你的配置还是不行，建议参考一下 <code>:help clipboard-wsl</code>。</p>
 <h2 id="6-总结">6. 总结<a class="headerlink" href="#6-总结" title="永久链接">&para;</a></h2>
-<p>我本来是不愿意来 neovim 的，所以自从接触 vim 之后也是过了大半年才入了 neovim 的坑。正因为来晚了，我才看到官方已经原生支持 <code>OSC-52</code> 协议了。当然对于各位大佬来说，也完全没必要去折腾。我希望这篇文章能带给和我一样的 neovim 新手，让他们能够在被 neovim 的剪贴板折磨的时候，能够通过搜索引擎，搜索到这么一篇 2024 年的教程。也希望大家和我多多交流，互相学习。个人网站下方的评论区已开放，欢迎大家来到博客园、知乎、个人网站的评论区一起交流。</p>
+<p>我本来是不愿意来 neovim 的，所以自从接触 vim 之后也是过了大半年才入了 neovim 的坑。正因为来晚了，我才看到官方已经原生支持 <code>OSC-52</code> 协议了。当然对于各位早已入坑的 neovim 玩家来说，也完全没必要去折腾。我希望这篇文章能带给和我一样的 neovim 新手，让他们能够在被 neovim 的剪贴板折磨的时候，能够通过搜索引擎，搜索到这么一篇 2024 年的教程。也希望大家和我多多交流，互相学习。个人网站下方的评论区已开放，欢迎大家来到博客园、知乎、个人网站的评论区一起交流。</p>
+<hr />
+<p>作者：Sxrhhh </p>
+<p>个人网站：<a href="https://www.sxrhhh.top/">https://www.sxrhhh.top</a>  </p>
+<p>博客园：<a href="https://www.cnblogs.com/sxrhhh/">Sxrhhh - 博客园 (cnblogs.com)</a> </p>
+<p>转载请注明出处. </p>
+<p>在个人网站持续更新中……</p>
 
 
 
