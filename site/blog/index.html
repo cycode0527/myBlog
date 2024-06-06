@@ -1629,6 +1629,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#穿透-wsl-和-ssh-新版本-neovim-跨设备任意复制copy-anywhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      穿透 wsl 和 ssh, 新版本 neovim 跨设备任意复制，copy anywhere!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#java学习日志urldns小结" class="md-nav__link">
     <span class="md-ellipsis">
       Java学习日志——URLDNS小结
@@ -1709,15 +1718,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#关于管理编程社网站的知识与技巧自用必看" class="md-nav__link">
-    <span class="md-ellipsis">
-      关于管理编程社网站的知识与技巧（自用，必看）
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1734,6 +1734,45 @@
 <p><img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f604.svg" title=":smile:" /> <strong>还有下一页哦</strong> <img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f604.svg" title=":smile:" /></p>
 <hr />
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-06-06 00:00:00">2024年6月6日</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="category/%E8%BF%90%E7%BB%B4/" class="md-meta__link">运维</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 4 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="穿透-wsl-和-ssh-新版本-neovim-跨设备任意复制copy-anywhere"><a class="toclink" href="2024/06/06/neovim-copy-anywhere/">穿透 wsl 和 ssh, 新版本 neovim 跨设备任意复制，copy anywhere!</a></h2>
+<h3 id="1-创作动机"><a class="toclink" href="2024/06/06/neovim-copy-anywhere/#1-创作动机">1. 创作动机</a></h3>
+<p>最近一个星期，我入坑了 neovim, 然后开始配置各种插件。同一个时间点，我入手了一台 surface go2, 这是个 Windows 平板，我在上面也是装好了各种软件，配置了 wsl2, 并且配置了 ssh。然后我发现当我 ssh 连接到宿舍的高性能笔记本的时候，我打开 neovim 时候无法进行复制粘贴。严格地说，是无法进行复制，因为你无法使用 <code>ctrl+shift+C</code> 进行复制。所以我们通常在本机配置 <code>opt.clipboard:append("unnamedplus")</code> 来直接让 neovim 和系统剪贴板打通。但是这一次我们通过 ssh 传输数据，傻眼了。</p>
+<p>因此，寻找一个可以通过 ssh 传输剪贴板的方案，<del>迫在眉睫</del>.</p>
+
+    <nav class="md-post__action">
+      <a href="2024/06/06/neovim-copy-anywhere/">
+        继续阅读
+      </a>
+    </nav>
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -2068,43 +2107,6 @@
 
     <nav class="md-post__action">
       <a href="2022/04/29/how-to-generate-javadoc/">
-        继续阅读
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2022-04-24 00:00:00">2022年4月24日</time></li>
-        
-          <li class="md-meta__item">
-            分类于
-            
-              <a href="category/%E8%BF%90%E7%BB%B4/" class="md-meta__link">运维</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              需要 15 分钟阅读时间
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="关于管理编程社网站的知识与技巧自用必看"><a class="toclink" href="2022/04/24/manage-to-cycode/">关于管理编程社网站的知识与技巧（自用，必看）</a></h2>
-<p>最近呢，咱们编程社的网站终于是又修好了。趁着这个机会，笔者决定是要写一篇攻略，专门用于了解与锻炼建立网站的能力。所以，如果现在是你在管理编程社的网站，这些东西一定要看，以备不时之需。</p>
-
-    <nav class="md-post__action">
-      <a href="2022/04/24/manage-to-cycode/">
         继续阅读
       </a>
     </nav>

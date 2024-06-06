@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="http://www.sxrhhh.top/blog/2024/05/12/learning-java-urldns/">
+        <link rel="canonical" href="http://www.sxrhhh.top/blog/2024/06/06/neovim-copy-anywhere/">
       
       
-        <link rel="prev" href="../../../01/16/sunshine-moonlight-to-create-a-virtual-monitor/">
+        <link rel="prev" href="../../../05/12/learning-java-urldns/">
       
-      
-        <link rel="next" href="../../../06/06/neovim-copy-anywhere/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../../../feed_rss_created.xml">
@@ -25,7 +23,7 @@
     
     
       
-        <title>Java学习日志——URLDNS小结 - Sxrhhh 的个人小站</title>
+        <title>穿透 wsl 和 ssh, 新版本 neovim 跨设备任意复制，copy anywhere! - Sxrhhh 的个人小站</title>
       
     
     
@@ -81,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#java学习日志urldns小结" class="md-skip">
+        <a href="#穿透-wsl-和-ssh-新版本-neovim-跨设备任意复制copy-anywhere" class="md-skip">
           跳转至
         </a>
       
@@ -117,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Java学习日志——URLDNS小结
+              穿透 wsl 和 ssh, 新版本 neovim 跨设备任意复制，copy anywhere!
             
           </span>
         </div>
@@ -1633,54 +1631,87 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#跟进查看入口类-hashmap" class="md-nav__link">
+  <a href="#1-创作动机" class="md-nav__link">
     <span class="md-ellipsis">
-      跟进查看入口类 HashMap
+      1. 创作动机
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#跟进查看执行类-url" class="md-nav__link">
+  <a href="#2-原理介绍" class="md-nav__link">
     <span class="md-ellipsis">
-      跟进查看执行类 URL
+      2. 原理介绍
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#构造攻击链" class="md-nav__link">
+  <a href="#3-配置-ssh-传输" class="md-nav__link">
     <span class="md-ellipsis">
-      构造攻击链
+      3. 配置 ssh 传输
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 配置 ssh 传输">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-理论基础" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 理论基础
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-按照官方文档配置" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 按照官方文档配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-配置不报错" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 配置不报错
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-配置-tmux-可选" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 配置 tmux (可选)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#反序列化测试" class="md-nav__link">
+  <a href="#5-配置-wsl" class="md-nav__link">
     <span class="md-ellipsis">
-      反序列化测试
+      5. 配置 wsl
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#jdk-版本问题" class="md-nav__link">
+  <a href="#6-总结" class="md-nav__link">
     <span class="md-ellipsis">
-      JDK 版本问题
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#小小总结" class="md-nav__link">
-    <span class="md-ellipsis">
-      小小总结
+      6. 总结
     </span>
   </a>
   
@@ -1723,7 +1754,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2024-05-12 00:00:00" class="md-ellipsis">2024年5月12日</time>
+                        <time datetime="2024-06-06 00:00:00" class="md-ellipsis">2024年6月6日</time>
                       </div>
                     </li>
                     
@@ -1734,7 +1765,7 @@
                           <span class="md-ellipsis">
                             分类于
                             
-                              <a href="../../../../category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a></span>
+                              <a href="../../../../category/%E8%BF%90%E7%BB%B4/">运维</a></span>
                         </div>
                       </li>
                     
@@ -1745,7 +1776,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 9 分钟阅读时间
+                              需要 4 分钟阅读时间
                             
                           </span>
                         </div>
@@ -1771,117 +1802,171 @@
     
     
     
-      <a href="../../../../../tags/#java" class="md-tag">Java</a>
+      <a href="../../../../../tags/#wsl" class="md-tag">wsl</a>
     
   
     
     
     
-      <a href="../../../../../tags/#反序列化" class="md-tag">反序列化</a>
+      <a href="../../../../../tags/#neovim" class="md-tag">Neovim</a>
     
   
     
     
     
-      <a href="../../../../../tags/#ctf" class="md-tag">CTF</a>
+      <a href="../../../../../tags/#vim" class="md-tag">vim</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../tags/#osc-52" class="md-tag">OSC-52</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../tags/#lua" class="md-tag">Lua</a>
     
   
 </nav>
 
 
 
-<h1 id="java学习日志urldns小结">Java学习日志——URLDNS小结<a class="headerlink" href="#java学习日志urldns小结" title="永久链接">&para;</a></h1>
-<p>开始学习 Java 反序列化，开此文章记录向其迈出的第一步。</p>
-<blockquote>
-<p>前置知识：Java 反射的基本利用。Java 序列化与反序列化的基本原理</p>
-</blockquote>
+<h1 id="穿透-wsl-和-ssh-新版本-neovim-跨设备任意复制copy-anywhere">穿透 wsl 和 ssh, 新版本 neovim 跨设备任意复制，copy anywhere!<a class="headerlink" href="#穿透-wsl-和-ssh-新版本-neovim-跨设备任意复制copy-anywhere" title="永久链接">&para;</a></h1>
+<h2 id="1-创作动机">1. 创作动机<a class="headerlink" href="#1-创作动机" title="永久链接">&para;</a></h2>
+<p>最近一个星期，我入坑了 neovim, 然后开始配置各种插件。同一个时间点，我入手了一台 surface go2, 这是个 Windows 平板，我在上面也是装好了各种软件，配置了 wsl2, 并且配置了 ssh。然后我发现当我 ssh 连接到宿舍的高性能笔记本的时候，我打开 neovim 时候无法进行复制粘贴。严格地说，是无法进行复制，因为你无法使用 <code>ctrl+shift+C</code> 进行复制。所以我们通常在本机配置 <code>opt.clipboard:append("unnamedplus")</code> 来直接让 neovim 和系统剪贴板打通。但是这一次我们通过 ssh 传输数据，傻眼了。</p>
+<p>因此，寻找一个可以通过 ssh 传输剪贴板的方案，<del>迫在眉睫</del>.</p>
 <!-- more -->
 
-<h2 id="跟进查看入口类-hashmap">跟进查看入口类 HashMap<a class="headerlink" href="#跟进查看入口类-hashmap" title="永久链接">&para;</a></h2>
-<p>根据 <code>ysoserial</code>上的 URLDNS 模块源码，我们得知整条链如下</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> *   Gadget Chain:
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> *     HashMap.readObject()
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> *       HashMap.putVal()
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a> *         HashMap.hash()
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a> *           URL.hashCode()
+<h2 id="2-原理介绍">2. 原理介绍<a class="headerlink" href="#2-原理介绍" title="永久链接">&para;</a></h2>
+<p>首先，我们要介绍一下 nvim 传输剪贴板的方式。</p>
+<p>第一步，当 neovim 执行 <code>"*y</code> 或者 <code>"+y</code> 的时候，就会把选中的内容写入到系统剪贴板中。这一步，并不是直接写入系统剪贴板的。neovim 会按照一定的优先级调用程序，而当某个程序符合要求的时候，neovim 就会调用这个程序。在以 X11 驱动的 Linux 桌面上，这个程序是 <code>xclip</code>。也就是说只要有 <code>xclip</code> 这个程序，neovim 就可以把内容写入到剪贴板。Wayland 、MacOS 、Windows 等平台都是有对应的剪贴板程序的，我们可以在 neovim 中使用 <code>:help clipboard-tool</code> 来查看对应的程序。</p>
+<p>还是第一步，如果 neovim 是使用 ssh 远程连接的，那么远程的我们肯定也是无法访问到系统剪贴板的。所以我们可以通过设置 <code>g:clipboard</code> 这个变量，让 neovim 执行 <code>"*y</code> 或者 <code>"+y</code> 的时候，把内容作为传入到 <code>g:clipboard</code> 这个变量定义的函数中。这一步我们可以实现将复制的内容利用 <code>OSC-52</code> 传输到远程的机器上。</p>
+<p>第二步，我们在本地的机器上操控远程的 neovim 时，会接收到传来的 <code>OSC-52</code> 内容。如果你的终端模拟器能支持 <code>OSC-52</code> 的话，它就会帮你自动的把传来的内容写入到系统剪贴板中。但是反过来的话却不一定，这个是安全原因，因为如果你的终端想要发送剪贴板的内容，必然需要读取系统剪贴板。这个是有风险的。如果开启，我们可以在远程上直接使用 <code>p</code> 命令粘贴。但是不开启的话，我们仍然可以进入 <code>insert</code> 模式，然后使用 <code>ctrl+shift+v</code> 粘贴。</p>
+<p>第三步，我们配置好 <code>g:clipboard</code> 变量之后，就可以直接使用 <code>"*y</code> 或者 <code>"+y</code> 进行复制。但是如果我们想要更方便，不想使用寄存器，直接使用 <code>y</code> <code>p</code> 命令，那么我们需要让 neovim 默认使用无名寄存器，配置加入这么一条就行了: <code>opt.clipboard:append("unnamedplus")</code>。</p>
+<p>如图就是这一套剪贴板内容传输的流程图。当你配置完成之后，你就可以不需要多余的操作而直接复制粘贴了。</p>
+<p><img alt="" src="https://repo.sxrhhh.top/undefined20240605015014.png" /></p>
+<p>下面就是具体的各种情况的配置过程。</p>
+<h2 id="3-配置-ssh-传输">3. 配置 ssh 传输<a class="headerlink" href="#3-配置-ssh-传输" title="永久链接">&para;</a></h2>
+<h3 id="31-理论基础">3.1 理论基础<a class="headerlink" href="#31-理论基础" title="永久链接">&para;</a></h3>
+<p>ssh 传输剪贴板是目前用处最广的, 配置它我们就需要利用好 <code>OSC-52</code> 协议。</p>
+<p>首先，我们需要确认好我们目前使用的终端是否支持 <code>OSC-52</code> 协议。网上可以找到一张主流终端模拟器是否对 <code>OSC-52</code> 协议的支持表。这里我就贴下来了。</p>
+<ul>
+<li>Windows平台 - Windows Terminal：支持</li>
+<li>Mac 平台 - iTerm2：支持</li>
+<li>Mac 平台 - terminal.app：不支持</li>
+<li>Ubuntu 平台 - Gnome Terminal：不支持</li>
+<li>Chromebook - hterm：支持</li>
+<li>跨平台 - alacritty：支持</li>
+<li>跨平台 - kitty：支持</li>
+<li>终端复用 - tmux：支持</li>
+<li>终端复用 - screen：支持</li>
+</ul>
+<p>也就是说，当你使用 Windows Terminal 作为你连接和使用远程 linux 上的 neovim 时，你就可以直接使用 <code>OSC-52</code> 协议进行剪贴板传输，请放心使用。</p>
+<p>然后，我们需要在远程的 neovim 中配置 <code>g:clipboard</code> 变量。这个变量分为两个部分，一部分是 copy，另一部分是 paste。copy 部分是当执行 <code>"*y</code> 或者 <code>"+y</code> 的时候，把选中的内容作为参数传给 <code>g:clipboard.copy，</code>paste 部分是当执行 <code>"*p</code> 的时候，把远程的 neovim 的剪贴板内容作为参数传给 neovim 来直接粘贴。然而通常，paste 会导致终端读取我们本地的剪贴板，经过网络传输，不太安全。所以一般大部分终端模拟器的 <code>OSC-52</code> 协议是<strong>不可读取</strong>的。这包括了 <strong>Windows Terminal</strong></p>
+<p>打开 neovim， 输入 <code>:help clipboard-osc52</code> 就可以看到 <code>OSC-52</code> 的帮助文档。这说明 neovim 已经原生支持了 <code>OSC-52</code> 协议。网上似乎说这一条的毕竟少，毕竟 neovim 0.10 是三个星期前刚发布的，之前用的人多了就没有关注这个新配置。而我正好是最近入坑的，查帮助文档看到了这个。在此之前人们基本上都是推荐 <code>vim.oscyank</code> 这个插件来支持 <code>OSC-52</code> 协议的。既然有原生的支持，我们就<strong>不需要</strong>再安装这个插件了。</p>
+<h3 id="32-按照官方文档配置">3.2 按照官方文档配置<a class="headerlink" href="#32-按照官方文档配置" title="永久链接">&para;</a></h3>
+<p>我们先在 neovim 里面执行 <code>:help clipboard-osc52</code> 看一下官方文档。如果你之前正常配置过 neovim ，就应该会有一个自己的配置文件目录，这里不再赘述，所以我们直接贴出官方的配置文档。</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">clipboard</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>      <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;OSC 52&#39;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>      <span class="n">copy</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="p">[</span><span class="s1">&#39;+&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;vim.ui.clipboard.osc52&#39;</span><span class="p">).</span><span class="n">copy</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">),</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;vim.ui.clipboard.osc52&#39;</span><span class="p">).</span><span class="n">copy</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">),</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      <span class="p">},</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>      <span class="n">paste</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="p">[</span><span class="s1">&#39;+&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;vim.ui.clipboard.osc52&#39;</span><span class="p">).</span><span class="n">paste</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">),</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;vim.ui.clipboard.osc52&#39;</span><span class="p">).</span><span class="n">paste</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">),</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>      <span class="p">},</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="p">}</span>
 </span></code></pre></div>
-<p>在略微学习了一下基本的反序列化只是之后，我们知道对象反序列化，会触发该对象的 <code>readObject()</code> 方法。而想要利用反序列化漏洞，我们要尽可能找到一个合适的入口类，通常需要如下的要求：</p>
-<ol>
-<li>该类为 Java 内部类，或是很常见的外部类，从而确保适用性。</li>
-<li>该类自己实现了 <code>readObject()</code> 方法。</li>
-<li>该类的 <code>readObject()</code> 方法会触发其他方法，并且最终来到我们要执行的类的方法。</li>
-</ol>
-<p>大佬们找到了 <code>HashMap</code>类，这个类重写了 <code>readObject()</code> 方法，在其中，我们能看到他对每个元素的 key 值调用的 <code>hash()</code> 方法，以确保 key 值在不同的机器上的 hash 值唯一。</p>
-<p>这是 <code>HashMap.readObject()</code> 方法的部分实现，可以看到每个 key 都会调用 <code>hash()</code> 方法。</p>
-<p><img alt="image-20240512144317476" src="https://repo.sxrhhh.top/undefinedimage-20240512144317476.png" /></p>
-<p>跟进 <code>hash()</code> 方法，可以看见它对 key 值调用了 <code>hashCode()</code> 方法（只要 key 存在）。</p>
-<p><img alt="image-20240512144510070" src="https://repo.sxrhhh.top/undefinedimage-20240512144510070.png" /></p>
-<p>到此停止跟进，因为现在要调用的是 key 的 <code>hashCode()</code> 方法，我们需要找到一个类作为执行类，放入 HashMap 的 key 字段，这样当他反序列化时就会执行这个 key 对象的 <code>hashCode()</code> 方法。</p>
-<h2 id="跟进查看执行类-url">跟进查看执行类 URL<a class="headerlink" href="#跟进查看执行类-url" title="永久链接">&para;</a></h2>
-<p>现在我们需要第二个类放入 HashMap 的 key 字段，并且满足以下要求：</p>
-<ol>
-<li>可以被反序列化，即实现 serializeable 接口</li>
-<li>同样要求要么内部类，要么属于攻击目标的依赖，这样目标反序列化后才可以执行成功。</li>
-<li>不要求拥有 <code>readObject()</code> 方法，但是要求有上一个类传递下来的同名方法</li>
-<li>最好能够执行我们需要的命令，或者能够将链条延伸到下一个执行类</li>
-</ol>
-<p>大佬们又找到了第二个类：<code>URL</code> 类。</p>
-<p>这个类有着 <code>hashCode()</code> 方法，可以连接上面。然后这个方法最终可以发送一个 dns 请求，完成反序列化执行。我们跟进 URL 类，看下他的 <code>hashCode()</code> 方法：</p>
-<p><img alt="image-20240512145854555" src="https://repo.sxrhhh.top/undefinedimage-20240512145854555.png" /></p>
-<p>可以看到 URL 类存在一个私有属性 <code>hashCode</code> 且默认值为 -1：</p>
-<p><img alt="image-20240512150217606" src="https://repo.sxrhhh.top/undefinedimage-20240512150217606.png" /></p>
-<p>也就是说，当 URL 对象并没有执行过 <code>hashCode()</code>方法时，他会调用他的 <code>handler.hashCode()</code> 方法。这个叫做 <code>URLStreamHandler</code> 的类也算是这条攻击链的一环。我们跟进一下：</p>
-<p><img alt="image-20240512151133867" src="https://repo.sxrhhh.top/undefinedimage-20240512151133867.png" /></p>
-<p>可以看见 <code>handler.hashCode()</code> 方法会调用 url 的 <code>getHostAddress()</code>方法，这个方法会向着域名类型的 URL 链接发送 dns 请求，从而确认存在反序列化漏洞。</p>
-<h2 id="构造攻击链">构造攻击链<a class="headerlink" href="#构造攻击链" title="永久链接">&para;</a></h2>
-<p>我们写一个 Main 程序用来序列化我们的 payload。</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">        </span><span class="c1">// 1. 创建 url 对象和 HashMap 对象</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">        </span><span class="n">URL</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="s">&quot;http://xxxxx.dnslog.cn&quot;</span><span class="p">);</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">URL</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="c1">// 2. 将 url 的 hashCode 属性改为非 -1 值</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="n">Field</span><span class="w"> </span><span class="n">urlHashcode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">URL</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&quot;hashCode&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="n">urlHashcode</span><span class="p">.</span><span class="na">setAccessible</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="n">urlHashcode</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="mi">1234</span><span class="p">);</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="c1">// 3. 将 url 存入 hashMap</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="c1">// 4. 将 url 的 hashCode 改为 -1</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="n">urlHashcode</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="c1">// 5. 序列化 hashMap,存入文件中</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="n">ObjectOutputStream</span><span class="w"> </span><span class="n">oos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectOutputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileOutputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;test.ser&quot;</span><span class="p">)));</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="n">oos</span><span class="p">.</span><span class="na">writeObject</span><span class="p">(</span><span class="n">map</span><span class="p">);</span>
+<p>我们只需要把这一段配置复制到自己的配置文件中，然后重启 neovim 即可。</p>
+<p><del>如果配置到这里就结束了，那么也不失为美好的结果。但是既然是个新东西，又怎么会让你如愿呢？</del></p>
+<p>之前说过，Windows Terminal 是不支持读取剪贴板的，所以当远程的 neovim 尝试执行 <code>"*p</code> 的时候，会试图通过 <code>OSC-52</code> 协议读取本地剪贴板的内容，然后传给远程的 neovim。但是 Windows Terminal 是不支持读取剪贴板的，所以这个过程会失败。我们在 neovim 中执行 <code>:reg</code> 来查看寄存器，可以看到 neovim 弹出了报错：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Waiting for OSC 52 response from the terminal. Press Ctrl-C to interrupt ...
 </span></code></pre></div>
-<p>可以看到，我们这里比预想的多出了 2和4 两个步骤。这是为什么呢。因为为了保证只有在反序列化成功时才会发送 dns 请求，那么之前我们就不允许发送 dns 请求。但是如果去掉第 2 步，我们会发现还没有反序列化就已经发送了 dns 请求。这是因为 <code>HashMap.put()</code> 方法也会走一遍攻击链。我们跟进 <code>put()</code> 方法：</p>
-<p><img alt="image-20240512161223224" src="https://repo.sxrhhh.top/undefinedimage-20240512161223224.png" /></p>
-<p>可以看到，和之前的攻击链如出一辙，并且还会修改我们的 <code>hashCode</code>，让我们的这个值不再等于 -1, 也就是说我们反序列化之后就不会再发送 dns 请求了。因此我们通过反射，提前将 <code>hashCode</code> 的值变为非 -1, 使得 <code>put</code>方法不会干扰我们的判断，然后再改回 -1, 进行序列化。</p>
-<h2 id="反序列化测试">反序列化测试<a class="headerlink" href="#反序列化测试" title="永久链接">&para;</a></h2>
-<p>我们写好一个反序列化类用来测试我们的 payload :</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">        </span><span class="n">ObjectInputStream</span><span class="w"> </span><span class="n">oos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectInputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;test.ser&quot;</span><span class="p">)));</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Object</span><span class="p">)</span><span class="w"> </span><span class="n">oos</span><span class="p">.</span><span class="na">readObject</span><span class="p">();</span>
+<p>正因如此，每当我们执行 <code>"*p</code> 的时候，都会弹出一个报错。我们必须要手动按下一个回车键，才能正常粘贴，而且粘贴的还是普通的 <code>""</code> 临时寄存器。这非常的影响体验。因为我们确实只需要复制功能，粘贴功能我们只需要进入 <code>INSERT</code> 模式，然后使用 <code>ctrl+shift+v</code> 粘贴就可以了。现在我们来重新配置一下，让它不再报错。</p>
+<h3 id="33-配置不报错">3.3 配置不报错<a class="headerlink" href="#33-配置不报错" title="永久链接">&para;</a></h3>
+<p>上文说到，如果本地终端不支持剪贴板的读取，那么远程的 neovim 会尝试通过 <code>OSC-52</code> 协议读取本地剪贴板的内容，然后失败，影响写作体验。</p>
+<p>在 github 上有这么一个 <a href="https://github.com/neovim/neovim/issues/28611">issue</a>，提出了一个解决方案如下：</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nf">no_paste</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="kr">return</span> <span class="kr">function</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="c1">-- Do nothing! We can&#39;t paste with OSC52</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="kr">end</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kr">end</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">clipboard</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;OSC 52&quot;</span><span class="p">,</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="n">copy</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>         <span class="p">[</span><span class="s2">&quot;+&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;vim.ui.clipboard.osc52&quot;</span><span class="p">).</span><span class="n">copy</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">),</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>         <span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;vim.ui.clipboard.osc52&quot;</span><span class="p">).</span><span class="n">copy</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">),</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="p">},</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="n">paste</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="p">[</span><span class="s2">&quot;+&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">no_paste</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">),</span> <span class="c1">-- Pasting disabled</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">no_paste</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">),</span> <span class="c1">-- Pasting disabled</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="p">}</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>简简单单两行代码，所做的就是反序列化一个对象。我们测试一下。先在 dnslog 上面申请一个地址，然后序列化。可以看见 dnslog 并没有反应。然后我们得到了叫做 "test.ser" 的 payload。我们再运行反序列化的方法，可以看到，dnslog有了一次 dns 记录。</p>
-<p><img alt="image-20240512174759236" src="https://repo.sxrhhh.top/undefinedimage-20240512174759236.png" /></p>
-<h2 id="jdk-版本问题">JDK 版本问题<a class="headerlink" href="#jdk-版本问题" title="永久链接">&para;</a></h2>
-<p>如果我使用的是 JDK17 作为序列化类的运行环境的话，会爆出以下的错误：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Exception in thread &quot;main&quot; java.lang.reflect.InaccessibleObjectException: Unable to make field private int java.net.URL.hashCode accessible: module java.base does not &quot;opens java.net&quot; to unnamed module @4617c264
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:178)
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    at java.base/java.lang.reflect.Field.setAccessible(Field.java:172)
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    at top.sxrhhh.testSerialize.Main.main(Main.java:25)
+<p>可以看到，这个方案是直接把 <code>paste</code> 设置为一个空函数。这样当 neovim 执行 <code>"*p</code> 的时候，就不会再试图去利用 <code>OSC-52</code> 协议读取本地剪贴板的内容了。</p>
+<p>但是这个方法有一个问题，就是说当进行粘贴的时候，因为函数返回的格式并不符合官方文档的要求，那么 neovim 就会报错。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>clipboard: provider returned invalid data
 </span></code></pre></div>
-<p>经过查阅，这是在 JDK17 新加入的特性，就是强制要求反射不允许对 Java 内部 api 进行操作。那么我们还怎么构造 payload 呢？难道说只能使用 1.8 ？经过各种版本的实验，我发现其实反序列化作为网络上传输数据的一种方法，并不一定要求 Java 的版本一致。因此，我们大可以不必费尽心思去绕过这一层，而是直接使用 1.8 低版本 JDK 去生成 payload, 然后再用 JDK17 的高版本运行反序列化类，就会发现效果是一样的。</p>
-<h2 id="小小总结">小小总结<a class="headerlink" href="#小小总结" title="永久链接">&para;</a></h2>
-<p>URLDNS 利用范围很广，它不依赖 JDK 的版本，使用的全是 Java 的内部类。因此，我们可以构造出 URLDNS 的 payload 用于检验目标是否具有反序列化漏洞。</p>
-<hr />
-<p>作者：Sxrhhh</p>
-<p>个人网站：<a href="https://www.sxrhhh.top/">https://www.sxrhhh.top</a></p>
-<p>博客园：<a href="https://www.cnblogs.com/sxrhhh/">Sxrhhh - 博客园 (cnblogs.com)</a></p>
-<p>转载请注明出处.</p>
-<p>在个人网站持续更新中……</p>
+<p>这个报错每一次粘贴都会出现，还是红字非常刺眼。我对此很难受，所以还需要想办法解决这个问题。解决思路就是：<strong>因为我们预期的粘贴命令是粘贴 neovim 自己的 <code>y</code> 复制，所以我们只需要让 paste 可以返回 <code>""</code> 临时寄存器的内容就可以了。</strong></p>
+<p>一下就是我的配置，把上面的配置替换成下面这个：</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nf">my_paste</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="kr">return</span> <span class="kr">function</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="c1">--[ 返回 “” 寄存器的内容，用来作为 p 操作符的粘贴物 ]</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="kd">local</span> <span class="n">content</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getreg</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="kr">return</span> <span class="n">vim</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="kr">end</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="kr">end</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="kr">if</span> <span class="p">(</span><span class="nb">os.getenv</span><span class="p">(</span><span class="s1">&#39;SSH_TTY&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="kr">then</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="c1">--[ 当前环境为本地环境，也包括 wsl ]</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="n">opt</span><span class="p">.</span><span class="n">clipboard</span><span class="p">:</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;unnamedplus&quot;</span><span class="p">)</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="kr">else</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="n">opt</span><span class="p">.</span><span class="n">clipboard</span><span class="p">:</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;unnamedplus&quot;</span><span class="p">)</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">clipboard</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>      <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;OSC 52&#39;</span><span class="p">,</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>      <span class="n">copy</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        <span class="p">[</span><span class="s1">&#39;+&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;vim.ui.clipboard.osc52&#39;</span><span class="p">).</span><span class="n">copy</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">),</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>        <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;vim.ui.clipboard.osc52&#39;</span><span class="p">).</span><span class="n">copy</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">),</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>      <span class="p">},</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>      <span class="n">paste</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        <span class="c1">--[ 小括号里面的内容可能是毫无意义的，但是保持原样可能看起来更好一点 ]</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        <span class="p">[</span><span class="s2">&quot;+&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">my_paste</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">),</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>        <span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">my_paste</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">),</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>    <span class="p">},</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="p">}</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="kr">end</span>
+</span></code></pre></div>
+<p>在这一段 lua 配置中，可以看到我用了一个 if 条件判断，检测 <code>$SSH_TTY</code> 环境变量来检测是否为本地环境。如果当前环境是本地环境，那么除了使用 <code>unnamedplus</code> 寄存器以外什么也不做，否则就使用 <code>OSC-52</code> 协议传输剪贴板。</p>
+<p>关于本地环境，因为没有设置 <code>g:clipboard</code> 变量，所以 neovim 就会根据 <code>:help clipboard-tool</code> 文档来选择默认的剪贴板。因为我们 linux 机器上面安装了 <code>xclip</code> 这个软件，所以 neovim 就会把内容复制到本地的系统剪贴板。</p>
+<p>而远程环境，因为设置了 <code>g:clipboard</code> 变量，所以 neovim 会使用 <code>OSC-52</code> 协议来传输它打算复制到系统剪贴板的内容。而粘贴的时候，则会调用我写的 <code>my_paste</code> 函数，这个函数会返回 <code>""</code> 寄存器的内容。因此，我成功的把 <code>p</code> 的功能给修复到了正常的状态。</p>
+<h2 id="4-配置-tmux-可选">4. 配置 tmux (可选)<a class="headerlink" href="#4-配置-tmux-可选" title="永久链接">&para;</a></h2>
+<p>如果你使用的是 tmux，那么你可以通过配置 tmux 来跳过步骤 3。我并没有使用 tmux 的打算，但是如果你使用 tmux，那么你需要配置一下。网上关于 tmux 开启 <code>OSC-52</code> 协议的配置很多，这里我不再赘述，我也暂时没有配置的打算。我只讲一下 tmux 代理的原理。</p>
+<p>其实也非常好懂，当你使用 tmux 的时候，neovim 不会认为你的终端是来自远程 ssh 连接的。他只知道将内容发送到 tmux 进程，然后由 tmux 转发给远程的 neovim。</p>
+<p>根据<a href="https://github.com/tmux/tmux/wiki/Clipboard">官方文档</a>，tmux 只需要这么设置就可以开启 <code>OSC-52</code> 协议了。</p>
+<p>在 <code>.tmux.conf</code> 文件中添加如下配置：
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">set</span><span class="w"> </span>-s<span class="w"> </span>set-cliplboard<span class="w"> </span>on
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># 好像还有一些，为了避免误人子弟还是建议自己去查一下</span>
+</span></code></pre></div></p>
+<p>这样，tmux 就会把内容发送给本地终端。</p>
+<blockquote>
+<p>勘误：上文说到，neovim 不会认为你的终端是来自远程 ssh 连接的。其实这句话是不对的，<code>$SSH_TTY</code> 环境变量是否设置，取决于你的 tmux 实在什么环境下开启的。那么如果你是 tmux 和直连混用的人，你需要这么配置</p>
+<p>首先先 <code>echo $TERM</code> 检查一下你的终端类型。通常情况下，当我直连终端时，这个值为 <code>xterm-256color</code>，当使用 tmux 的时候，这个值会变成 <code>tmux-256color</code>。</p>
+<p>然后，改写我之前的 lua 配置，利用 <code>if (os.getenv('TERM') == 'tmux-256color')</code> 判断。具体的配置教程可以参考 <code>:help g:clipboard</code>, 也可以参考网上教程。</p>
+</blockquote>
+<h2 id="5-配置-wsl">5. 配置 wsl<a class="headerlink" href="#5-配置-wsl" title="永久链接">&para;</a></h2>
+<p>到了这里，我很高兴的告诉你，在我的设备上(wsl 2.1.0, neovim 0.10.0)，只需要一个 <code>opt clipboard:append('unnamedplus')</code>，wsl 就会自动和系统剪贴板交换，虽然使用 <code>win+R</code> 快捷键可能不一定能看见。</p>
+<p>如果你的配置还是不行，建议参考一下 <code>:help clipboard-wsl</code>。</p>
+<h2 id="6-总结">6. 总结<a class="headerlink" href="#6-总结" title="永久链接">&para;</a></h2>
+<p>我本来是不愿意来 neovim 的，所以自从接触 vim 之后也是过了大半年才入了 neovim 的坑。正因为来晚了，我才看到官方已经原生支持 <code>OSC-52</code> 协议了。当然对于各位大佬来说，也完全没必要去折腾。我希望这篇文章能带给和我一样的 neovim 新手，让他们能够在被 neovim 的剪贴板折磨的时候，能够通过搜索引擎，搜索到这么一篇 2024 年的教程。也希望大家和我多多交流，互相学习。个人网站下方的评论区已开放，欢迎大家来到博客园、知乎、个人网站的评论区一起交流。</p>
 
 
 
