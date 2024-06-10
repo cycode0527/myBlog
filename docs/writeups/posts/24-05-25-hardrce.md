@@ -2,7 +2,7 @@
 date: 2024-05-25
 categories: 
     - SWPUCTF
-tag:
+tags:
     - CTF
     - RCE
     - PHP

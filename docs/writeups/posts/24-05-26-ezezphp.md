@@ -2,7 +2,7 @@
 date: 2024-05-26
 categories: 
     - SWPUCTF
-tag:
+tags:
     - CTF
     - PHP
     - 文件包含

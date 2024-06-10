@@ -2,7 +2,7 @@
 date: 2024-05-31
 categories: 
     - 安洵杯
-tag:
+tags:
     - CTF
     - SSTI
     - flask

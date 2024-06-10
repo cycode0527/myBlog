@@ -2,7 +2,7 @@
 date: 2024-05-27
 categories: 
     - NUSTCTF
-tag:
+tags:
     - CTF
     - http
 ---
